@@ -15,33 +15,35 @@
 	
 </head>  
 <body>
-    <header>
+    <header id="header">
         <a href= "index.html"><img src="img/logos/logotipo_Mesa_de_trabajo1.png" alt="logo_inicio" class="logo"></a>
     </header>
-    <form class="formulario">
+    <form class="formulario" id="form">
     
-    <h1>Login</h1>
-     <div class="contenedor">
-     
-     
+    <h1 id="title_form">Login</h1>
+     <div class="contenedor" id="contenedor-login">
+          
          
-         <div class="input-contenedor">
+         <div class="input-contenedor" id="contenedor-correo-electronico">
          <i class="fas fa-envelope icon"></i>
-         <input type="text" placeholder="Correo Electronico">
+         <input id="input-correo-electronico" type="text" placeholder="Correo Electronico">
          
          </div>
          
-         <div class="input-contenedor">
+         <div class="input-contenedor" id="contenedor-password">
         <i class="fas fa-key icon"></i>
-         <input type="password" placeholder="Contraseña">
-         
-         </div>
-         <input type="submit" value="Login" class="button">
+        <input id= "input-password" type="password" placeholder="Contraseña">
+        </div>
+
+    </div >
+
+    <div id = "contenedor-inferior">
+         <input id="button-login" type="submit" value="Login" class="button">
          <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
          <p>¿No tienes una cuenta? <a class="link" href="registrarvista.html">Registrate </a></p>
      </div>
     </form>
 
-    <h2 class="titulo-final">&copy; Voto electronico 2021 | Todos los derechos reservados.</h2>
+    <h2 class="titulo-final" id="h2-down">&copy; Voto electronico 2021 | Todos los derechos reservados.</h2>
 </body>
 </html>

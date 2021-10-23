@@ -18,38 +18,41 @@
 
 </head>  
 <body>
-    <header>
+    <header id="header-registrar">
         <a href= "index.html"><img src="img/logos/logotipo_Mesa_de_trabajo1.png" alt="logo_inicio" class="logo"></a>
     </header>
- <form class="formulario">
+ <form class="formulario" id="form-registrar">
     
-    <h1>Registrate</h1>
-     <div class="contenedor">
+    <h1 id="title-form-login">Registrate</h1>
+    <div class="contenedor" id="contenedor-registrar">
      
-     <div class="input-contenedor">
-         <i class="fas fa-user icon"></i>
-         <input type="text" placeholder="Nombre Completo">
+        <div class="input-contenedor" id="contenedor-nombre-completo-registrar">
+            <i class="fas fa-user icon"></i>
+            <input id="input-nombre-completo-registrar" type="text" placeholder="Nombre Completo">
          
-         </div>
+        </div>
          
-         <div class="input-contenedor">
-         <i class="fas fa-envelope icon"></i>
-         <input type="text" placeholder="Correo Electronico">
+        <div class="input-contenedor" id="contenedor-correo-electronico-registrar">
+            <i class="fas fa-envelope icon"></i>
+            <input id="input-correo-electronico-registrar" type="text" placeholder="Correo Electronico">
+
+        </div>
          
-         </div>
+        <div class="input-contenedor" id="contenedor-password-registrar">
+            <i class="fas fa-key icon"></i>
+            <input id="input-password-registrar" type="password" placeholder="Contraseña">
          
-         <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-         <input type="password" placeholder="Contraseña">
-         
-         </div>
-         <input type="submit" value="Registrate" class="button">
-         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-         <p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html">Iniciar Sesion</a></p>
-     </div>
+        </div>
+
+        <div id = "contenedor-inferior-login">
+            <input id="button-registrar" type="submit" value="Registrate" class="button">
+            <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+            <p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html">Iniciar Sesion</a></p>
+        </div> 
+    </div>
     </form>
 
-    <h2 class="titulo-final">&copy; Voto electronico 2021 | Todos los derechos reservados.</h2>
+    <h2 class="titulo-final" id="titulo-final-registrar">&copy; Voto electronico 2021 | Todos los derechos reservados.</h2>
     
 </body>
 </html>
