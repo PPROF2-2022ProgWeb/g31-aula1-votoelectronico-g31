@@ -37,16 +37,75 @@ h1{
     font-size: 40px;
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],input[type="date"], input[type="email"]{
     font-size: 20px;
-    width: 82%;
+    width: 88.3%;
     padding: 10px;
     border: none;
+    outline: none;
 }
 .input-contenedor{
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
+    margin-bottom: 15px !important;
+    border: 1px solid #aaa !important;
 }
+.form-input::-moz-placeholder {
+    color: #999;
+  }
+  .form-input:-ms-input-placeholder {
+    color: #999;
+  }
+  .form-input::placeholder {
+    color: #999;
+  }
+  .form-input:focus:required {
+    border-color: #02ffd0;
+    outline: 0 none;
+  }
+  .form-input:required:-moz-placeholder-shown {
+    border: 1px solid #e8e8e8;
+  }
+  .form-input:required:-ms-input-placeholder {
+    border: 1px solid #e8e8e8;
+  }
+  .form-input:required:placeholder-shown {
+    border: 1px solid #e8e8e8;
+  }
+  .form-input:required:not(:-moz-placeholder-shown):invalid {
+    border: 1px solid red;
+    color: red;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:not(:-ms-input-placeholder):invalid {
+    border: 1px solid red;
+    color: red;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:not(:placeholder-shown):invalid {
+    border: 1px solid red;
+    color: red;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:not(:-moz-placeholder-shown):valid {
+    border: 1px solid #2fe678;
+    color: #2fe678;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:not(:-ms-input-placeholder):valid {
+    border: 1px solid #2fe678;
+    color: #2fe678;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:not(:placeholder-shown):valid {
+    border: 1px solid #2fe678;
+    color: #2fe678;
+    box-shadow: 0 0 0 1px;
+  }
+  .form-input:required:focus:invalid {
+    border: 1px solid red;
+    color: red;
+    box-shadow: 0 0 0 1px;
+  }
+  
 .icon{
     min-width: 50px;
     text-align: center;
@@ -68,6 +127,16 @@ input[type="password"]{
 p{
     text-align: center;
 }
+.sinborde {
+    border: 0;
+    outline:none !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
+
+
 .link{
     text-decoration: none;
       color: #1a2537;
