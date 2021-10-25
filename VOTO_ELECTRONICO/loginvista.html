@@ -1,47 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
 
-	             <title>Voto Electronico - Login </title> 
+    <title>Voto Electronico - Login</title>
 
-	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
-    <meta name="description" content="Accede a #Voto para saber las ultimas votas con tu email y la clave">
-    <meta name="keywords" content="VotoElectronico, EstadisticasVoto, VotaRemoto, voto">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-    <link rel="shortcut icon" href="img/logos/icono_Mesa_de_trabajo1.png" type="image/x-icon">
-	<link rel="stylesheet" href="css/estilo_lyr.css">
-    <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet">
-	
-</head>  
-<body>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="Accede a #Voto para saber las ultimas votas con tu email y la clave"
+    />
+    <meta
+      name="keywords"
+      content="VotoElectronico, EstadisticasVoto, VotaRemoto, voto"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/logos/icono_Mesa_de_trabajo1.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/estilo_lyr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
     <header>
-        <a href= "index.html"><img src="img/logos/logotipo_Mesa_de_trabajo1.png" alt="logo_inicio" class="logo"></a>
+      <a href="index.html"
+        ><img
+          src="img/logos/logotipo_Mesa_de_trabajo1.png"
+          alt="logo_inicio"
+          class="logo"
+      /></a>
     </header>
-    <form class="formulario">
-    
-    <h1>Login</h1>
-     <div class="contenedor">
-     
-     
-         
-         <div class="input-contenedor">
-         <i class="fas fa-envelope icon"></i>
-         <input type="text" placeholder="Correo Electronico">
-         
-         </div>
-         
-         <div class="input-contenedor">
-        <i class="fas fa-key icon"></i>
-         <input type="password" placeholder="Contraseña">
-         
-         </div>
-         <input type="submit" value="Login" class="button">
-         <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-         <p>¿No tienes una cuenta? <a class="link" href="registrarvista.html">Registrate </a></p>
-     </div>
-    </form>
+  
 
-    <h2 class="titulo-final">&copy; Voto electronico 2021 | Todos los derechos reservados.</h2>
-</body>
+    <section id="register" class="mb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 com-md-4 mx-auto text-center pt-5">
+              <h1 class="h3 mb-3 font-weight-normal color-title">Iniciar Sesión</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
+              <div class="card_register">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <form class="box">  
+                      <div class="form-group">
+                        <label class="color-title"> Email </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="mail"
+                          class="form-control"
+                          placeholder="Email"
+                          required
+                        />
+                      </div>
+  
+                      <div class="form-group">
+                        <label class="color-title">Contraseña</label>
+                        <input
+                          type="password"
+                          id="contrasena"
+                          name="contrasena"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          required
+                        />
+                      
+  
+                      <button
+                        type="submit"
+                        class="btn btn-lg w-100 btn-registrar btn-block button"
+                      >
+                        Iniciar sesión
+                      </button>
+                      
+                      <p id="sin-cuenta">
+                        ¿No tienes una cuenta?
+                        <a class="link" href="registrarvista.html">Registrate </a>
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+
+
+    <h2 class="titulo-final">
+      &copy; Voto electronico 2021 | Todos los derechos reservados.
+    </h2>
+  </body>
 </html>
