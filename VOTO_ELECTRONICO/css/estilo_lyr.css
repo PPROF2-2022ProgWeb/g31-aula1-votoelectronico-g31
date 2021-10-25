@@ -1,117 +1,70 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    background-image: linear-gradient(180deg, #ffff93 0, #f4ff9a 7.14%, #dcffa2 14.29%, #c3ffaa 21.43%, #a8ffb1 28.57%, #8dffb7 35.71%, #70ffbb 42.86%, #53f2bc 50%, #33e3bc 57.14%, #00d5bc 64.29%, #00cabd 71.43%, #00c0be 78.57%, #00b8c0 85.71%, #00b2c3 92.86%, #00aec7 100%);
-    background-size: cover;
-    background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-image: linear-gradient(
+    180deg,
+    #ffff93 0,
+    #f4ff9a 7.14%,
+    #dcffa2 14.29%,
+    #c3ffaa 21.43%,
+    #a8ffb1 28.57%,
+    #8dffb7 35.71%,
+    #70ffbb 42.86%,
+    #53f2bc 50%,
+    #33e3bc 57.14%,
+    #00d5bc 64.29%,
+    #00cabd 71.43%,
+    #00c0be 78.57%,
+    #00b8c0 85.71%,
+    #00b2c3 92.86%,
+    #00aec7 100%
+  );
+  background-size: cover;
+  background-attachment: fixed;
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-header{
-    margin-left: auto;
-    margin-right: auto;
+header {
+  margin-left: auto;
+  margin-right: auto;
 }
-.logo{
-    width: 10%;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
+h1 {
+  font-family: "Poppins", sans-serif;
 }
-.contenedor{
-    width: 100%;
-    padding: 15px;
+.logo {
+  width: 10%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
 }
-.formulario{
-    background: #fff;
-    margin-top: 50px;
-    padding: 3px;
+
+.form-group{
+    margin-bottom: 40px;
 }
-h1{
-    text-align: center;
-    color: #1a2537;
-    font-size: 40px;
-}
-input[type="text"],
-input[type="password"]{
-    font-size: 20px;
-    width: 82%;
-    padding: 10px;
-    border: none;
-}
-.input-contenedor{
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
-}
-.icon{
-    min-width: 50px;
-    text-align: center;
-    color: #999;
-}
+
 .button{
-    border: none;
-    width: 100%;
-    color: white;
-    font-size: 20px;
-    background:  #4f078a;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: rgb(133, 13, 133) !important;
+    color: white !important;
+    margin-top: 40px;
 }
+
 .button:hover{
-    background: cadetblue;
-}
-p{
-    text-align: center;
-}
-.link{
-    text-decoration: none;
-      color: #1a2537;
-    font-weight: 600;
-}
-.link:hover{
-     color: cadetblue;
-}
-@media(min-width:768px)
-{
-    .formulario{
-        margin: auto;
-        width: 500px;
-        margin-top: 50px;
-        border-radius: 2%;
-    }
-}
+    background-color: rgb(27, 7, 99) !important;
+    color: white !important;
+} 
 
-
-.titulo-final{
+.marg{
+    width: 80% !important;
+}
+.titulo-final {
     text-align: center;
     font-size: 15px;
     margin: 20px 0 0 0;
     color: black;
-}
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  #sin-cuenta{
+      margin-top: 40px;
+  }
