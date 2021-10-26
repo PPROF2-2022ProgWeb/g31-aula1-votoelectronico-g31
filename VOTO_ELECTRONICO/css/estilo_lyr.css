@@ -40,6 +40,10 @@ h1 {
   margin-top: 20px;
 }
 
+.breadcrumb-item {
+  margin-left: 10px;
+}
+
 .form-group{
     margin-bottom: 40px;
 }
