@@ -40,6 +40,10 @@ h1 {
   margin-top: 20px;
 }
 
+.breadcrumb-item {
+  margin-left: 10px;
+}
+
 .form-group{
     margin-bottom: 40px;
 }
@@ -56,7 +60,7 @@ h1 {
 } 
 
 .marg{
-    width: 80% !important;
+    width: 50% !important;
 }
 .titulo-final {
     text-align: center;
