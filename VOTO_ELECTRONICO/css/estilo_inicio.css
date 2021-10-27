@@ -8,19 +8,6 @@ transition: all 0.4s linear;
   color: orangered !important; 
   }
 
-.imagen1  {
-  width: 80%;
-}
-.imagen2  {
-  width: 75%;
-}
-.imagen3  {
-  width: 80%;
-}
-.imagen4 {
-  width: 100%;
-}
-
 /* TEXTO DE IMAGEN PRINCIPAL */
 
 #intro{
@@ -79,6 +66,19 @@ header {
     padding: 2px;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
     margin-right: 5px;
+}
+
+.imagen1  {
+  width: 80%;
+}
+.imagen2  {
+  width: 75%;
+}
+.imagen3  {
+  width: 80%;
+}
+.imagen4 {
+  width: 100%;
 }
 
 .contenido-textos a{
