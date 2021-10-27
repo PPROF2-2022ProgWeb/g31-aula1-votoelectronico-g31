@@ -36,6 +36,7 @@ header {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    
 }
 .wave {
     position: absolute;
@@ -189,4 +190,10 @@ header {
   color: #125688;
   background: #fefefe;
   border-color: #125688;
+  }
+  #nav{
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(211,242,149,1) 100%);
+    position: fixed;
+    width: 100%;
   }
