@@ -68,19 +68,6 @@ header {
     margin-right: 5px;
 }
 
-.imagen1  {
-  width: 80%;
-}
-.imagen2  {
-  width: 75%;
-}
-.imagen3  {
-  width: 80%;
-}
-.imagen4 {
-  width: 100%;
-}
-
 .contenido-textos a{
   color: black;
   transition: all 0.4s linear;
