@@ -7,7 +7,14 @@
     .nav-item a:hover{
       color: orangered !important; 
       }
-    
+
+      .divisor{
+        border-top: 8px solid black;
+        width: 100%;
+        background-color: darkgray;
+      }
+
+      
     /* TEXTO DE IMAGEN PRINCIPAL */
     
     #intro{
