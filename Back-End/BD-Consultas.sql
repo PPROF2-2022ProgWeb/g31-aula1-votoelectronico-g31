@@ -92,21 +92,21 @@ WHERE userName = 'Juan' AND password = '123456';
 -- Insertar datos en Pais / Provincia / Ciudad
 
 INSERT IGNORE INTO Pais
-(Nombre)
+(NombrePais)
 VALUES
 ('ARGENTINA'),
 ('BRASIL'),
 ('COLOMBIA');
 
 INSERT IGNORE INTO Pais
-(Nombre)
+(NombrePais)
 VALUES
 ('JAPON'),
 ('ISRAEL'),
 ('ALEMANIA');
 
 INSERT IGNORE INTO provincia
-(Nombre, idPais)
+(NombreProvincia, idPais)
 VALUES
 ('CORDOBA', 1),
 ('BUENOS AIRES', 1),
@@ -116,7 +116,7 @@ VALUES
 ('CHUBUT', 1);
 
 INSERT IGNORE INTO Ciudad
-(Nombre, idProvincia)
+(NombreCiudad, idProvincia)
 VALUES
 ('CORDOBA CAPITAL', 1),
 ('CARLOS PAZ', 1),
