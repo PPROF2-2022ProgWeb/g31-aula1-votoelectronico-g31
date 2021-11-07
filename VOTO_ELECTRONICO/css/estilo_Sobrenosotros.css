@@ -14,13 +14,16 @@
       background-color: darkgray;
       margin: 0;
     }
-  
-  /* TEXTO DE IMAGEN PRINCIPAL */
 
+  /*BREADCRUMBD*/
   .head{
     margin-left: 2% !important;
     margin-right: auto;
   }
+  /* FIN BREADCRUMBD*/
+  
+  /* TEXTO DE IMAGEN PRINCIPAL */
+
   
   #intro{
     display: flex;
