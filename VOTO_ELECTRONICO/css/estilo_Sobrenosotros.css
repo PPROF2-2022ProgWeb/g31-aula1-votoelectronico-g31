@@ -12,9 +12,15 @@
       border-top: 8px solid black;
       width: 100%;
       background-color: darkgray;
+      margin: 0;
     }
   
   /* TEXTO DE IMAGEN PRINCIPAL */
+
+  .head{
+    margin-left: 2% !important;
+    margin-right: auto;
+  }
   
   #intro{
     display: flex;

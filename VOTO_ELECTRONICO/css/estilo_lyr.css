@@ -26,9 +26,16 @@ body {
   box-sizing: border-box;
 }
 
-header {
+.head{
   margin-left: auto;
   margin-right: auto;
+}
+.start{
+  background-color: white !important;
+  color: black;
+}
+.letra{
+  color: black !important;
 }
 h1 {
   font-family: "Poppins", sans-serif;
@@ -72,3 +79,11 @@ h1 {
   #sin-cuenta{
       margin-top: 40px;
   }
+  .divisor{
+    border-top: 8px solid black;
+    width: 100%;
+    background-color: darkgray;
+    margin: 0;
+    top: -10px;
+  }
+  
