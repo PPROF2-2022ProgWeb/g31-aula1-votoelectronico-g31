@@ -12,10 +12,18 @@
         border-top: 8px solid black;
         width: 100%;
         background-color: darkgray;
+        margin: 0;
       }
 
-      
-    /* TEXTO DE IMAGEN PRINCIPAL */
+  /*BREADCRUMBD*/
+      .head{
+        margin-left: 2% !important;
+        margin-right: auto;
+      }
+   
+  /*FIN BREADCRUMBD*/
+  
+  /* TEXTO DE IMAGEN PRINCIPAL */
     
     #intro{
       display: flex;
@@ -67,7 +75,14 @@
       color: orangered;
     }
     
-    
+    /*BREADCRUMD*/
+    .head{
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
     /* FORMULARIO CONTACTO */
     
     .contact-form .btnContact {

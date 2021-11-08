@@ -26,10 +26,27 @@ body {
   box-sizing: border-box;
 }
 
-header {
+  /*BREADCRUMBD*/
+.head{
   margin-left: auto;
   margin-right: auto;
 }
+.breadcrumb-item {
+  margin-left: 10px;
+}
+/*BREADCRUMBD*/
+
+/*HEADER*/
+.start{
+  background-color: white !important;
+  color: black;
+}
+
+
+.letra{
+  color: black !important;
+}
+/*FIN HEADER*/
 h1 {
   font-family: "Poppins", sans-serif;
 }
@@ -40,9 +57,7 @@ h1 {
   margin-top: 20px;
 }
 
-.breadcrumb-item {
-  margin-left: 10px;
-}
+
 
 .form-group{
     margin-bottom: 40px;
@@ -72,3 +87,11 @@ h1 {
   #sin-cuenta{
       margin-top: 40px;
   }
+  .divisor{
+    border-top: 8px solid black;
+    width: 100%;
+    background-color: darkgray;
+    margin: 0;
+    top: -10px;
+  }
+  
