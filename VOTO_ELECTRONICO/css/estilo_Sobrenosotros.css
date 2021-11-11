@@ -12,9 +12,18 @@
       border-top: 8px solid black;
       width: 100%;
       background-color: darkgray;
+      margin: 0;
     }
+
+  /*BREADCRUMBD*/
+  .head{
+    margin-left: 2% !important;
+    margin-right: auto;
+  }
+  /* FIN BREADCRUMBD*/
   
   /* TEXTO DE IMAGEN PRINCIPAL */
+
   
   #intro{
     display: flex;

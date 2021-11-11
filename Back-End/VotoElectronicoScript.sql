@@ -22,9 +22,10 @@ USE `Voto_Electronico` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Pais` (
   `idPais` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NULL DEFAULT NULL,
+  `NombrePais` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idPais`),
-  UNIQUE INDEX `Nombre_UNIQUE` (`Nombre` ASC) )
+  UNIQUE INDEX `Nombre_UNIQUE` (`NombrePais` ASC) VISIBLE,
+  UNIQUE INDEX `idPais_UNIQUE` (`idPais` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4
@@ -36,11 +37,11 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Provincia` (
   `idProvincia` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `NombreProvincia` VARCHAR(45) NOT NULL,
   `idPais` INT NOT NULL,
   PRIMARY KEY (`idProvincia`),
-  UNIQUE INDEX `Nombre_UNIQUE` (`Nombre` ASC) ,
-  INDEX `fk_pais_provincia` (`idPais` ASC) ,
+  INDEX `fk_pais_provincia` (`idPais` ASC) VISIBLE,
+  UNIQUE INDEX `idProvincia_UNIQUE` (`idProvincia` ASC) VISIBLE,
   CONSTRAINT `fk_pais_provincia`
     FOREIGN KEY (`idPais`)
     REFERENCES `Voto_Electronico`.`Pais` (`idPais`))
@@ -55,10 +56,11 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Ciudad` (
   `idCiudad` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `NombreCiudad` VARCHAR(45) NOT NULL,
   `idProvincia` INT NOT NULL,
   PRIMARY KEY (`idCiudad`),
-  INDEX `fk_ciudad_provincia` (`idProvincia` ASC) ,
+  INDEX `fk_ciudad_provincia` (`idProvincia` ASC) VISIBLE,
+  UNIQUE INDEX `idCiudad_UNIQUE` (`idCiudad` ASC) VISIBLE,
   CONSTRAINT `fk_ciudad_provincia`
     FOREIGN KEY (`idProvincia`)
     REFERENCES `Voto_Electronico`.`Provincia` (`idProvincia`))
@@ -73,13 +75,14 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Usuario` (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NULL DEFAULT NULL,
-  `Apellido` VARCHAR(45) NULL DEFAULT NULL,
-  `Telefono` VARCHAR(45) NULL DEFAULT NULL,
-  `DNI` VARCHAR(45) NULL DEFAULT NULL,
+  `Nombre` VARCHAR(45) NOT NULL,
+  `Apellido` VARCHAR(45) NOT NULL,
+  `Telefono` VARCHAR(45) NOT NULL,
+  `DNI` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idusuario`),
-  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC) ,
-  UNIQUE INDEX `DNI_UNIQUE` (`DNI` ASC) )
+  UNIQUE INDEX `idusuario_UNIQUE` (`idusuario` ASC) VISIBLE,
+  UNIQUE INDEX `DNI_UNIQUE` (`DNI` ASC) VISIBLE,
+  UNIQUE INDEX `Telefono_UNIQUE` (`Telefono` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 12
 DEFAULT CHARACTER SET = utf8mb4
@@ -91,12 +94,12 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Login` (
   `idLogin` INT NOT NULL AUTO_INCREMENT,
-  `userName` VARCHAR(45) NULL DEFAULT NULL,
-  `password` VARCHAR(45) NULL DEFAULT NULL,
+  `userName` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idLogin`),
-  UNIQUE INDEX `idLogin_UNIQUE` (`idLogin` ASC) ,
-  INDEX `fk_usuario_login` (`idusuario` ASC) ,
+  UNIQUE INDEX `idLogin_UNIQUE` (`idLogin` ASC) VISIBLE,
+  INDEX `fk_usuario_login` (`idusuario` ASC) VISIBLE,
   CONSTRAINT `fk_usuario_login`
     FOREIGN KEY (`idusuario`)
     REFERENCES `Voto_Electronico`.`Usuario` (`idusuario`))
@@ -111,9 +114,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`estado_Votacion` (
   `idestado_Votacion` INT NOT NULL AUTO_INCREMENT,
-  `descripcion_estado` VARCHAR(45) NULL DEFAULT NULL,
+  `descripcion_estado` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idestado_Votacion`),
-  UNIQUE INDEX `idestado_Votacion_UNIQUE` (`idestado_Votacion` ASC) )
+  UNIQUE INDEX `idestado_Votacion_UNIQUE` (`idestado_Votacion` ASC) VISIBLE)
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4
@@ -125,16 +128,16 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Votacion` (
   `idVotacion` INT NOT NULL AUTO_INCREMENT,
-  `descripcion_Votacion` VARCHAR(45) NULL DEFAULT NULL,
-  `fecha_inicio` DATE NULL DEFAULT NULL,
-  `fecha_cierre` DATE NULL DEFAULT NULL,
-  `para_Todos` VARCHAR(45) NULL DEFAULT NULL,
-  `estado_Votacion_idestado_Votacion` INT NOT NULL,
+  `descripcion_Votacion` VARCHAR(45) NOT NULL,
+  `fecha_inicio` DATE NOT NULL,
+  `fecha_cierre` DATE NOT NULL,
+  `para_Todos` VARCHAR(45) NOT NULL,
   `Resultado_idResultado` INT NOT NULL,
+  `estado_Votacion_idestado_Votacion` INT NOT NULL,
   PRIMARY KEY (`idVotacion`),
-  UNIQUE INDEX `idVotacion_UNIQUE` (`idVotacion` ASC) ,
-  INDEX `fk_Votacion_estado_Votacion1_idx` (`estado_Votacion_idestado_Votacion` ASC) ,
-  INDEX `fk_Votacion_Resultado1_idx` (`Resultado_idResultado` ASC) ,
+  UNIQUE INDEX `idVotacion_UNIQUE` (`idVotacion` ASC) VISIBLE,
+  INDEX `fk_Votacion_estado_Votacion1_idx` (`estado_Votacion_idestado_Votacion` ASC) VISIBLE,
+  INDEX `fk_Votacion_Resultado1_idx` (`Resultado_idResultado` ASC) VISIBLE,
   CONSTRAINT `fk_Votacion_estado_Votacion1`
     FOREIGN KEY (`estado_Votacion_idestado_Votacion`)
     REFERENCES `Voto_Electronico`.`estado_Votacion` (`idestado_Votacion`))
@@ -148,11 +151,11 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Resultado` (
   `idResultado` INT NOT NULL AUTO_INCREMENT,
-  `descripcion_Resultado` VARCHAR(45) NULL DEFAULT NULL,
+  `descripcion_Resultado` VARCHAR(45) NOT NULL,
   `idVotacion` INT NOT NULL,
   PRIMARY KEY (`idResultado`),
-  UNIQUE INDEX `idResultado_UNIQUE` (`idResultado` ASC) ,
-  INDEX `fk_resultado_votacion` (`idVotacion` ASC) ,
+  UNIQUE INDEX `idResultado_UNIQUE` (`idResultado` ASC) VISIBLE,
+  INDEX `fk_resultado_votacion` (`idVotacion` ASC) VISIBLE,
   CONSTRAINT `fk_resultado_votacion`
     FOREIGN KEY (`idVotacion`)
     REFERENCES `Voto_Electronico`.`Votacion` (`idVotacion`))
@@ -166,9 +169,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Rol_Usuario` (
   `idRol_Usuario` INT NOT NULL AUTO_INCREMENT,
-  `nombres` VARCHAR(45) NULL DEFAULT NULL,
+  `nombresRU` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idRol_Usuario`),
-  UNIQUE INDEX `idRol_Usuario_UNIQUE` (`idRol_Usuario` ASC) )
+  UNIQUE INDEX `idRol_Usuario_UNIQUE` (`idRol_Usuario` ASC) VISIBLE,
+  UNIQUE INDEX `nombres_UNIQUE` (`nombresRU` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -184,11 +188,11 @@ CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`Ubicacion` (
   `idCiudad` INT NOT NULL,
   `idusuario` INT NOT NULL,
   PRIMARY KEY (`idUbicacion`),
-  UNIQUE INDEX `idUbicacion_UNIQUE` (`idUbicacion` ASC) ,
-  INDEX `fk_ubicacion_usuario` (`idusuario` ASC) ,
-  INDEX `fk_Ubicacion_ciudad` (`idCiudad` ASC) ,
-  INDEX `fk_Ubicacion_provincia` (`idProvincia` ASC) ,
-  INDEX `fk_Ubicacion_pais` (`idPais` ASC) ,
+  UNIQUE INDEX `idUbicacion_UNIQUE` (`idUbicacion` ASC) VISIBLE,
+  INDEX `fk_ubicacion_usuario` (`idusuario` ASC) VISIBLE,
+  INDEX `fk_Ubicacion_ciudad` (`idCiudad` ASC) VISIBLE,
+  INDEX `fk_Ubicacion_provincia` (`idProvincia` ASC) VISIBLE,
+  INDEX `fk_Ubicacion_pais` (`idPais` ASC) VISIBLE,
   CONSTRAINT `fk_Ubicacion_ciudad`
     FOREIGN KEY (`idCiudad`)
     REFERENCES `Voto_Electronico`.`Ciudad` (`idCiudad`),
@@ -214,9 +218,9 @@ CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`opcion_Votacion` (
   `Votacion_idVotacion` INT NOT NULL,
   `usuario_idusuario` INT NOT NULL,
   PRIMARY KEY (`idopcion_Votacion`),
-  UNIQUE INDEX `idopcion_Votacion_UNIQUE` (`idopcion_Votacion` ASC) ,
-  INDEX `fk_opcion_Votacion_Votacion1_idx` (`Votacion_idVotacion` ASC) ,
-  INDEX `fk_opcion_Votacion_usuario1_idx` (`usuario_idusuario` ASC) ,
+  UNIQUE INDEX `idopcion_Votacion_UNIQUE` (`idopcion_Votacion` ASC) VISIBLE,
+  INDEX `fk_opcion_Votacion_Votacion1_idx` (`Votacion_idVotacion` ASC) VISIBLE,
+  INDEX `fk_opcion_Votacion_usuario1_idx` (`usuario_idusuario` ASC) VISIBLE,
   CONSTRAINT `fk_opcion_Votacion_usuario1`
     FOREIGN KEY (`usuario_idusuario`)
     REFERENCES `Voto_Electronico`.`usuario` (`idusuario`),
@@ -233,16 +237,16 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`desc_Voto` (
   `idDesc_Voto` INT NOT NULL AUTO_INCREMENT,
-  `descripcion_Voto` VARCHAR(45) NULL DEFAULT NULL,
-  `fecha_voto` DATE NULL DEFAULT NULL,
+  `descripcion_Voto` VARCHAR(45) NOT NULL,
+  `fecha_voto` DATE NOT NULL,
   `Votacion_idVotacion` INT NOT NULL,
   `usuario_idusuario` INT NOT NULL,
   `opcion_Votacion_idopcion_Votacion` INT NOT NULL,
   PRIMARY KEY (`idDesc_Voto`),
-  UNIQUE INDEX `idDesc_Voto_UNIQUE` (`idDesc_Voto` ASC) ,
-  INDEX `fk_desc_Voto_Votacion1_idx` (`Votacion_idVotacion` ASC) ,
-  INDEX `fk_desc_Voto_usuario1_idx` (`usuario_idusuario` ASC) ,
-  INDEX `fk_desc_Voto_opcion_Votacion1_idx` (`opcion_Votacion_idopcion_Votacion` ASC) ,
+  UNIQUE INDEX `idDesc_Voto_UNIQUE` (`idDesc_Voto` ASC) VISIBLE,
+  INDEX `fk_desc_Voto_Votacion1_idx` (`Votacion_idVotacion` ASC) VISIBLE,
+  INDEX `fk_desc_Voto_usuario1_idx` (`usuario_idusuario` ASC) VISIBLE,
+  INDEX `fk_desc_Voto_opcion_Votacion1_idx` (`opcion_Votacion_idopcion_Votacion` ASC) VISIBLE,
   CONSTRAINT `fk_desc_Voto_opcion_Votacion1`
     FOREIGN KEY (`opcion_Votacion_idopcion_Votacion`)
     REFERENCES `Voto_Electronico`.`opcion_Votacion` (`idopcion_Votacion`),
@@ -262,9 +266,9 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`grupo_det` (
   `idgrupo_det` INT NOT NULL AUTO_INCREMENT,
-  `Descripcion_grupo` VARCHAR(45) NULL DEFAULT NULL,
+  `Descripcion_grupo` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idgrupo_det`),
-  UNIQUE INDEX `idgrupo_det_UNIQUE` (`idgrupo_det` ASC) )
+  UNIQUE INDEX `idgrupo_det_UNIQUE` (`idgrupo_det` ASC) VISIBLE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -274,12 +278,13 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `Voto_Electronico`.`grupo_Votacion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`grupo_Votacion` (
-  `idgrupo_Votacion` INT NOT NULL,
+  `idgrupo_Votacion` INT NOT NULL AUTO_INCREMENT,
   `Votacion_idVotacion` INT NOT NULL,
   `grupo_det_idgrupo_det` INT NOT NULL,
   PRIMARY KEY (`idgrupo_Votacion`),
-  INDEX `fk_grupo_Votacion_Votacion1_idx` (`Votacion_idVotacion` ASC) ,
-  INDEX `fk_grupo_Votacion_grupo_det1_idx` (`grupo_det_idgrupo_det` ASC) ,
+  INDEX `fk_grupo_Votacion_Votacion1_idx` (`Votacion_idVotacion` ASC) VISIBLE,
+  INDEX `fk_grupo_Votacion_grupo_det1_idx` (`grupo_det_idgrupo_det` ASC) VISIBLE,
+  UNIQUE INDEX `idgrupo_Votacion_UNIQUE` (`idgrupo_Votacion` ASC) VISIBLE,
   CONSTRAINT `fk_grupo_Votacion_grupo_det1`
     FOREIGN KEY (`grupo_det_idgrupo_det`)
     REFERENCES `Voto_Electronico`.`grupo_det` (`idgrupo_det`),
@@ -299,9 +304,9 @@ CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`grupo_int` (
   `grupo_det_idgrupo_det` INT NOT NULL,
   `usuario_idusuario` INT NOT NULL,
   PRIMARY KEY (`idgrupo_int`),
-  UNIQUE INDEX `idgrupo_int_UNIQUE` (`idgrupo_int` ASC) ,
-  INDEX `fk_grupo_int_grupo_det1_idx` (`grupo_det_idgrupo_det` ASC) ,
-  INDEX `fk_grupo_int_usuario1_idx` (`usuario_idusuario` ASC) ,
+  UNIQUE INDEX `idgrupo_int_UNIQUE` (`idgrupo_int` ASC) VISIBLE,
+  INDEX `fk_grupo_int_grupo_det1_idx` (`grupo_det_idgrupo_det` ASC) VISIBLE,
+  INDEX `fk_grupo_int_usuario1_idx` (`usuario_idusuario` ASC) VISIBLE,
   CONSTRAINT `fk_grupo_int_grupo_det1`
     FOREIGN KEY (`grupo_det_idgrupo_det`)
     REFERENCES `Voto_Electronico`.`grupo_det` (`idgrupo_det`),
@@ -317,13 +322,13 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- Table `Voto_Electronico`.`usuario_Y_Rol`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Voto_Electronico`.`usuario_Y_Rol` (
-  `idusuario_Y_Rol` INT NOT NULL,
+  `idusuario_Y_Rol` INT NOT NULL AUTO_INCREMENT,
   `Rol_Usuario_idRol_Usuario` INT NOT NULL,
   `usuario_idusuario` INT NOT NULL,
   PRIMARY KEY (`idusuario_Y_Rol`),
-  UNIQUE INDEX `idusuario_Y_Rol_UNIQUE` (`idusuario_Y_Rol` ASC) ,
-  INDEX `fk_usuario_Y_Rol_Rol_Usuario1_idx` (`Rol_Usuario_idRol_Usuario` ASC) ,
-  INDEX `fk_usuario_Y_Rol_usuario1_idx` (`usuario_idusuario` ASC) ,
+  UNIQUE INDEX `idusuario_Y_Rol_UNIQUE` (`idusuario_Y_Rol` ASC) VISIBLE,
+  INDEX `fk_usuario_Y_Rol_Rol_Usuario1_idx` (`Rol_Usuario_idRol_Usuario` ASC) VISIBLE,
+  INDEX `fk_usuario_Y_Rol_usuario1_idx` (`usuario_idusuario` ASC) VISIBLE,
   CONSTRAINT `fk_usuario_Y_Rol_Rol_Usuario1`
     FOREIGN KEY (`Rol_Usuario_idRol_Usuario`)
     REFERENCES `Voto_Electronico`.`Rol_Usuario` (`idRol_Usuario`),
