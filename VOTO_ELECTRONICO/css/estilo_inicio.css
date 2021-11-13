@@ -36,6 +36,13 @@ header {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
+    
+}
+h1{
+  font-family: 'Roboto Slab', serif;
+}
+#contiene{
+  font-family: 'Roboto Slab', serif;
 }
 .wave {
     position: absolute;
@@ -190,3 +197,4 @@ header {
   background: #fefefe;
   border-color: #125688;
   }
+ 
