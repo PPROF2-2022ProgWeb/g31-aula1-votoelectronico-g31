@@ -38,6 +38,15 @@ header {
     position: relative;
     
 }
+h1{
+  font-family: 'Roboto Slab', serif;
+}
+#contiene{
+  font-family: 'Roboto Slab', serif;
+}
+#paso{
+  font-family: 'Roboto Slab', serif;
+}
 .wave {
     position: absolute;
     bottom: -2px;
