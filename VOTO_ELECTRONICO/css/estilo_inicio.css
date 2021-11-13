@@ -44,6 +44,9 @@ h1{
 #contiene{
   font-family: 'Roboto Slab', serif;
 }
+#pasos{
+  font-family: 'Roboto Slab', serif;
+}
 .wave {
     position: absolute;
     bottom: -2px;
