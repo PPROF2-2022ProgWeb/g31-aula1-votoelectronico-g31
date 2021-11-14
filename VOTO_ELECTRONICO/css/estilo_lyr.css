@@ -16,6 +16,14 @@ background: linear-gradient(176deg, rgba(115,115,115,1) 0%, rgba(255,255,255,1) 
   background-color: #fefefe;
 }
 
+.nav-item a{
+  color: black !important;
+  transition: all 0.4s linear;
+  }
+  .nav-item a:hover{
+    color: orangered !important; 
+    }
+
 .head{
   background: white;
 }
