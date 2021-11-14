@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto Slab', serif; 
+}
+
 /* HOVER NAVBAR */
 
 .nav-item a{
@@ -8,12 +12,13 @@
     color: orangered !important; 
     }
 
-    .divisor{
-      border-top: 8px solid black;
-      width: 100%;
-      background-color: darkgray;
-      margin: 0;
-    }
+   .divisor{
+    border-top: 8px solid black;
+    width: 100%;
+    background-color: darkgray;
+    margin: 0;
+    top: -10px;
+  }
 
   /*BREADCRUMBD*/
   .head{
@@ -113,7 +118,7 @@
   }
   .box {
     height: 150px;
-    background: paleturquoise;
+    background: #737373;
     border: 1px solid #fff;
   }
   
