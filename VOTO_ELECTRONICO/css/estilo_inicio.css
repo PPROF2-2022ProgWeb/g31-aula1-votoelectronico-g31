@@ -1,5 +1,7 @@
 /* HOVER NAVBAR */
-
+body{
+  font-family: 'Roboto Slab', serif;
+}
 .nav-item a{
 color: black !important;
 transition: all 0.4s linear;
@@ -41,12 +43,7 @@ header {
 h1{
   font-family: 'Roboto Slab', serif;
 }
-#contiene{
-  font-family: 'Roboto Slab', serif;
-}
-#pasos{
-  font-family: 'Roboto Slab', serif;
-}
+
 .wave {
     position: absolute;
     bottom: -2px;
