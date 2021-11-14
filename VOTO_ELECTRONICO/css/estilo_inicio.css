@@ -1,7 +1,8 @@
-/* HOVER NAVBAR */
 body{
   font-family: 'Roboto Slab', serif;
 }
+
+/* HOVER NAVBAR */
 .nav-item a{
 color: black !important;
 transition: all 0.4s linear;
