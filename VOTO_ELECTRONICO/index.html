@@ -112,6 +112,23 @@
                        </div>                     
                   </div>
              </section>
+             <section id="edadSeccion">
+                 <h6>Recordá que debes ser mayor de 16 años, ingresa fecha de nacimiento</h6>
+                    <div id="inputEdad">
+                        <input onclick="habilita()"
+                          type="date"
+                          id="fechanacimiento"
+                          name="fecha_nacimiento"
+                          class="form-control"
+                          placeholder="Fecha de nacimiento"
+                          required
+                        />
+                        <p id="aviso1"></p>
+                      </div>
+                      <div class="container">
+                        <button class="btn" onclick="calculaEdad()" id="botonC" disabled="true"><span class="btn-text">Comprobar</span></button>
+                      </div>
+             </section>
             <!-- FIN CUERPO PRINCIPAL-->
         </main>
         <!-- INICIO FOOTER-->

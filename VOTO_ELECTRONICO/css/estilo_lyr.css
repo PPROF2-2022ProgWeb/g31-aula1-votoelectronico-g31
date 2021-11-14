@@ -1,29 +1,31 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
+
+body{
+  font-family: 'Roboto Slab', serif !important;
   margin: 0;
-  background-image: linear-gradient(
-    180deg,
-    #ffff93 0,
-    #f4ff9a 7.14%,
-    #dcffa2 14.29%,
-    #c3ffaa 21.43%,
-    #a8ffb1 28.57%,
-    #8dffb7 35.71%,
-    #70ffbb 42.86%,
-    #53f2bc 50%,
-    #33e3bc 57.14%,
-    #00d5bc 64.29%,
-    #00cabd 71.43%,
-    #00c0be 78.57%,
-    #00b8c0 85.71%,
-    #00b2c3 92.86%,
-    #00aec7 100%
-  );
+  background: rgb(115,115,115);
+background: linear-gradient(176deg, rgba(115,115,115,1) 0%, rgba(255,255,255,1) 50%, rgba(115,115,115,1) 100%);
+
   background-size: cover;
   background-attachment: fixed;
 }
 * {
   box-sizing: border-box;
+}
+
+.navbar{
+  background-color: #fefefe;
+}
+
+.nav-item a{
+  color: black !important;
+  transition: all 0.4s linear;
+  }
+  .nav-item a:hover{
+    color: orangered !important; 
+    }
+
+.head{
+  background: white;
 }
 
   /*BREADCRUMBD
@@ -48,7 +50,7 @@ body {
 }
 /*FIN HEADER*/
 h1 {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 .logo {
   width: 10%;
@@ -88,7 +90,7 @@ h1 {
       margin-top: 40px;
   }
   .divisor{
-    border-top: 8px solid black;
+    border-top: 8px solid rgb(255, 255, 255);
     width: 100%;
     background-color: darkgray;
     margin: 0;

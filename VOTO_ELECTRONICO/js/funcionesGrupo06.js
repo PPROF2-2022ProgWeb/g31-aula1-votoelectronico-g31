@@ -50,6 +50,7 @@ function tomarDatos(){
   
   //array
 
+
   var datosForm = new Array(nombreContacto,apellidoContacto,emailContacto,descripcionContacto);
 
   //filtroLongitud
@@ -61,6 +62,9 @@ for (f=0;datosForm.length>f;f++){
     console.log( " el dato ingresado " + datosForm[f] + " es correcto")
     let c = 0;
     c++;}
+  
+
+
 
     else { alert (" el dato ingresado " + datosForm[f] + " debe tener entre 2 y 100 caracteres" )
       console.log(" el dato ingresado " + datosForm[f] + "debe tener entre 2 y 100 caracteres" )
@@ -70,11 +74,48 @@ for (f=0;datosForm.length>f;f++){
 
       
 
+
 //punto 3 IEV : 3.Uno de los formularios debe tener funcionalidad en el botón Enviar, mostrando un Alert de operación exitosa.
 
 if (c=4){
   alert(" Su consulta a sido enviada, responderemos a la brevedad ")
+
+  
+  
+ //Funcion que calcula la edad dada la fecha de nacimiento
+function calculaEdad () {
+  var nacimiento= document.getElementById("fechanacimiento");
+  
+  nacimiento = new Date(nacimiento.value);
+  actualidad = new Date(fechaActual());
+
+  var edad = (actualidad.getFullYear() - nacimiento.getFullYear());
+  
+  if (actualidad.getMonth() < nacimiento.getMonth() || actualidad.getMonth() == nacimiento.getMonth() && actualidad.getDate() < nacimiento.getDate()) {
+      edad--;
+  }
+  localStorage.setItem("edad", edad);
+  if (edad>=16){
+    document.getElementById("aviso1").innerHTML = "Genial, tienes "+edad+ " años, puedes participar en votaciones!"
+    document.getElementById("aviso1").style.backgroundColor = "Green"
+  }
+  else{
+    document.getElementById("aviso1").innerHTML = "Lo sentimos, debes ser mayor";
+    document.getElementById("aviso1").style.backgroundColor = "Yellow"
+  }
+
+function existeFecha(){
+  let fecha = document.getElementById('fechanacimiento').value;
+  nacimiento = new Date(fecha);
+  
+
+  if (nacimiento.getMonth() > 12 || nacimiento.getMonth() <= 0 || nacimiento.getDate <= 0 || nacimiento > 31 || nacimiento.getFullYear <= 0) {
+      return false
+
   }
 
 }
 
+function habilita(){
+  document.getElementById("botonC").disabled=false;
+}
