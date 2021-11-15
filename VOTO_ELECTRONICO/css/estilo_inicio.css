@@ -1,8 +1,7 @@
+/* HOVER NAVBAR */
 body{
   font-family: 'Roboto Slab', serif;
 }
-
-/* HOVER NAVBAR */
 .nav-item a{
 color: black !important;
 transition: all 0.4s linear;
@@ -99,48 +98,6 @@ h1{
   cursor: pointer;
 }
 
-/*SECCION CALCULO EDAD*/
-#edadSeccion{
-  text-align: center;
-}
-#inputEdad{
-  margin: 30px;
-}
-#fechanacimiento{
-  width: 50%;
-  margin-left: 25%;
-}
-.container {
-  width: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.btn {
-  margin: 20px auto;
-  border: none;
-  padding: 10px 44px;
-  font-size: 36px;
-  position: relative;
-}
-.btn::before {
-  transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  content: "";
-  width: 50%;
-  height: 100%;
-  background: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.btn .btn-text {
-  color: white;
-  mix-blend-mode: difference;
-}
-.btn:hover::before {
-  background: black;
-  width: 100%;
-}
 
 /* FOOTER */
 

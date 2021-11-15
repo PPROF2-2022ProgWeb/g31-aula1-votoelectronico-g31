@@ -1,9 +1,5 @@
-body{
-  font-family: 'Roboto Slab', serif;
-}
-
-
 /* HOVER NAVBAR */
+
 .nav-item a{
     color: black !important;
     transition: all 0.4s linear;
@@ -17,7 +13,6 @@ body{
         width: 100%;
         background-color: darkgray;
         margin: 0;
-        top: -10px
       }
 
   /*BREADCRUMBD*/

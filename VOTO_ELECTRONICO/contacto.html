@@ -15,7 +15,6 @@
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
       <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet"/>
       <link rel="stylesheet" href="css/estilo_contacto.css">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet"> 
       <title>Contacto</title>
    </head>
    <body>
@@ -48,17 +47,20 @@
            <!-- FIN NAVBAR-->
            <hr class="divisor"> 
            <!-- BREADCRUMB-->     
-    <div class="head pb-1 " style= "padding-left: 5px;">
+    <div class="head">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-pos">
             <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Inicio</a></li>
-            <li class="breadcrumb-item active" style="color:black" aria-current="page">Contacto</li>
+            <li class="breadcrumb-item active" aria-current="page">Contacto</li>
           </ol>
         </nav>
       </div>
       <!-- FIN BREADCRUMB-->
+      <hr class="divisor"> 
        </header>       
         <main>
+
+            
 
           <!-- INICIO HERO -->
 
@@ -76,7 +78,7 @@
 
           <!-- INICIO FORMULARIO-->
             <div class="container contact-form pt-5">
-                <form method="">
+                <form method="post">
                     <h2 class="text-center p-5 fs-2 border-top border-3">Contactate con nosotros</h2>
                     <div class="row">
 
@@ -88,24 +90,25 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group p-2">
-                                <input type="text" name="nombreContacto" id="nombreContacto" class="form-control" placeholder="Escribe tu nombre *" value="" required/>
+                                <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Escribe tu nombre *" value="" required/>
                             </div>
                             <div class="form-group p-2">
-                                <input type="text" name="apellidoContacto" id="apellidoContacto" class="form-control" placeholder="Escribe tu apellido *" value="" required/>
+                                <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Escribe tu apellido *" value="" required/>
                             </div>
                             <div class="form-group p-2">
-                                <input type="email" name="emailContacto" id="emailContacto" class="form-control" placeholder="Escribe tu Email *" value="" required/>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Escribe tu Email *" value="" required/>
                             </div>
                             <div class="form-group p-2">
                                 <textarea name="descripcion-contacto" id="descripcion-contacto" class="form-control" placeholder="Escribi tu mensaje *" style="width: 100%; height: 150px;" required></textarea>
                             </div>
                             <div class="form-group p-2 pb-5">
-                                <input type="submit" input type="button" name="btnSubmit" class="btnContact" value="Enviar mensaje" onclick="return tomarDatos()"/>
-                               
+                                <input type="submit" input type="button" name="btnSubmit" class="btnContact" value="Enviar mensaje"/>
+                                
                             </div>                    
                         </div>
                     </div>
                 </form>
+           </div>
           <!-- FIN FORMULARIO-->
         </main>
         <!-- INICIO FOOTER-->

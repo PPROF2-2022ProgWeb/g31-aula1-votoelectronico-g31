@@ -15,13 +15,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
     <link href="bootstrap-5.0.1-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
     <!-- INICIO NAVBAR-->
      <header>
-       
          <nav class="navbar navbar-expand-sm navbar-light">
              <div class="container-fluid">
                 <a href="index.html" class="navbar-header"><img src="img/logos/logotipo1_Mesa_de_trabajo1.png" alt="Logo de la Pagina"></a>
@@ -49,21 +47,25 @@
          <!-- FIN NAVBAR-->
          <hr class="divisor"> 
          <!-- BREADCRUMB-->     
-  <div class="head pb-1" style= "padding-left: 20px;">
+  <div class="head">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-pos">
           <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Inicio</a></li>
-          <li class="breadcrumb-item active" style="color:black" aria-current="page">Acceso</li>
+          <li class="breadcrumb-item active" aria-current="page">Acceso</li>
         </ol>
       </nav>
     </div>
     <!-- FIN BREADCRUMB-->
-     
+    <hr class="divisor"> 
      </header>       
       <main>
-        <div class="container" style="text-align: center;">
-          <a href="index.html"><img src="img/logos/logotipo_Mesa_de_trabajo1.png" alt="logo_inicio"/></a> 
-       </div>
+        <a href="index.html"
+        ><img
+          src="img/logos/logotipo_Mesa_de_trabajo1.png"
+          alt="logo_inicio"
+          class="logo"
+      /></a> 
+    
       <section id="register" class="mb-5">
         <div class="container">
           <div class="row">
@@ -76,15 +78,15 @@
               <div class="card_register">
                 <div class="card">
                   <div class="card-body text-center">
-                    <form class="box">  
+                    <form class="box" action="validar.php" method="post">  
                       <div class="form-group">
-                        <label class="color-title"> Email </label>
+                        <label class="color-title"> correo </label>
                         <input
-                          type="email"
-                          id="email"
-                          name="mail"
+                          type="text"
+                          id="correo"
+                          name="correo"
                           class="form-control"
-                          placeholder="Email"
+                          placeholder="correo"
                           required
                         />
                       </div>
@@ -103,7 +105,7 @@
   
                       <button
                         type="submit"
-                        class="btn btn-lg w-100 btn-registrar btn-block button"
+                        class="btn btn-lg w-100 btn-registrar"
                       >
                         Iniciar sesión
                       </button>
