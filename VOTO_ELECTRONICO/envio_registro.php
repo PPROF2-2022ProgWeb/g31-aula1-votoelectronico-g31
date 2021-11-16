@@ -61,17 +61,17 @@
     <div class= "text-left ms-4" style="font-size: 24px;">
 
 <?php
-
-$nombre = $_POST["nombre"];
-$apellido = $_POST["apellido"];
-$fecha_nacimiento = $_POST["fecha_nacimiento"];
-$dni = $_POST["dni"];
-$correo = $_POST["correo"];
-$password = $_POST["password"];
-$telefono = $_POST["telefono"];
-$pais = $_POST["pais"];
-$provincia = $_POST["provincia"];
-$ciudad = $_POST["ciudad"];
+include('db.php');
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$fecha_nacimiento = $_POST['fecha_nacimiento'];
+$dni = $_POST['dni'];
+$correo = $_POST['correo'];
+$password = $_POST['password'];
+$telefono = $_POST['telefono'];
+$pais = $_POST['pais'];
+$provincia = $_POST['provincia'];
+$ciudad = $_POST['ciudad'];
 
 print " <p> Su nombre es: <strong>$nombre</strong>.</p>\n";
 print "\n";
@@ -96,32 +96,23 @@ print "\n";
 
 // Datos conexion y funciones.
 
-include("conexion.php");
-$conn = mysqli_connect($host, $usuario, $clave, $basededatos) or die ("No se pudo conectar al servidor de base de datos");
-if (!$conn) {
-    die("Conexión fallida: " . mysqli_connect_error());
-}
 
-$db = mysqli_select_db($conn, $basededatos) or die ("¡Error!, no se ha podido conectar a la base de datos");
+$conexion=mysqli_connect("localhost","Marcos","1234","voto_electronico");
 
 //INSERT DATOS
 
 $consulta = "INSERT INTO usuario (nombre, apellido, DNI, telefono) VALUES ('$nombre', '$apellido', '$dni' ,'$telefono')";
 
-$ejecutado = mysqli_query($conn, $consulta);
-
+$ejecutado = mysqli_query($conexion, $consulta);
 
 if ($ejecutado == 1){
-  $consulta2 = "INSERT INTO pais (NombrePais) VALUES ('$pais')";
-  $ejecutado2 = mysqli_query ($conn, $consulta2);
   echo "<p><strong>-->Registro completo.<--</strong></p>";
 }
-
 else {
   echo "<p><strong>-->Error de registro.<--</strong></p>";
 }
 
-mysqli_close($conn);
+mysqli_close($conexion);
 
 
 ?>
