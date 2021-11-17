@@ -21,7 +21,6 @@
   <body>
     <!-- INICIO NAVBAR-->
      <header>
-       
          <nav class="navbar navbar-expand-sm navbar-light">
              <div class="container-fluid">
                 <a href="index.html" class="navbar-header"><img src="img/logos/logotipo1_Mesa_de_trabajo1.png" alt="Logo de la Pagina"></a>
@@ -76,18 +75,15 @@
               <div class="card_register">
                 <div class="card">
                   <div class="card-body text-center">
-                    <form class="box">  
+                    <form class="box" action="validar.php" method="post">  
                       <div class="form-group">
-
                         <label class="color-title"> Correo </label>
-
                         <input
-                          type="email"
-                          id="email"
-                          name="mail"
+                          type="text"
+                          id="correo"
+                          name="correo"
                           class="form-control"
                           placeholder="Correo"
-
                           required
                         />
                       </div>
