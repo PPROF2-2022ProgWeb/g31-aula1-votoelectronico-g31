@@ -15,15 +15,15 @@ $filas=mysqli_num_rows($resultado);
 
 if($filas){
   
-    header("location:home.php");
+    header("location:indexlog.php");
 
 }else{
     ?>
     <?php
-    include("indextest.html");
+    include("loginerror.html");
 
   ?>
-  <h1 class="bad">ERROR DE AUTENTIFICACION</h1>
+  <h1 class="bad pt-5" style="text-align: center">ERROR DE AUTENTIFICACION</h1>
   <?php
 }
 mysqli_free_result($resultado);
