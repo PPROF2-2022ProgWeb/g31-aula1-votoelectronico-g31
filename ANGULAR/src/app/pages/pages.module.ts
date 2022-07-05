@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 
 import { LayoutModule } from '../layout/layout.module';
+import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 
 
@@ -17,7 +19,9 @@ import { LayoutModule } from '../layout/layout.module';
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SobrenosotrosComponent,
+    ContactoComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ import { LayoutModule } from '../layout/layout.module';
   ],
   exports: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SobrenosotrosComponent,
+    ContactoComponent
   ]
 })
 export class PagesModule { }
