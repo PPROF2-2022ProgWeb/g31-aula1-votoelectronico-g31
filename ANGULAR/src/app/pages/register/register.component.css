@@ -1,7 +1,7 @@
 *{
     font-family: 'Roboto Slab', serif !important;
    
-    background: rgb(115,115,115);
+  background: rgb(115,115,115);
   background: linear-gradient(176deg, rgba(115,115,115,1) 0%, rgba(255,255,255,1) 50%, rgba(115,115,115,1) 100%);
   box-sizing: border-box;
     background-size: cover;
@@ -213,4 +213,16 @@
       .formulario__btn {
           width: 100%;
       }
+  }
+
+  #btn-enviar{
+        display: block;
+        font-size: x-large;
+        background: rgb(77, 0, 77);
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        padding: 20px 100px;
+        margin: 50px;
+        border-radius: 15px;
   }

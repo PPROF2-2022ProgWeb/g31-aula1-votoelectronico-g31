@@ -11,6 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { LayoutModule } from '../layout/layout.module';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { SectionComercialComponent } from './section-comercial/section-comercial.component';
 
 
 
@@ -21,7 +22,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     LoginComponent,
     RegisterComponent,
     SobrenosotrosComponent,
-    ContactoComponent
+    ContactoComponent,
+    SectionComercialComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     HomeComponent,
     LoginComponent,
     SobrenosotrosComponent,
-    ContactoComponent
+    ContactoComponent,
+    SectionComercialComponent
   ]
 })
 export class PagesModule { }
