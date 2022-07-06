@@ -1,8 +1,10 @@
-#found{
+#container-notFound{
     display: flex;
-    justify-content: center;
+}
+#imgNotFound{
+  max-width: 700px; 
 }
 
-img{
-    position: relative;
-}
+
+
+    

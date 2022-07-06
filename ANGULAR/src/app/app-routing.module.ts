@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SobrenosotrosComponent } from './pages/sobrenosotros/sobrenosotros.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { SectionComercialComponent } from './pages/section-comercial/section-comercial.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'contacto', component: ContactoComponent},
   { path: 'sobrenosotros', component: SobrenosotrosComponent},
+  { path: 'section-comercial', component: SectionComercialComponent},
   //dejar siempre al ultimo por que entra a la pagina de error si no esta contemplada
   { path: '**', component: NotFoundComponent }
 
