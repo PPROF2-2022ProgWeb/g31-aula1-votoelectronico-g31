@@ -1,32 +1,30 @@
-<nav class="navbar navbar-expand-sm navbar-light" id="nav">
-  <div class="container-fluid">
-     <a href="index.html" class="navbar-header"><img src="../../../assets/logotipo_Mesa_de_trabajo1.png"></a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-     </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                   <a class="nav-link" href="loginvista.html">Acceso</a>
-               </li>
-               <li class="nav-item">
-                   <a class="nav-link" href="registrarvista.html">Registro</a>
-               </li>
-               <li class="nav-item">
-                   <a class="nav-link" href="contacto.html">Contacto</a>
-               </li>
-               <li class="nav-item">
-                   <a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a>
-               </li>
-          </ul>
-      </div>
-  </div>
-</nav>
-<!-- FIN NAVBAR-->
-<section class="w-60 mx-auto text-center" id="intro">
-<h1 class="p-5 fs-1">CONTAMOS TU VOTO</h1>
-</section>
-<!-- EFECTO IMAGEN PRINCIPAL-->
-<div class="wave" style="height: 120px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-0.84,50.81 C119.35,82.39 334.36,-23.19 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(255, 255, 255);"></path></svg>
-</div>
-<!-- FIN EFECTO IMAGEN PRINCIPAL-->
+<header>
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+           <a href="index.html" class="navbar-header"><img src="../../../assets/logotipo1_Mesa_de_trabajo1.png" alt="Logo de la Pagina"></a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+           </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                         <a class="nav-link" routerLink="/login" routerLinkActive="active">Acceso</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" routerLink="/register" routerLinkActive="active">Registro</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" routerLink="/contacto" routerLinkActive="active">Contacto</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" routerLink="/sobrenosotros" routerLinkActive="active">Sobre Nosotros</a>                         
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" routerLink="/section-comercial" routerLinkActive="active">Empezar Votacion</a>
+                     </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR-->
+</header>
