@@ -1,72 +1,25 @@
-.navbar{
-  background-color: #fefefe;
+ /* FOOTER */
+
+footer{
+  /*bg diferente a header porque hay otro estilo molestando( no pude encontrarlo )*/
+  background-color: rgb(51, 47, 47);
+  font-size: 18px;
 }
-
-.nav-item a{
-  color: black !important;
-  transition: all 0.4s linear;
-  }
-  .nav-item a:hover{
-    color: orangered !important; 
-    }
-
-.head{
-  background: white;
-}
-
-.letra{
-  color: black !important;
-}
-/*FIN HEADER*/
-h1 {
-  font-family: 'Roboto Slab', serif;
-}
-
-.button{
-    background-color: rgb(133, 13, 133) !important;
-    color: white !important;
-    margin-top: 40px;
-}
-
-.button:hover{
-    background-color: rgb(27, 7, 99) !important;
-    color: white !important;
-} 
-
-.marg{
-    width: 50% !important;
-}
-.titulo-final {
-    text-align: center;
-    font-size: 15px;
-    margin: 20px 0 0 0;
-    color: black;
-  }
-
-  #sin-cuenta{
-      margin-top: 40px;
-  }
-  .divisor{
-    border-top: 8px solid rgb(255, 255, 255);
-    width: 100%;
-    background-color: darkgray;
-    margin: 0;
-    top: -10px;
-  }
-  
-  /* FOOTER */
   
   .footer-hover a{
     color: white;
-    transition: all 0.4s linear;
+    transition: all 0.2s linear;
 }
 .footer-hover a:hover{
-    color: orangered;
+  color: orangered !important; 
+  text-decoration: underline;
+  transform: scale(105%);
 }
 
   .svg-inline--fa {
     vertical-align: -0.2em;
   }
+
   
 .rounded-social-buttons {
     text-align: center;
