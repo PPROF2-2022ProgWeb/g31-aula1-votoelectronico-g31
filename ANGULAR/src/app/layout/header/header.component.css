@@ -23,16 +23,16 @@
   transition: 0.2s;
 }
 
-.navbar-toggler,.navbar-toggler-icon{
-  
-}
 .navbar a{
   color: white;
   transition: all 0.2s linear;
+  text-decoration: none;
+
   }
-.nav-item a:hover{
+.navbar a:hover{
   color: orangered !important; 
   text-decoration: underline;
+  transition: 0.2s;
   transform: scale(105%);
 }
 
