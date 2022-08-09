@@ -8,6 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  show:boolean = false;
+
+  toggleCollapse() {
+    this.show = !this.show
+  }
+
   constructor(private router: Router) { }
 
 
