@@ -12,10 +12,10 @@
         <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
           <div class="card_register">
             <div class="card">
-              <div class="card-body text-center">
-                <form [formGroup]="formulario">
+              <div class="card-body text-center" id="cont">
+                <form [formGroup]="formulario" id="formulario">
 
-                    <div class="form-group">
+                    <div class="form-group campo">
                       <label class="color-title"> Nombre/s </label>
                       <input
                         type="text"
@@ -36,7 +36,7 @@
                     </div>
             
             
-                    <div class="form-group">
+                    <div class="form-group campo">
                       <label class="color-title"> Apellido/s </label>
                       <input
                         type="text"
@@ -56,7 +56,7 @@
                     </div>
                     </div>
             
-                    <div class="form-group">
+                    <div class="form-group campo">
                         <label class="color-title"> Fecha de nacimiento </label>
                         <input
                           type="date"
@@ -76,7 +76,7 @@
                       </div>
                       </div>
             
-                    <div class="form-group">
+                    <div class="form-group campo" >
                       <label class="color-title">DNI</label>
                       <input
                         type="text"
@@ -96,7 +96,7 @@
                     </div>
                     </div>
             
-                    <div class="form-group">
+                    <div class="form-group campo">
                         <label class="color-title"> Email </label>
                         <input
                           type="email"
@@ -116,7 +116,7 @@
                       </div>
                       </div>
             
-                    <div class="form-group">
+                    <div class="form-group campo">
                         <label class="color-title">Contraseña</label>
                         <input
                           type="password"
@@ -141,7 +141,7 @@
                     </div>
                       </div>
             
-                      <div class="form-group">
+                      <div class="form-group campo" >
                         <label class="color-title">Repetir Contraseña</label>
                         <input
                           type="password"
@@ -166,7 +166,7 @@
                     </div>
                       </div>
             
-                      <div class="form-group">
+                      <div class="form-group campo">
                         <label class="color-title"> Teléfono </label>
                         <input
                           type="text"
@@ -186,7 +186,7 @@
                       </div>
                       </div>
             
-                      <div class="form-group">
+                      <div class="form-group campo">
                         <label class="color-title">País</label>
                         <input
                           type="text"
@@ -206,7 +206,7 @@
                       </div>
                       </div>
             
-                      <div class="form-group">
+                      <div class="form-group campo">
                         <label class="color-title">Provincia</label>
                         <input
                           type="text"
@@ -226,7 +226,7 @@
                       </div>
                       </div>
             
-                      <div class="form-group">
+                      <div class="form-group campo">
                         <label class="color-title">Ciudad</label>
                         <input
                           type="text"
@@ -252,7 +252,7 @@
                        
                     </div>
                     
-                      <div class="form-group">
+                      <div class="form-group campo">
                           <a routerLink="../login" class="form-control login-user btn-pass">¿Ya tienes una cuenta?</a>
                       </div>
                   </form>

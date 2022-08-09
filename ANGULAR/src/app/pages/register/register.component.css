@@ -1,11 +1,6 @@
-*{
+#register{
     font-family: 'Roboto Slab', serif !important;
-   
-  background: rgb(115,115,115);
-  background: linear-gradient(176deg, rgba(115,115,115,1) 0%, rgba(255,255,255,1) 50%, rgba(115,115,115,1) 100%);
-  box-sizing: border-box;
-    background-size: cover;
-    background-attachment: fixed;
+    
   }
  
   .navbar{
@@ -242,7 +237,7 @@
 }
 
 .color-title{
-    color: #4174f4;
+    color: black;
 }
 
 .btn-registrar{
@@ -263,4 +258,14 @@
 .btn-pass:hover{
     color: #4174f4;
     outline-style: none;
+}
+#formulario{
+    background: white !important;
+    bottom: 10%;
+}
+#cont{
+    background: white !important;
+}
+.campo{
+    background: white !important;
 }
