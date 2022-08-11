@@ -8,7 +8,6 @@
             <div class="col-4 divImgHome">
                 <a href="index.html" class="navbar-header" >
                     <img  id ="logoIcon" src="../../../assets/logotipo1_Mesa_de_trabajo1.png" alt="Logo de la Pagina">
-                    <span> Inicio</span>
                 </a>
             </div>
             <button (click)="toggleCollapse()" class="navbar-toggler navbar-dark" type="button" id="burguerIcon">
@@ -16,6 +15,9 @@
             </button>
             <div class="col-8 menuDiv navbar-collapse collapse" [class.show]="show">
                 <ul class="navbar-nav" id="navbarPrincipal">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/login" routerLinkActive="active">Ingresar</a>
                     </li>
