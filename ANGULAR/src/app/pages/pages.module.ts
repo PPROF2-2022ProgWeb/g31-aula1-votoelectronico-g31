@@ -19,6 +19,7 @@ import { LoginEngComponent } from './login-eng/login-eng.component';
 import { SectionComercialEngComponent } from './section-comercial-eng/section-comercial-eng.component';
 import { ContactoEngComponent } from './contacto-eng/contacto-eng.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { ContactoEngComponent } from './contacto-eng/contacto-eng.component';
     CommonModule,
     AppRoutingModule,
     RouterModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HomeComponent,

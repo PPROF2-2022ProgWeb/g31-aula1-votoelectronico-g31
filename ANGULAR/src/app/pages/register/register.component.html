@@ -1,7 +1,4 @@
 <main>
-    <div class="container" style="text-align: center;">
-         <a href="index.html"><img src="../../../assets/logotipo_Mesa_de_trabajo1.png" alt="logo_inicio"/></a> 
-    </div>
     <section id="register" class="">
     <div class="container">
         <div class="row">
@@ -10,130 +7,264 @@
             </div>
         </div>
     <!-- INICIO FORMULARIO -->
-    <form action="envio_registro.php" class="formulario" id="formulario" method="post" class="needs-validation" novalidate>
-        
-        <!-- Grupo: Nombre -->
-        <div class="formulario__grupo" id="grupo__nombre">
-          <label for="nombre" class="formulario__label">Nombre</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-           </div>
-        <p class="formulario__input-error">El nombre debe tener de 2 a 16 dígitos y solo puede contener numeros y letras.</p>
-        </div>
-        
-        <!-- Grupo: Apellido -->
-        <div class="formulario__grupo" id="grupo__apellido">
-            <label for="apellido" class="formulario__label">Apellido</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Apellido">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El apellido debe tener de 4 a 16 dígitos y solo puede contener numeros y letras.</p>
-        </div>
 
-        <!-- Grupo: Contraseña -->
-        <div class="formulario__grupo" id="grupo__password">
-            <label for="password" class="formulario__label">Contraseña</label>
-            <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password" id="password">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-        </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
+          <div class="card_register">
+            <div class="card">
+              <div class="card-body text-center" id="cont">
+                <form [formGroup]="formulario" id="formulario">
 
-        <!-- Grupo: Contraseña 2 -->
-        <div class="formulario__grupo" id="grupo__password2">
-            <label for="password2" class="formulario__label">Repetir Contraseña</label>
-            <div class="formulario__grupo-input">
-                <input type="password" class="formulario__input" name="password2" id="password2">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-        </div>
-
-        <!-- Grupo: Correo Electronico -->
-        <div class="formulario__grupo" id="grupo__correo">
-            <label for="correo" class="formulario__label">Correo Electrónico</label>
-            <div class="formulario__grupo-input">
-                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El correo solo puede tener letras, numeros, puntos, guiones y guion bajo.</p>
-        </div>
-
-        <!-- Grupo: Teléfono -->
-        <div class="formulario__grupo" id="grupo__telefono">
-            <label for="telefono" class="formulario__label">Teléfono</label>
-            <div class="formulario__grupo-input">
-                <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Número de teléfono">
-                <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El telefono solo puede tener numeros y el maximo son 14 dígitos.</p>
-        </div>
-
-        <!-- Grupo: DNI -->
-        <div class="formulario__grupo" id="grupo__dni">
-            <label for="dni" class="formulario__label">D.N.I.</label>
-            <div class="formulario__grupo-input">
-            <input type="text" class="formulario__input" name="dni" id="dni" placeholder="Número de dni">
-            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-            </div>
-            <p class="formulario__input-error">El DNI solo puede tener entre 7 y 8 dígitos.</p>
-            </div>
-            <!-- Grupo: Pais -->
-            <div class="formulario__grupo" id="grupo__pais">
-                <label for="pais" class="formulario__label">País</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="pais" id="pais" placeholder="Nombre del País">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__input-error">El país solo puede tener letras y el maximo son 14 dígitos.</p>
-            </div>
-            <!-- Grupo: Provincia -->
-            <div class="formulario__grupo" id="grupo__provincia">
-                <label for="provincia" class="formulario__label">Provincia</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="provincia" id="provincia" placeholder="Nombre de Provincia">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__input-error">La provincia solo puede tener letras y el maximo son 14 dígitos.</p>
-            </div>
-            <!-- Grupo: Ciudad -->
-            <div class="formulario__grupo" id="grupo__ciudad">
-                <label for="ciudad" class="formulario__label">Ciudad</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="Nombre de Ciudad">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__input-error">La ciudad solo puede tener letras y el maximo son 14 dígitos.</p>
-            </div>
-
-            <!-- Grupo: Nacimiento -->
-            <div class="form-group">
-                <label class="formulario__label"> Fecha de nacimiento </label>
-                <input onclick="existeFecha()"
-                  type="date"
-                  id="fecha_nacimiento"
-                  name="fecha_nacimiento"
-                  class="form-control"
-                  placeholder="Fecha de nacimiento"
-                 
-                />
-                <p id="aviso"></p>
+                    <div class="form-group campo">
+                      <label class="color-title"> Nombre/s </label>
+                      <input
+                        type="text"
+                        formControlName="nombre"
+                        [class.border-danger]="NombreValid"
+                        id="nombre"
+                        name="nombre"
+                        class="form-control"
+                        placeholder="Nombre"
+                        required
+                        #newName
+                      />
+                      <div *ngIf="Nombre?.errors  && Nombre?.touched">
+                        <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                          El nombre es requerido.
+                        </p>
+                    </div>
+                    </div>
+            
+            
+                    <div class="form-group campo">
+                      <label class="color-title"> Apellido/s </label>
+                      <input
+                        type="text"
+                        formControlName="apellido"
+                        [class.border-danger]="ContrasenaValid"
+                        id="apellido"
+                        name="apellido"
+                        class="form-control"
+                        placeholder="Apellido"
+                        required
+                        #newApellido
+                      />
+                      <div *ngIf="Apellido?.errors  && Apellido?.touched">
+                        <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                          El apellido es requerido.
+                        </p>
+                    </div>
+                    </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title"> Fecha de nacimiento </label>
+                        <input
+                          type="date"
+                          formControlName="fecha_nacimiento"
+                          [class.border-danger]="FechaNacimientoValid"
+                          id="fecha_nacimiento"
+                          name="fecha_nacimiento"
+                          class="form-control"
+                          placeholder="Fecha de nacimiento"
+                          required
+                          #newFecha
+                        />
+                        <div *ngIf="FechaNacimiento?.errors  && FechaNacimiento?.touched">
+                          <p *ngIf="FechaNacimiento?.hasError('required')" class="text-danger">
+                            La fecha de nacimiento es requerida.
+                          </p>
+                      </div>
+                      </div>
+            
+                    <div class="form-group campo" >
+                      <label class="color-title">DNI</label>
+                      <input
+                        type="text"
+                        formControlName="username"
+                        [class.border-danger]="UsernameValid"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Usuario"
+                        required
+                        #newUsuario
+                      />
+                      <div *ngIf="Username?.errors  && Username?.touched">
+                        <p *ngIf="Username?.hasError('required')" class="text-danger">
+                          El usuario es requerido.
+                        </p>
+                    </div>
+                    </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title"> Email </label>
+                        <input
+                          type="email"
+                          formControlName="email"
+                          [class.border-danger]="MailValid"
+                          id="email"
+                          name="mail"
+                          class="form-control"
+                          placeholder="Email"
+                          required
+                          #newMail
+                        />
+                        <div *ngIf="Mail?.errors  && Mail?.touched">
+                          <p *ngIf="Mail?.hasError('required')" class="text-danger">
+                            El email es requerido.
+                          </p>
+                      </div>
+                      </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title">Contraseña</label>
+                        <input
+                          type="password"
+                          formControlName="contrasena"
+                          [class.border-danger]="ContrasenaValid"
+                          id="contrasena"
+                          name="contrasena"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          required
+                          #newPass
+                        />
+                        <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                          <p *ngIf="Contrasena?.hasError('required')" class="text-danger">
+                            La contraseña es requerida.
+                          </p>
+                      </div>
+                      <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                        <p *ngIf="Contrasena?.errors?.['minlength']" class="text-danger">
+                          La contraseña debe contener al menos 8 caracteres.
+                        </p>
+                    </div>
+                      </div>
+            
+                      <div class="form-group campo" >
+                        <label class="color-title">Repetir Contraseña</label>
+                        <input
+                          type="password"
+                          formControlName="contrasena"
+                          [class.border-danger]="ContrasenaValid"
+                          id="contrasena"
+                          name="contrasena"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          required
+                          #newPass
+                        />
+                        <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                          <p *ngIf="Contrasena?.hasError('required')" class="text-danger">
+                            La contraseña es requerida.
+                          </p>
+                      </div>
+                      <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                        <p *ngIf="Contrasena?.errors?.['minlength']" class="text-danger">
+                          La contraseña debe contener al menos 8 caracteres.
+                        </p>
+                    </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title"> Teléfono </label>
+                        <input
+                          type="text"
+                          formControlName="telefono"
+                          [class.border-danger]="TelefonoValid"
+                          id="telefono"
+                          name="telefono"
+                          class="form-control"
+                          placeholder="Telefono"
+                          required
+                          #newTelefono
+                        />
+                        <div *ngIf="Telefono?.errors  && Telefono?.touched">
+                          <p *ngIf="Telefono?.hasError('required')" class="text-danger">
+                            El teléfono es requerido.
+                          </p>
+                      </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title">País</label>
+                        <input
+                          type="text"
+                          formControlName="pais"
+                          [class.border-danger]="PaisValid"
+                          id="pais"
+                          name="pais"
+                          class="form-control"
+                          placeholder="Pais"
+                          required
+                          #newPais
+                        />
+                        <div *ngIf="Pais?.errors  && Pais?.touched">
+                          <p *ngIf="Pais?.hasError('required')" class="text-danger">
+                            El país es requerido.
+                          </p>
+                      </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title">Provincia</label>
+                        <input
+                          type="text"
+                          formControlName="provincia"
+                          [class.border-danger]="ProvinciaValid"
+                          id="provincia"
+                          name="provincia"
+                          class="form-control"
+                          placeholder="provincia"
+                          required
+                          #newProvincia
+                        />
+                        <div *ngIf="Provincia?.errors  && Provincia?.touched">
+                          <p *ngIf="Provincia?.hasError('required')" class="text-danger">
+                            La provincia es requerida.
+                          </p>
+                      </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title">Ciudad</label>
+                        <input
+                          type="text"
+                          formControlName="ciudad"
+                          [class.border-danger]="CiudadValid"
+                          id="ciudad"
+                          name="ciudad"
+                          class="form-control"
+                          placeholder="ciudad"
+                          required
+                          #newCiudad
+                        />
+                        <div *ngIf="Ciudad?.errors  && Ciudad?.touched">
+                          <p *ngIf="Ciudad?.hasError('required')" class="text-danger">
+                            La ciudad es requerida.
+                          </p>
+                      </div>
+                      </div>
+            
+                   
+                      <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button type="submit" class="btn" [disabled]="!formulario.valid" id ="btn-enviar">Enviar</button>
+                       
+                    </div>
+                    
+                      <div class="form-group campo">
+                          <a routerLink="../login" class="form-control login-user btn-pass">¿Ya tienes una cuenta?</a>
+                      </div>
+                  </form>
+               
               </div>
-            <br>
-
-        <div class="formulario__mensaje" id="formulario__mensaje">
-            <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+            </div>
+          </div>
         </div>
-
-        <div class="formulario__grupo formulario__grupo-btn-enviar">
-            <button type="submit" class="btn" id ="btn-enviar">Enviar</button>
-            <p class="formulario__mensaje-exito pb-5" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-        </div>
-    </form>
+    </div>
     <!-- FIN FORMULARIO -->
+
+    
    </div>
  </section>
 </main>

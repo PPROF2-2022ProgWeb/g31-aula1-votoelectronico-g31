@@ -1,11 +1,6 @@
-*{
+#register{
     font-family: 'Roboto Slab', serif !important;
-   
-  background: rgb(115,115,115);
-  background: linear-gradient(176deg, rgba(115,115,115,1) 0%, rgba(255,255,255,1) 50%, rgba(115,115,115,1) 100%);
-  box-sizing: border-box;
-    background-size: cover;
-    background-attachment: fixed;
+    
   }
  
   .navbar{
@@ -226,3 +221,51 @@
         margin: 50px;
         border-radius: 15px;
   }
+
+
+.form-group{ 
+    margin: 5%;
+}
+.form-control.login-user{
+    border: 0px solid #fff !important;
+
+}
+.error{
+    color: red;
+    margin: 10px;
+    
+}
+
+.color-title{
+    color: black;
+}
+
+.btn-registrar{
+    background-color: #4174f4;
+    border-color: #4174f4;
+    border-radius: 4em;
+}
+.btn-registrar:hover{
+    background-color: #041c8a;
+    border-radius: 4em;
+}
+
+.btn-pass{
+    color: #041c8a;
+    outline-style: none;
+}
+
+.btn-pass:hover{
+    color: #4174f4;
+    outline-style: none;
+}
+#formulario{
+    background: white !important;
+    bottom: 10%;
+}
+#cont{
+    background: white !important;
+}
+.campo{
+    background: white !important;
+}
