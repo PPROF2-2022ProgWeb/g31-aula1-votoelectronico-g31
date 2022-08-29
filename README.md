@@ -6,8 +6,10 @@ Es una web-app de uso general para poder efectuar votaciones manera simple y sen
 
 *Importante - Se debe actualizar la seguridad que requiere el proyecto
 
-1 - Ir a la rama main y hacerle pull para tener los archivos .JSON actualizados
+1 - Abrir el VS code o el git bash e ir a la rama main para hacerle pull para tener los archivos .JSON actualizados
 
-2 - Instalar la actualizacion haciendo un "npm install" con ello ya tendrias actualizado tu NODE_MODULE
+2 - Instalar la actualizacion haciendo un "npm install" estando en la rama main con esto se les tendria que actualizar el paquete de NODE_MODULE
+
+3 - Actualizar su propia rama con el contenido de main
 
 El mensaje sera eliminado el dia 10/09/2022
