@@ -7,4 +7,7 @@ Es una web-app de uso general para poder efectuar votaciones manera simple y sen
 *Importante - Se debe actualizar la seguridad que requiere el proyecto
 
 1 - Ir a la rama main y hacerle pull para tener los archivos .JSON actualizados
+
 2 - Instalar la actualizacion haciendo un "npm install" con ello ya tendrias actualizado tu NODE_MODULE
+
+El mensaje sera eliminado el dia 10/09/2022
