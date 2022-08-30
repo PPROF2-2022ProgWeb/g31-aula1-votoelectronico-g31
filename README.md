@@ -134,15 +134,15 @@ Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb
 
 <br />
 
-Marcos Javier Gómez - mail@gmail.com
+Hilario Iñigo Menéndez Picossi - mail@gmail.com
 
-Proyectos: [https://github.com/wesborland-github](https://github.com/wesborland-github)
+Proyectos: [https://github.com/hpicossi](https://github.com/hpicossi)
 
 <br />
 
-Hilario Iñigo Menéndez Picossi - mail1@gmail.com
+Marcos Javier Gómez - mail1@gmail.com
 
-Proyectos: [https://github.com/hpicossi](https://github.com/hpicossi)
+Proyectos: [https://github.com/wesborland-github](https://github.com/wesborland-github)
 
 <br />
 
