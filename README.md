@@ -58,7 +58,11 @@ Aqui adjuntamos las tecnologías utilizadas para el proyecto con su correspondie
 
 * [![Angular][Angular.io]][Angular-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![css][css.com]][css-url]
+* [![js][js.com]][js-url]
 * [![mysql][mysql.com]][mysql-url]
+* [![php][php.com]][php-url]
+* [![ts][ts.com]][ts-url]
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
@@ -128,9 +132,37 @@ Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb
 <!-- Contacto -->
 ## Contacto
 
-Nombre - email@email.com
+<br />
 
-Proyectos: [https://github.com/usuario/nombre_repo](https://github.com/usuario/nombre_repo)
+Marcos Javier Gómez - mail@gmail.com
+
+Proyectos: [https://github.com/wesborland-github](https://github.com/wesborland-github)
+
+<br />
+
+Hilario Iñigo Menéndez Picossi - mail1@gmail.com
+
+Proyectos: [https://github.com/hpicossi](https://github.com/hpicossi)
+
+<br />
+
+Florencia Bravo Corvalán - mail2@gmail.com
+
+Proyectos: [https://github.com/FlorenciaCorvalan](https://github.com/FlorenciaCorvalan)
+
+<br />
+
+Juan Ortega - mail3@gmail.com
+
+Proyectos: [hhttps://github.com/Full-Juan-Ortega](https://github.com/Full-Juan-Ortega)
+
+<br />
+
+Lucas Bartolone - mail4@gmail.com
+
+Proyectos: [https://github.com/LucasBartolone](https://github.com/LucasBartolone)
+
+<br />
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
@@ -144,9 +176,9 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 * [Angular Material](https://material.angular.io/)
 * [Recursos de Bootstrap](https://startbootstrap.com/bootstrap-resources)
 * [etc](etc)
-* [etc](etc)
-* [etc](etc)
-* [etc](etc)
+* [etc1](etc1)
+* [etc2](etc2)
+* [etc3](etc3)
 
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
@@ -159,8 +191,16 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 [Angular-url]: https://angular.io/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
+[css.com]: https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=CSS3&logoColor=red
+[css-url]: https://www.w3schools.com/css/
+[js.com]: https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+[js-url]: https://www.javascript.com/
 [mysql.com]: https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=MySQL&logoColor=FFF
 [mysql-url]: https://www.mysql.com/
+[php.com]: https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white
+[php-url]: https://www.php.net/
+[ts.com]: https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
+[ts-url]: https://www.typescriptlang.org/
 
 
 
