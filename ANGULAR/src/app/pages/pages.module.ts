@@ -15,7 +15,7 @@ import { SectionComercialComponent } from './section-comercial/section-comercial
 import { HomeEngComponent } from './home-eng/home-eng.component';
 import { SobrenosotrosEngComponent } from './sobrenosotros-eng/sobrenosotros-eng.component';
 import { RegisterEngComponent } from './register-eng/register-eng.component';
-import { LoginEngComponent } from './login-eng/login-eng.component';
+
 import { SectionComercialEngComponent } from './section-comercial-eng/section-comercial-eng.component';
 import { ContactoEngComponent } from './contacto-eng/contacto-eng.component';
 
@@ -34,7 +34,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeEngComponent,
     SobrenosotrosEngComponent,
     RegisterEngComponent,
-    LoginEngComponent,
     SectionComercialEngComponent,
     ContactoEngComponent
   ],
