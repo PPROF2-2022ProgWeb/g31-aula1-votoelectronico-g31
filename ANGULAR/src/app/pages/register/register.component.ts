@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { ValidatorFn, AbstractControl} from '@angular/forms';
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,16 +18,15 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router) { 
     this.formulario= this.formBuilder.group(
       {
-        nombre : new FormControl('', [Validators.required]),
-        apellido : new FormControl('', [Validators.required]),
+        nombre : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
+        apellido : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
         fecha_nacimiento : new FormControl('', [Validators.required]),
-        username : new FormControl('', [Validators.required]),
+        identificador : new FormControl('', [Validators.required, Validators.minLength(2)]),
         email : new FormControl('', [Validators.required, Validators.email]),
         contrasena : new FormControl('', [Validators.required, Validators.minLength(8)]),
-        telefono : new FormControl('', [Validators.required]),
-        pais : new FormControl('', [Validators.required]),
-        provincia : new FormControl('', [Validators.required]),
-        ciudad : new FormControl('', [Validators.required])
+        contrasena2 : new FormControl('', [Validators.required, Validators.minLength(8)]),
+        telefono : new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^([0-9])*$/)]),
+        pais : new FormControl('', [Validators.required])
       }
     )
   }
@@ -36,14 +38,19 @@ export class RegisterComponent implements OnInit {
 {
   return this.formulario.get("contrasena");
 }
+
+get Contrasena2()
+{
+  return this.formulario.get("contrasena2");
+}
 /*get pass()
 {
   return this.form.get("password2");
 }*/
 
-get Username()
+get Identificador()
 {
-  return this.formulario.get("username");
+  return this.formulario.get("identificador");
 }
 
 get Telefono()
@@ -56,14 +63,6 @@ get Pais()
   return this.formulario.get("pais");
 }
 
-get Ciudad()
-{
-  return this.formulario.get("ciudad");
-}
-get Provincia()
-{
-  return this.formulario.get("provincia");
-}
 
 get Mail()
 {
@@ -85,10 +84,6 @@ get FechaNacimiento()
  return this.formulario.get("fecha_nacimiento");
 }
 
-/*get Dni()
-{
- return this.form.get("dni");
-}*/
 
 get MailValid()
 {
@@ -115,33 +110,23 @@ get ContrasenaValid()
   return this.Contrasena?.touched && !this.Contrasena?.valid;
 }
 
-/*get Password2Valid()
+get Contrasena2Invalid()
 {
-  return this.Password2?.touched && !this.Password2?.valid;
-}*/
+  return (this.Contrasena?.value != this.Contrasena2?.value) && this.Contrasena2?.touched;
+}
+
 
 get FechaNacimientoValid()
 {
   return this.FechaNacimiento?.touched && !this.FechaNacimiento?.valid;
 }
 
-get UsernameValid(){
-  return this.Username?.touched && !this.Username?.valid;
+get IdentificadorValid(){
+  return this.Identificador?.touched && !this.Identificador?.valid;
 }
 
 get PaisValid(){
   return this.Pais?.touched && !this.Pais?.valid;
 }
-get CiudadValid(){
-  return this.Ciudad?.touched && !this.Ciudad?.valid;
-}
-get ProvinciaValid(){
-  return this.Provincia?.touched && !this.Provincia?.valid;
-}
 
-/*get DniValid()
-{
-  return this.Dni?.touched && !this.Dni?.valid;
-}
-*/
 }
