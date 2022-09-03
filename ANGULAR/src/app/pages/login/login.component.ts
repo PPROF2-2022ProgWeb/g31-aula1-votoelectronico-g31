@@ -51,10 +51,6 @@ export class LoginComponent implements OnInit {
     return this.pass?.touched && !this.pass.valid;
   }
 
-  get mailInvalid()
-  {
-    return this.mail?.touched || this.mail?.dirty
-  }
 
   get mailNoValido()
   {
