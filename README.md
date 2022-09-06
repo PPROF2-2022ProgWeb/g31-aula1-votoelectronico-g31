@@ -41,7 +41,7 @@
 <!-- SOBRE -->
 ## Sobre
 <br />
-<img src="https://i.ibb.co/1nxPtTw/pag-web.png" alt="pag-web" border="0">
+<img src="http://imgfz.com/i/r0Q6hKe.png" alt="pag-web" border="0">
 <br />
 
 El proyecto de 'Voto Electrónico' será una web-app de uso general para efectuar votaciones de manera simple y sencilla.
