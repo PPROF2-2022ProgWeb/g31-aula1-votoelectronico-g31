@@ -1,10 +1,6 @@
-#container-notFound{
-    display: flex;
+#container-notFound {
+  display: flex;
 }
-#imgNotFound{
-  max-width: 700px; 
+#imgNotFound {
+  max-width: 700px;
 }
-
-
-
-    
