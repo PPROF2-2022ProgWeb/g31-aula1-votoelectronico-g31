@@ -1,7 +1,9 @@
 <a name="inicio"></a>
 <br />
 <div align="center">
-    <img src="https://github.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31/blob/develop/z-2021%20Proyect/img/logos/logotipo_Mesa%20de%20trabajo%201.png">
+
+    <img src="https://github.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31/blob/develop/z-2021%20Proyect/img/logos/logotipo_Mesa%20de%20trabajo%201.png" alt="Logo" width="100" height="100">
+
   </a>
 
   <h2 align="center">Proyecto: Voto Electrónico</h2>
