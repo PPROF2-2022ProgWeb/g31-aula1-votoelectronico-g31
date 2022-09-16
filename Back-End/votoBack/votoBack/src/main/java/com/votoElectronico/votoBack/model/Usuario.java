@@ -20,6 +20,12 @@ public class Usuario {
     @Column(name = "dni", nullable = false, unique = true)
     public String dni;
 
+    @Column(name = "email", nullable = false, unique = true)
+    public String email;
+
+    @Column(name = "password", nullable = false)
+    public String password;
+
     @Column(name = "telefono", nullable = true)
     public String telefono;
 
