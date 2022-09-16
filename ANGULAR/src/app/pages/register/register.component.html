@@ -1,0 +1,261 @@
+<main>
+    <section id="register" class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 com-md-4 mx-auto text-center pt-5">
+              <h1 class="h3 mb-3 font-weight-normal color-title">Registrarse</h1>
+            </div>
+        </div>
+    <!-- INICIO FORMULARIO -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
+          <div class="card_register">
+            <div class="card">
+              <div class="card-body text-center" id="cont">
+                <form [formGroup]="formulario" id="formulario">
+
+                    <div class="form-group campo">
+                      <label class="color-title"> Nombre/s </label>
+                      <input
+                        type="text"
+                        formControlName="nombre"
+                        [class.border-danger]="NombreValid"
+                        id="nombre"
+                        name="nombre"
+                        class="form-control"
+                        placeholder="Nombre"
+                        required
+                        #newName
+                      />
+                      <div *ngIf="Nombre?.errors  && Nombre?.touched">
+                        <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                          El nombre es requerido.
+                        </p>
+                      </div>
+                      <div *ngIf="Nombre?.errors  && Nombre?.touched">
+                        <p *ngIf="Nombre?.hasError('pattern')" class="text-danger">
+                          Solo puede ingresar letras en este campo y al menos dos caracteres.
+                        </p>
+                      </div>
+                    </div>
+            
+            
+                    <div class="form-group campo">
+                      <label class="color-title"> Apellido/s </label>
+                      <input
+                        type="text"
+                        formControlName="apellido"
+                        [class.border-danger]="ApellidoValid"
+                        id="apellido"
+                        name="apellido"
+                        class="form-control"
+                        placeholder="Apellido"
+                        required
+                        #newApellido
+                      />
+                      <div *ngIf="Apellido?.errors  && Apellido?.touched">
+                        <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                          El apellido es requerido.
+                        </p>
+                      </div>
+
+                      <div *ngIf="Apellido?.errors  && Apellido?.touched">
+                        <p *ngIf="Apellido?.hasError('pattern')" class="text-danger">
+                          Solo puede ingresar letras en este campo y al menos dos caracteres.
+                        </p>
+                      </div>
+                      
+                    </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title"> Fecha de nacimiento </label>
+                        <input
+                          type="date"
+                          formControlName="fecha_nacimiento"
+                          [class.border-danger]="FechaNacimientoValid"
+                          id="fecha_nacimiento"
+                          name="fecha_nacimiento"
+                          class="form-control"
+                          placeholder="Fecha de nacimiento"
+                          required
+                          #newFecha
+                        />
+                        <div *ngIf="FechaNacimiento?.errors  && FechaNacimiento?.touched">
+                          <p *ngIf="FechaNacimiento?.hasError('required')" class="text-danger">
+                            La fecha de nacimiento es requerida.
+                          </p>
+                      </div>
+                      </div>
+            
+                    <div class="form-group campo" >
+                      <label class="color-title">Número de identificación</label>
+                      <input
+                        type="text"
+                        formControlName="identificador"
+                        [class.border-danger]="IdentificadorValid"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Número de identificación"
+                        required
+                        #newUsuario
+                      />
+                      <div *ngIf="Identificador?.errors  && Identificador?.touched">
+                        <p *ngIf="Identificador?.hasError('required')" class="text-danger">
+                          El identificador es requerido.
+                        </p>
+                    </div>
+                    </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title"> Email </label>
+                        <input
+                          type="email"
+                          formControlName="email"
+                          [class.border-danger]="MailValid"
+                          id="email"
+                          name="mail"
+                          class="form-control"
+                          placeholder="Email"
+                          required
+                          #newMail
+                        />
+                        <div *ngIf="Mail?.errors  && Mail?.touched">
+                          <p *ngIf="Mail?.hasError('required')" class="text-danger">
+                            El email es requerido.
+                          </p>
+                        </div>
+                        <div *ngIf="Mail?.errors  && Mail?.touched">
+                          <p *ngIf="Mail?.errors?.['email']" class="text-danger">
+                            El mail no es válido
+                          </p>
+                      </div>
+                      </div>
+            
+                    <div class="form-group campo">
+                        <label class="color-title">Contraseña</label>
+                        <input
+                          type="password"
+                          formControlName="contrasena"
+                          [class.border-danger]="ContrasenaValid"
+                          id="contrasena"
+                          name="contrasena"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          required
+                          #newPass
+                        />
+                        <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                          <p *ngIf="Contrasena?.hasError('required')" class="text-danger">
+                            La contraseña es requerida.
+                          </p>
+                      </div>
+                      <div *ngIf="Contrasena?.errors  && Contrasena?.touched">
+                        <p *ngIf="Contrasena?.errors?.['minlength']" class="text-danger">
+                          La contraseña debe contener al menos 8 caracteres.
+                        </p>
+                    </div>
+                      </div>
+            
+                      <div class="form-group campo" >
+                        <label class="color-title">Repetir Contraseña</label>
+                        <input
+                          type="password"
+                          formControlName="contrasena2"
+                          [class.border-danger]="ContrasenaValid"
+                          id="contrasena"
+                          name="contrasena"
+                          class="form-control"
+                          placeholder="Contraseña"
+                          required
+                          #newPass
+                        />
+                        <div *ngIf="Contrasena2?.errors  && Contrasena2?.touched">
+                          <p *ngIf="Contrasena?.hasError('required')" class="text-danger">
+                            La contraseña es requerida.
+                          </p>
+                        </div>
+                        <div *ngIf="Contrasena2?.errors  && Contrasena2?.touched">
+                          <p *ngIf="Contrasena?.errors?.['minlength']" class="text-danger">
+                          La contraseña debe contener al menos 8 caracteres.
+                          </p>
+                        </div>
+                        <div *ngIf="Contrasena2Invalid">
+                           <p  class="Contrasena2Invalid" class="text-danger">
+                            Las contraseñas no coinciden.
+                           </p>
+                        </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title"> Teléfono </label>
+                        <input
+                          type="text"
+                          formControlName="telefono"
+                          [class.border-danger]="TelefonoValid"
+                          id="telefono"
+                          name="telefono"
+                          class="form-control"
+                          placeholder="Telefono"
+                          required
+                          #newTelefono
+                        />
+                        <div *ngIf="Telefono?.errors  && Telefono?.touched">
+                          <p *ngIf="Telefono?.hasError('required')" class="text-danger">
+                            El teléfono es requerido.
+                          </p>
+                        </div>
+                        <div *ngIf="Telefono?.errors  && Telefono?.touched">
+                          <p *ngIf="Telefono?.hasError('pattern')" class="text-danger">
+                            Solo puede ingresar números en este campo.
+                          </p>
+                        </div>
+                        <div *ngIf="Telefono?.errors  && Telefono?.touched">
+                          <p *ngIf="Telefono?.errors?.['minlength']" class="text-danger">
+                          EL teléfono debe tener al menos 6 dígitos.
+                          </p>
+                        </div>
+                      </div>
+            
+                      <div class="form-group campo">
+                        <label class="color-title">País</label>
+                        <input
+                          type="text"
+                          formControlName="pais"
+                          [class.border-danger]="PaisValid"
+                          id="pais"
+                          name="pais"
+                          class="form-control"
+                          placeholder="Pais"
+                          required
+                          #newPais
+                        />
+                        <div *ngIf="Pais?.errors  && Pais?.touched">
+                          <p *ngIf="Pais?.hasError('required')" class="text-danger">
+                            El país es requerido.
+                          </p>
+                      </div>
+                      </div>
+        
+                      <button type="submit" [disabled]="formulario.invalid || Contrasena2Invalid" class="btn btn-lg w-100 btn-registrar btn-block button">
+                        Registrar
+                      </button>
+                    
+                      <div class="form-group campo">
+                          <a routerLink="../login" class="form-control login-user btn-pass">¿Ya tienes una cuenta?</a>
+                      </div>
+                  </form>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- FIN FORMULARIO -->
+
+    
+   </div>
+ </section>
+</main>
+

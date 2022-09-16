@@ -1,0 +1,99 @@
+/* title */
+.row-title {
+  margin: 55px 0;
+  text-align: center;
+}
+/* card */
+.card {
+  padding: 5px;
+  box-shadow: 2px 2px 5px 1px grey;
+  border: 1px solid rgba(255, 208, 0, 0.901);
+}
+.card-img-top {
+  width: 80%;
+  margin: auto;
+  border-bottom: 2px solid grey;
+}
+
+.card-body {
+  text-align: center;
+}
+/* card effect */
+.card:hover {
+  transform: scale(105%);
+  transition: 0.2s;
+}
+/* buttons  */
+.card-body > a {
+  display: block;
+  font-size: x-large;
+  background: rgb(133, 13, 133);
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.card-body > a:hover {
+  background-color: rgb(27, 7, 99);
+}
+
+.check-icon {
+  width: 20px;
+}
+/* paragraph  */
+.card-text {
+  margin: 15px;
+  font-weight: 400;
+}
+
+/* Section_Comercial_Modal */
+.paymentMethods {
+  margin-top: 20px;
+  padding: 20px 0;
+  background-color: rgba(255, 255, 0, 0.277);
+}
+
+.superRow {
+  box-shadow: 1px 1px 5px 1px rgba(194, 185, 94, 0.389);
+  padding: 10px;
+}
+.columnaContainer {
+  display: flex;
+  justify-content: center;
+}
+.rowInterna {
+  margin: auto;
+  padding: 15px;
+}
+
+.containerText {
+  margin-left: 0px;
+  padding-left: 2px;
+  padding-top: 4px;
+  font-size: 17px;
+}
+.containerText > h4 {
+  font-size: 28px;
+  margin: 0px;
+}
+
+.colImgPayment {
+  display: flex;
+  margin: 0px;
+}
+
+.modal-dialog {
+  margin: auto;
+}
+.modal-content {
+  padding: 1% 1% 0% 5%;
+}
+
+.greenText {
+  padding: 0px;
+  margin: 0px;
+  color: green;
+}
+.secondaryText {
+  color: grey;
+  font-size: 14px;
+}
