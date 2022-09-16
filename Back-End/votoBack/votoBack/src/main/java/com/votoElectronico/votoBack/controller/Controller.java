@@ -12,15 +12,6 @@ public class Controller {
     @Autowired
     private IUsuarioService usuServi;
 
-    //@GetMapping ("/hola/{nombre}")
-    //public String decirHola(@PathVariable String nombre){
-    // return "hola "+ nombre;
-    //}
-
-    // @GetMapping ("/chau")
-    //public String decirCHau(@RequestParam String nombre){
-    //  return "hola "+ nombre;
-    //}
 
     @PostMapping("/agregar")
     public void agregarUsuario(@RequestBody Usuario usuario){
