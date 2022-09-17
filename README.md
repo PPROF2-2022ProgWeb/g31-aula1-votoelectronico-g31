@@ -1,7 +1,7 @@
 <a name="inicio"></a>
 <br />
 <div align="center">
-    <img src="VOTO_ELECTRONICO/img/logos/logotipo_Mesa de trabajo 1.png" alt="Logo" width="100" height="100">
+    <img src="z - Proyecto 2021 - Voto/img/logos/logotipo_Mesa de trabajo 1.png" alt="Logo" width="100" height="100">
   </a>
 
   <h2 align="center">Proyecto: Voto Electrónico</h2>
