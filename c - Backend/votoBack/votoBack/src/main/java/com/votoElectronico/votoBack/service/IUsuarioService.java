@@ -1,5 +1,6 @@
 package com.votoElectronico.votoBack.service;
 
+import com.votoElectronico.votoBack.model.Login;
 import com.votoElectronico.votoBack.model.Usuario;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface IUsuarioService {
 
     public void bajarUsuario(Long id);
 
-    public Usuario buscarUsuario(Long id);
+    //public Usuario buscarUsuario(Login login);
 }
