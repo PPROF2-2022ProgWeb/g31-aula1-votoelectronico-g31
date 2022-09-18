@@ -1,5 +1,6 @@
 package com.votoElectronico.votoBack.service;
 
+import com.votoElectronico.votoBack.model.Login;
 import com.votoElectronico.votoBack.model.Usuario;
 import com.votoElectronico.votoBack.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,9 @@ public class UsuarioService implements IUsuarioService{
         usuarioRepo.deleteById(id);
     }
 
-    @Override
-    public Usuario buscarUsuario(Long id) {
-        return usuarioRepo.findById(id).orElse(null);
-    }
+    //@Override
+    //public Usuario buscarUsuario(Login login) {
+      //  return usuarioRepo.findByEmailAndPassword(login.email, login.password);
+    //}
 
 }
