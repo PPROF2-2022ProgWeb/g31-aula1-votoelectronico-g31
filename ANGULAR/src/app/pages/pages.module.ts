@@ -20,6 +20,7 @@ import { SectionComercialEngComponent } from './section-comercial-eng/section-co
 import { ContactoEngComponent } from './contacto-eng/contacto-eng.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SobrenosotrosEngComponent,
     RegisterEngComponent,
     SectionComercialEngComponent,
-    ContactoEngComponent
+    ContactoEngComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
