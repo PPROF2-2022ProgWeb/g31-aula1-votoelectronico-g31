@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 
 import { ValidatorFn, AbstractControl} from '@angular/forms';
+import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 
 
 @Component({
@@ -14,25 +15,46 @@ import { ValidatorFn, AbstractControl} from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   formulario:FormGroup;
+  usuario: Usuario = new Usuario();
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { 
+  constructor(private formBuilder: FormBuilder, private router: Router, private usuarioService: UsuarioService) { 
     this.formulario= this.formBuilder.group(
       {
         nombre : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
         apellido : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
-        fecha_nacimiento : new FormControl('', [Validators.required]),
         identificador : new FormControl('', [Validators.required, Validators.minLength(2)]),
         email : new FormControl('', [Validators.required, Validators.email]),
         contrasena : new FormControl('', [Validators.required, Validators.minLength(8)]),
         contrasena2 : new FormControl('', [Validators.required, Validators.minLength(8)]),
         telefono : new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(/^([0-9])*$/)]),
-        pais : new FormControl('', [Validators.required])
       }
     )
   }
 
   ngOnInit(): void {
   }
+
+  onEnviar(event: Event, usuario:Usuario): void {
+    event.preventDefault;
+
+    if (this.formulario.valid)
+    {
+      console.log(usuario);
+      this.usuarioService.onCrearRegistro(usuario).subscribe(
+        data => {
+          console.log(data);
+          //if (data['id_usuario']>0)
+          //{
+            //alert("El registro ha sido creado satisfactoriamente. A continuación, por favor Inicie Sesión.");
+            //this.router.navigate(['/login'])
+          //}
+      })
+  }
+  else
+  {
+    this.formulario.markAllAsTouched();
+  }
+};
 
   get Contrasena()
 {

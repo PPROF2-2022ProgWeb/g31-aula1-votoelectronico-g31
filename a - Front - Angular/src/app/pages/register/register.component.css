@@ -235,3 +235,7 @@
 .campo {
   background: white !important;
 }
+
+#envio:hover{
+  cursor: pointer;
+}
