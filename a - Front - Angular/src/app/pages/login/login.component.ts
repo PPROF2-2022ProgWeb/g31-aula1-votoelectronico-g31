@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
- contactForm: FormGroup;
-  
+  contactForm: FormGroup;
+  usuario: LoginRequest = new LoginRequest();
   error: string="";
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
     this.form= this.formBuilder.group(
       {
         password:['',[Validators.required, Validators.minLength(8)]],
@@ -35,7 +37,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  
   get mail()
   {
     return this.form.get("mail");
@@ -58,6 +60,31 @@ export class LoginComponent implements OnInit {
   }
 
 
+  onEnviar(event: Event, usuario: LoginRequest)
+  {
+    event.preventDefault(); //Cancela la funcionalidad por default.
+    if (this.form.valid)
+    {
+      console.log(this.form.value); //se puede enviar al servidor...
+      this.authService.login(this.usuario)
+      .subscribe(
+        data => {
+        console.log("DATA"+ JSON.stringify( data));
+        //localStorage.setItem('auth-token', JSON.stringify(data ));
+
+        this.router.navigate(['sobrenosotros']);
+
+        },
+        error => {
+         this.error = error;
+        }
+      );
+    }
+    else
+    {
+      this.form.markAllAsTouched(); //Activa todas las validaciones
+    }
+  }
 
 
 }
