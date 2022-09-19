@@ -1,0 +1,42 @@
+/* CARD */
+
+.timeline {
+  position: relative;
+}
+.timeline:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: #d1d1d1;
+}
+.timeline-point {
+  position: relative;
+}
+.timeline-point:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  border: 3px solid #d1d1d1;
+  background: #fff;
+}
+@media (max-width: 576px) {
+  .timeline:after,
+  .timeline-point:after {
+    display: none;
+  }
+}
+.box {
+  height: 150px;
+  background: #737373;
+  border: 1px solid #fff;
+}
+

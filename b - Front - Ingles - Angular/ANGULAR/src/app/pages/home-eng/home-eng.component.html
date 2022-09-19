@@ -1,0 +1,79 @@
+<header>
+  <section class="w-60 mx-auto text-center" id="intro">
+      <h1 class="p-5 fs-1">WE COUNT YOUR VOTE</h1>
+  </section>
+  <!-- EFECTO IMAGEN PRINCIPAL-->
+  <div class="wave" style="height: 120px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+          style="height: 100%; width: 100%;">
+          <path d="M-0.84,50.81 C119.35,82.39 334.36,-23.19 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+              style="stroke: none; fill: rgb(255, 255, 255);"></path>
+      </svg>
+  </div>
+  <!-- FIN EFECTO IMAGEN PRINCIPAL-->
+</header>
+<main>
+  <!-- INICIO CUERPO PRINCIPAL-->
+  <section class="container-fluid" id="contiene">
+      <div class="row w-75 mx-auto servicio-fila my-5">
+          <h3 class="fs-1 mt-2 px-4 pb-5">The keys of our service:</h3>
+          <div class="col-sm pt-5">
+              <img src="../../../assets/transparencia.png" alt="imagen-transparencia" width="80%">
+              <div class="texto-cuerpo-ppal">
+                  <h3 class="fs-3 mt-4 px-4 pb-1">Transparency</h3>
+                  <p class="px-4">The system allows manual vote-by-vote auditing to verify the integrity of the vote.</p>
+              </div>
+          </div>
+          <div class="col-sm pt-5">
+              <img src="../../../assets/rapidez.png" alt="imagen-rapidez" width="80%">
+              <div class="texto-cuerpo-ppal">
+                  <h3 class="fs-3 mt-4 px-4 pb-1">Speed</h3>
+                  <p class="px-4">The election process will be in real time; the vote that is uploaded is instantly entered into the percentages.</p>
+              </div>
+          </div>
+          <div class="col-sm pt-5">
+              <img src="../../../assets/seguridad.png" alt="imagen-seguridad" width="80%">
+              <div class="texto-cuerpo-ppal">
+                  <h3 class="fs-3 mt-4 px-4 pb-1">Security</h3>
+                  <p class="px-4">Fraud-free system, with high computer security standards, that make over to the election exempt of this .</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section class="container-fluid" id="pasos">
+      <div class="row w-75 mx-auto servicio-fila my-5">
+          <h3 class="fs-1 mt-2 px-4 pb-5 pt-3">How to use our service:</h3>
+          <div class="col-sm pt-5">
+              <img src="../../../assets/pasoapaso.png" alt="imagen-paso-a-paso" width="100%">
+          </div>
+          <div class="col-sm pt-5" id="paso">
+              <div class="contenido-textos">
+                  <div class="texto-span-1">
+                      <h3 class="fs-3 mt-4 px-4 pb-1"><span>1</span>Step</h3>
+                      <p class="px-4 fs-5">Enter the account section in the site menu or download the application for your mobile device.</p>
+                  </div>
+                  <div class="texto-span-2">
+                      <h3 class="fs-3 mt-4 px-4 pb-1"><span>2</span>Step</h3>
+                      <p class="px-4 fs-5">Register through the<a href="registrarvista.html"
+                              target="_blank" class="text-decoration-none"><strong>Registration</strong></a> section with the requested data</p>
+                  </div>
+                  <div class="texto-span-3">
+                      <h3 class="fs-3 mt-4 px-4 pb-1"><span>3</span>Step</h3>
+                      <p class="px-4 fs-5">Access with the account data previously loaded and enter through your code to the election to which you are going to participate.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <section id="edadSeccion">
+      <h6>Remember that you must be over 16 years old. Please, enter your date of birth</h6>
+      <div id="inputEdad">
+          <input  type="date" id="fechanacimiento" name="fecha_nacimiento" class="form-control"
+              placeholder="Fecha de nacimiento" required />
+          <p id="aviso1"></p>
+      </div>
+      <div class="container">
+          <button class="btn" (click)='calculaEdad()' id="botonC"><span class="btn-text">check</span></button>
+      </div>
+  </section>
+  <!-- FIN CUERPO PRINCIPAL-->
+</main>
