@@ -63,6 +63,7 @@ Aqui adjuntamos las tecnologías utilizadas para el proyecto con su correspondie
 * [![mysql][mysql.com]][mysql-url]
 * [![php][php.com]][php-url]
 * [![ts][ts.com]][ts-url]
+* [![Springboot][Springboot.io]][Springboot-url]
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
@@ -93,7 +94,10 @@ Instalaciones necesarias para el correcto funcionamiento.
    ```sh
    npm install
    ```
-4. etc etc
+4. Lanzar proyecto
+   ```sh
+   ng s -o
+   ```
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
@@ -113,13 +117,12 @@ El sistema solo permitirá 1 voto por participante.
 <!-- Estado actual del proyecto -->
 ## Estado
 
-'Sprint 2/5'
+'Sprint 3/5'
 
 - [x] Mantener actualizado ieee830.
-- [x] Script base de datos.
-- [x] DER y Modelo Relacional.
-- [x] Diagrama de clases.
-- [x] Diagrama de casos de uso.
+- [x] Registro de usuario.
+- [x] Login de usuario.
+- [x] Dashboard con módulos planteados.
  
  <br />
  
@@ -175,10 +178,12 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 
 * [Angular Material](https://material.angular.io/)
 * [Recursos de Bootstrap](https://startbootstrap.com/bootstrap-resources)
-* [etc](etc)
-* [etc1](etc1)
-* [etc2](etc2)
-* [etc3](etc3)
+* [Gráficos de datos](https://valor-software.com/ng2-charts)
+* [Material Icons](https://fonts.google.com/icons?selected=Material+Icons)
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [etc9](etc3)
+* [etc10](etc3)
 
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
@@ -201,19 +206,8 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 [php-url]: https://www.php.net/
 [ts.com]: https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [ts-url]: https://www.typescriptlang.org/
-
+[Springboot.io]: https://img.shields.io/badge/Springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=black
+[Springboot-url]: https://spring.io/
 
 
 <!-- FIN -->
-
-
-
-*Importante - Se debe actualizar la seguridad que requiere el proyecto
-
-1 - Abrir el VS code o el git bash e ir a la rama main para hacerle pull para tener los archivos .JSON actualizados
-
-2 - Instalar la actualizacion haciendo un "npm install" estando en la rama main con esto se les tendria que actualizar el paquete de NODE_MODULE
-
-3 - Actualizar su propia rama con el contenido de main
-
-El mensaje sera eliminado el dia 10/09/2022
