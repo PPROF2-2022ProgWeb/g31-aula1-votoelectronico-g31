@@ -12,35 +12,43 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long idusuario;
+    private Long idusuario;
     @Column(name = "nombre", nullable = false)
-    public String nombre;
+    private String nombre;
     @Column(name = "apellido", nullable = false)
-    public  String apellido;
+    private  String apellido;
 
     @Column(name = "dni", nullable = false, unique = true)
-    public String dni;
+    private String dni;
 
     @Column(name = "email", nullable = false, unique = true)
-    public String email;
+    private String email;
 
     @Column(name = "password", nullable = false)
-    public String password;
+    private String password;
 
     @Column(name = "telefono", nullable = true)
-    public String telefono;
+    private String telefono;
 
     @Column(name="bajaLogica")
-    public Integer bajaLogica = 0;
+    private Integer bajaLogica = 0;
 
     public Usuario(){}
 
-    public Usuario(Long id, String nombre, String apellido, String identificacion, String telefono){
+    public Usuario(String nombre, String apellido, String identificador, String telefono ,
+                   String password, String email){
+        //not nulls
         this.nombre=nombre;
         this.apellido=apellido;
-        this.dni=identificacion;
+        this.dni=identificador;
+        this.password=password;
+        this.email=email;
+        //nulls
         this.telefono=telefono;
     }
+
+
+    //getters y setters
 
     public long getId() {
         return idusuario;
