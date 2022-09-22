@@ -1,0 +1,72 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav nav_letters" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="icon_logo"><img src="https://raw.githubusercontent.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31/main/VOTO_ELECTRONICO/img/logos/logotipo1_Mesa%20de%20trabajo%201.png" alt="logo_voto"></mat-toolbar>
+    <mat-nav-list class="nav_effect">
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          dashboard
+          </span><span class="title">Dashboard</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+        reply_all
+        </span>
+        <span class="title">Volver al Sitio</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          group_add</span>
+          <span class="title">Crear Votaciones</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          edit</span>
+          <span class="title">Editar Votaciones</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          history</span>
+          <span class="title">Historial</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          help</span>
+          <span class="title">Preguntas</span></a>
+      <a mat-list-item href="#"><span class="material-icons">
+        settings</span>
+        <span class="title">Panel de Usuario</span></a>
+      <a mat-list-item href="#">
+        <span class="material-icons">
+          logout</span>
+          <span class="title">Salir</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <mat-toolbar color="warn" class="nav_letters">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+<!-- Imagen de usuario-->
+<div class="user">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <span class="material-icons">
+          account_circle
+          </span>
+      </div>
+      <div class="col">
+        Bienvenido User               <!--Variable con login -->
+      </div>
+    </div>
+  </div>
+</div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <app-dashboard></app-dashboard>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
