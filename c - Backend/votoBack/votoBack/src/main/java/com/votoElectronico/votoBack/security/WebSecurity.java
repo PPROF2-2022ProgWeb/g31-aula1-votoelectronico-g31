@@ -15,9 +15,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static com.votoElectronico.votoBack.security.Constants.LOGIN_URL;
-import static com.votoElectronico.votoBack.security.Constants.REG_URL;
-
 @Configuration
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
@@ -27,6 +24,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     public WebSecurity(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
+
+
+
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -44,9 +44,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
          */
         httpSecurity
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .cors().and()
+                //.cors().and()
                 .csrf().disable()
                 .authorizeRequests().antMatchers(HttpMethod.POST).permitAll()
+                .antMatchers(HttpMethod.GET).permitAll()
                 .anyRequest().authenticated().and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()));

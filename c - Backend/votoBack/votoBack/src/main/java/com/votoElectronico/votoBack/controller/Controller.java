@@ -1,6 +1,5 @@
 package com.votoElectronico.votoBack.controller;
 
-import com.votoElectronico.votoBack.model.Login;
 import com.votoElectronico.votoBack.model.Usuario;
 import com.votoElectronico.votoBack.repository.UsuarioRepository;
 import com.votoElectronico.votoBack.service.IUsuarioService;
@@ -8,12 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-
-import javax.servlet.http.HttpSession;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
@@ -34,6 +28,9 @@ public class Controller {
     @CrossOrigin(origins="*")
     @PostMapping("/agregar")
     public void agregarUsuario(@RequestBody Usuario usuario){
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String encodedPassword = encoder.encode(usuario.getPassword());
+        usuario.setPassword(encodedPassword);
         usuServi.crearUsuario(usuario);
     }
 
