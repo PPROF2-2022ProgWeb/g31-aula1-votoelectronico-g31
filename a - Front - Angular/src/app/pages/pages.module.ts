@@ -44,8 +44,7 @@ import { CompraUserComponent } from './post_login/user/compra-user/compra-user.c
 import { NgChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './post_login/admin/dashboard-adm/components/line-chart/line-chart.component';
 import { BarChartComponent } from './post_login/admin/dashboard-adm/components/bar-chart/bar-chart.component';
-
-
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -76,7 +75,6 @@ import { BarChartComponent } from './post_login/admin/dashboard-adm/components/b
     CompraUserComponent,
     LineChartComponent,
     BarChartComponent,
-
   ],
   imports: [
     CommonModule,
@@ -94,6 +92,7 @@ import { BarChartComponent } from './post_login/admin/dashboard-adm/components/b
     MatCardModule,
     MatMenuModule,
     NgChartsModule,
+    MatTableModule,
   ],
   exports: [
     HomeComponent,
@@ -114,9 +113,6 @@ import { BarChartComponent } from './post_login/admin/dashboard-adm/components/b
     HistorialUserComponent,
     PanelUserUserComponent,
     ToolbarUserComponent,
-  ]
+  ],
 })
-export class PagesModule { }
-
-
-
+export class PagesModule {}
