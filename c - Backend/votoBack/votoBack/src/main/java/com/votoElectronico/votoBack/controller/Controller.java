@@ -35,7 +35,6 @@ public class Controller {
     }
 
     @GetMapping("/ver/usuarios")
-    @ResponseBody
     public List<Usuario> verPersonas(){
         return usuServi.traerUsuarios();
     }
@@ -45,13 +44,7 @@ public class Controller {
         usuServi.bajarUsuario(id);
     }
 
-    @CrossOrigin(origins="*")
-    @PostMapping("/hhh")
-    public void saveUsuario(@RequestBody Usuario user) {
-
-        usuarioRepository.save(user);
-    }
-
+    
     @GetMapping("/users/")
     public List<Usuario> getAllUsuarios() {
         return usuarioRepository.findAll();

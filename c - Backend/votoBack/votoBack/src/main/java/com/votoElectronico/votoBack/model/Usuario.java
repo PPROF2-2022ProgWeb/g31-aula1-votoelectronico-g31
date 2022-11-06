@@ -2,13 +2,19 @@ package com.votoElectronico.votoBack.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 @Getter @Setter
 @Entity
-public class Usuario {
+public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,6 +38,10 @@ public class Usuario {
 
     @Column(name="bajaLogica")
     public Integer bajaLogica = 0;
+
+    @Column(name="rol")
+    @Enumerated(EnumType.STRING)
+    private Rol rol = Rol.ADMIN;
 
     public Usuario(){}
 
@@ -58,10 +68,40 @@ public class Usuario {
         return password;
     }
 
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
 
+    //@Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> roles = new ArrayList<>();
+        roles.add(new SimpleGrantedAuthority(rol.toString()));
+        return roles;
+    }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 
 }
