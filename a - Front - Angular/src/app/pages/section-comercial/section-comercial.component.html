@@ -130,7 +130,7 @@
     </div>
   </div>
 </section>
-
+<!--
 <section class="sectionComercial">
   <div class="container-fluid section">
     <div id="container section-title">
@@ -208,6 +208,22 @@
       </div>
     </div>
   </div>
-</section>
+</section>-->
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of filterCategory">
+      <div class="card col-md-3">
+        <img src="{{ item.image }}" alt="imagen_producto" />
+        <h5 class="itemTitle">{{ item.title }}</h5>
+        <p class="itemDescription">{{ item.description }}</p>
+        <p><strong>Precio:</strong> ${{ item.price }}</p>
+        <button class="btn btn-primary" (click)="addtoCart(item)">
+          Agregar al carrito
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
 
 <app-footer></app-footer>

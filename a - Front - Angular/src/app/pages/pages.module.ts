@@ -45,6 +45,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './post_login/admin/dashboard-adm/components/line-chart/line-chart.component';
 import { BarChartComponent } from './post_login/admin/dashboard-adm/components/bar-chart/bar-chart.component';
 import { MatTableModule } from '@angular/material/table';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { MatTableModule } from '@angular/material/table';
     CompraUserComponent,
     LineChartComponent,
     BarChartComponent,
+    CartComponent,
   ],
   imports: [
     CommonModule,
