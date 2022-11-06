@@ -20,6 +20,7 @@ import { DashboardUserComponent } from './pages/post_login/user/dashboard-user/d
 import { CompraUserComponent } from './pages/post_login/user/compra-user/compra-user.component';
 import { HistorialUserComponent } from './pages/post_login/user/historial-user/historial-user.component';
 import { PanelUserUserComponent } from './pages/post_login/user/panel-user-user/panel-user-user.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'sobrenosotros', component: SobrenosotrosComponent },
   { path: 'section-comercial', component: SectionComercialComponent },
+  { path: 'cart', component: CartComponent },
   //ruta admin
   { path: 'toolbar-adm', component: ToolbarAdmComponent },
   { path: 'dash-adm', component: DashboardAdmComponent },
