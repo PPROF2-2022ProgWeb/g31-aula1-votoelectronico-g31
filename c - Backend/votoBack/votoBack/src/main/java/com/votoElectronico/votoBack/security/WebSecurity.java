@@ -50,6 +50,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests().antMatchers(HttpMethod.POST).permitAll()
                 .antMatchers(HttpMethod.GET).permitAll()
+//                se agregan los permisos por el rol por necesidad de producto el DELETE y PUT
+                .antMatchers(HttpMethod.DELETE).permitAll()
+                .antMatchers(HttpMethod.PUT).permitAll()
                 .antMatchers("/admin").hasRole(String.valueOf(ADMIN))
                 .anyRequest().authenticated().and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))

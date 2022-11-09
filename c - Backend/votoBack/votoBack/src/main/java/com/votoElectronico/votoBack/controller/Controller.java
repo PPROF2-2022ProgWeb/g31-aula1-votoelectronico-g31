@@ -55,6 +55,9 @@ public class Controller {
         return usuarioRepository.findByEmail(mail);
     }
 
+    @CrossOrigin(origins="")
+    @PutMapping("/editarUser")
+    public void editarUser(@RequestBody Usuario usuario){usuServi.updateUser(usuario);}
 
 
 }

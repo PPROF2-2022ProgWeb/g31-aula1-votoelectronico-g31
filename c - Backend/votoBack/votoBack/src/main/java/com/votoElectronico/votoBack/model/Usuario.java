@@ -21,6 +21,7 @@ public class Usuario implements UserDetails {
     public Long idusuario;
     @Column(name = "nombre", nullable = false)
     public String nombre;
+
     @Column(name = "apellido", nullable = false)
     public  String apellido;
 
@@ -45,15 +46,40 @@ public class Usuario implements UserDetails {
 
     public Usuario(){}
 
-    public Usuario(Long id, String nombre, String apellido, String identificacion, String telefono){
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.dni=identificacion;
-        this.telefono=telefono;
+    public Usuario(String nombre, String apellido, String dni, String email, String password, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.email = email;
+        this.password = password;
+        this.telefono = telefono;
     }
 
     public long getId() {
         return idusuario;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getEmail() {
@@ -75,6 +101,14 @@ public class Usuario implements UserDetails {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     //@Override
