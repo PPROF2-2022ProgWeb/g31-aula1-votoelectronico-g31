@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
+//import { AuthService } from 'src/app/services/auth/auth.service';
+//import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
+import { NgxRolesService } from 'ngx-permissions';
+import { Token } from 'src/app/models/Token';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -11,12 +14,39 @@ import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
+
+  username : string="";
+  password : string="";
+  error : string="";
+
+  constructor(private usersService : UsuarioService, private router : Router) { }
+
+  ngOnInit(): void {
+      if (localStorage.getItem('token')) {
+          this.router.navigateByUrl('/account')
+      }
+  }
+
+  logIn () {
+      this.error = ''
+
+      this.usersService.login(
+          this.username, this.password).subscribe((token : Token) => {
+              localStorage.setItem('token', token.token);
+              this.router.navigateByUrl('/account').then(() => window.location.reload())
+          }, (error : ErrorEvent) => {
+              console.log(error);
+              this.error = "Invalid login credentials"
+          })
+      
+  }
+
+  /*form: FormGroup;
   contactForm: FormGroup;
   usuario: LoginRequest = new LoginRequest();
   error: string="";
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService, private rolesService: NgxRolesService) {
     this.form= this.formBuilder.group(
       {
         password:['',[Validators.required, Validators.minLength(8)]],
@@ -70,7 +100,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
         console.log("DATA"+ JSON.stringify( data));
-        //localStorage.setItem('auth-token', JSON.stringify(data ));
+        localStorage.setItem('auth-token', JSON.stringify(data ));
+        this.rolesService.addRole(data.rol, []);
 
         this.router.navigate(['sobrenosotros']);
 
@@ -84,7 +115,7 @@ export class LoginComponent implements OnInit {
     {
       this.form.markAllAsTouched(); //Activa todas las validaciones
     }
-  }
+  }*/
 
 
 }

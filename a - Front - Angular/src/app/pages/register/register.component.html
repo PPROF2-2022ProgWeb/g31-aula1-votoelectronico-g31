@@ -20,7 +20,7 @@
                       <input
                         type="text"
                         formControlName="nombre"
-                        [(ngModel)]="usuario.nombre" 
+                        [(ngModel)]="usuario.name" 
                         [class.border-danger]="NombreValid"
                         id="nombre"
                         name="nombre"
@@ -47,7 +47,7 @@
                       <input
                         type="text"
                         formControlName="apellido"
-                        [(ngModel)]="usuario.apellido"
+                        [(ngModel)]="usuario.lastname"
                         [class.border-danger]="ApellidoValid"
                         id="apellido"
                         name="apellido"
@@ -68,6 +68,37 @@
                         </p>
                       </div>                     
                     </div>
+
+
+                    <div class="form-group campo">
+                      <label class="color-title"> Nombre de usuario </label>
+                      <input
+                        type="text"
+                        formControlName="username"
+                        [(ngModel)]="usuario.username"
+                        [class.border-danger]="UsernameValid"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Username"
+                        required
+                        #newUsername
+                      />
+                      <div *ngIf="Apellido?.errors  && Apellido?.touched">
+                        <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                          El nombre de usuario es requerido.
+                        </p>
+                      </div>
+
+                                        
+                    </div>
+
+
+
+
+
+
+
             
                     <div class="form-group campo" >
                       <label class="color-title">Número de identificación</label>
@@ -177,7 +208,7 @@
                         <input
                           type="text"
                           formControlName="telefono"
-                          [(ngModel)]="usuario.telefono"
+                          [(ngModel)]="usuario.phone"
                           [class.border-danger]="TelefonoValid"
                           id="telefono"
                           name="telefono"

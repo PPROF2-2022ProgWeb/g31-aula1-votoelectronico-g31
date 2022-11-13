@@ -12,7 +12,38 @@
                     <div class="card_register">
                         <div class="card">
                             <div class="card-body text-center">
-                                
+                                <form class="col-4 mx-auto mt-5" action="" (submit)="logIn()">
+                                    <input 
+                                        type="text" 
+                                        placeholder="Username" 
+                                        name="username" 
+                                        id="username" 
+                                        style="border: 1px solid #fffa;" 
+                                        class="my-3 bg-transparent rounded p-2 col-12 d-block text-light" 
+                                        [(ngModel)]="username"
+                                    />
+                                    <input 
+                                        type="password" 
+                                        placeholder="Password" 
+                                        name="password" 
+                                        id="password" 
+                                        style="border: 1px solid #fffa;" 
+                                        class="my-3 bg-transparent rounded p-2 col-12 d-block text-light" 
+                                        [(ngModel)]="password"
+                                    />
+                                    <input 
+                                        type="submit"
+                                        value="Log in" 
+                                        style="border: 1px solid #fffa;" 
+                                        class="mt-5 rounded col-2 d-block btn btn-primary" 
+                                    />
+                                    <h4 
+                                        *ngIf="error"
+                                        style="text-align: center;" 
+                                        class="alert-danger p-2 m-5 rounded"
+                                    >{{error}}</h4>
+                                </form>
+                              <!--
                                 <form [formGroup]="form" (ngSubmit)="onEnviar($event, usuario)" novalidate >
                                     <div class="form-group">
                                       <label for="email">Email:</label>
@@ -44,7 +75,7 @@
                                         ¿No tienes una cuenta?
                                         <a class="link" routerLink="/register" routerLinkActive="active">Registrate </a>
                                     </p>
-                                </form>
+                                </form>-->
                             </div>
                         </div>
                     </div>

@@ -13,12 +13,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PostLoginModule } from './post-login/post-login.module';
 import { NgChartsModule } from 'ng2-charts';
-import { JwtInterceptor } from './services/auth/interceptor.service';
+//import { JwtInterceptor } from './services/auth/interceptor.service';
 import { UsuarioService } from './services/usuario.service';
-import { AuthService } from './services/auth/auth.service';
+//import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './services/auth/error.service';
-
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 @NgModule({
@@ -40,11 +40,12 @@ import { ErrorInterceptor } from './services/auth/error.service';
     MatListModule,
     PostLoginModule,
     NgChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPermissionsModule.forRoot()
+
   ],
-  providers: [AuthService, UsuarioService,
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
+  providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
