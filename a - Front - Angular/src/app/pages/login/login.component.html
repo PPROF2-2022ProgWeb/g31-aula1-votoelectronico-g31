@@ -1,81 +1,37 @@
+
 <app-header></app-header>
-
-<section id="section-register" class="cuerpoLogin">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
-        <div class="card">
-          <h1 class="tituloTarjeta">Ingreso de usuario</h1>
-          <div class="card-body text-center">
-            <form
-              [formGroup]="form"
-              (ngSubmit)="onEnviar($event, usuario)"
-              novalidate
-            >
-              <div class="form-group">
-                <i class="fa-solid fa-user posicionIcono"></i>
-                <input
-                  type="email"
-                  class="form-control"
-                  formControlName="mail"
-                  [(ngModel)]="usuario.email"
-                  placeholder="Ingrese su email"
-                  id="email"
-                  [class.border-danger]="mailNoValido"
-                />
-                <label for="email"></label>
-                <span
-                  *ngIf="this.form.get('mail')?.errors?.['required'] && this.mail?.touched"
-                  ><p class="mensajeError">El email no puede quedar vacío</p>
-                </span>
-                <span *ngIf="this.form.get('mail')?.errors?.['email']">
-                  <p class="mensajeError">El email no es válido</p>
-                </span>
-              </div>
-              <div class="form-group">
-                <i class="fa-solid fa-key posicionIcono"></i>
-                <input
-                  type="password"
-                  class="form-control"
-                  formControlName="password"
-                  [(ngModel)]="usuario.password"
-                  placeholder="Ingrese su contraseña"
-                  id="pwd"
-                  [class.border-danger]="passInvalid"
-                />
-                <label for="pwd"></label>
-                <span *ngIf="pass?.errors?.['required'] && pass?.touched">
-                  <p class="mensajeError">La contraseña es requerida</p>
-                </span>
-                <span *ngIf="pass?.errors?.['minlength']" class="text-danger">
-                  <p class="mensajeError">
-                    La contraseña debe contener al menos 8 caracteres
-                  </p>
-                </span>
-              </div>
-
-              <button
-                type="submit"
-                [disabled]="form.invalid"
-                class="btn btn-lg w-50 btn-block"
-              >
-                Iniciar sesión
-              </button>
-              <p id="sin-cuenta">
-                ¿No tienes una cuenta?
-                <a
-                  class="linkRegistro"
-                  routerLink="/register"
-                  routerLinkActive="active"
-                  >Click aquí
-                </a>
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<div class="px-5 col-12" style="margin-top: 5rem;">
+    <h1 class="mx-auto text-center mb-5">Login</h1>
+    <form class="col-4 mx-auto mt-5" action="" (submit)="logIn()">
+        <input 
+            type="text" 
+            placeholder="Username" 
+            name="username" 
+            id="username" 
+            style="border: 1px solid #fffa;" 
+            class="my-3 bg-transparent rounded p-2 col-12 d-block text-light" 
+            [(ngModel)]="username"
+        />
+        <input 
+            type="password" 
+            placeholder="Password" 
+            name="password" 
+            id="password" 
+            style="border: 1px solid #fffa;" 
+            class="my-3 bg rounded p-2 col-12 d-block" 
+            [(ngModel)]="password"
+        />
+        <input 
+            type="submit"
+            value="Log in" 
+            style="border: 1px solid #fffa;" 
+            class="mt-5 rounded col-2 d-block btn btn-primary" 
+        />
+        <h4 
+            *ngIf="error"
+            style="text-align: center;" 
+            class="alert-danger p-2 m-5 rounded"
+        >{{error}}</h4>
+    </form>
+</div>
 <app-footer></app-footer>
