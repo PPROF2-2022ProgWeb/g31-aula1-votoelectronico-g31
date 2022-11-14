@@ -6,6 +6,8 @@ public class Login {
     private String password;
     private String token;
 
+    public Rol rol;
+
     public long getId() {
         return id;
     }

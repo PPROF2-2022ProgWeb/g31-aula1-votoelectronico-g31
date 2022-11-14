@@ -1,6 +1,7 @@
 package com.votoelectronico.ecommercebackend.controller;
 
 import com.votoelectronico.ecommercebackend.config.JwtUtil;
+import com.votoelectronico.ecommercebackend.model.Login;
 import com.votoelectronico.ecommercebackend.model.User;
 import com.votoelectronico.ecommercebackend.repo.UserRepository;
 import com.votoelectronico.ecommercebackend.service.JwtUserDetailsService;
@@ -106,12 +107,17 @@ public class JwtAuthenticationController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> authenticateUser (@RequestBody Map<String, String> user) throws Exception {
         authenticate(user.get("username"), user.get("password"));
-
+        Login login= new Login();
+        login.setUsername(user.get("username"));
+        login.setPassword(user.get("password"));
+        User usuario = repo.findByUsername(user.get("username"));
+        login.rol= usuario.getRol();
         Map<String, Object> tokenResponse = new HashMap<>();
         final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(user.get("username"));
         final String token = jwtUtil.generateToken(userDetails);
+        login.setToken(token);
 
-        tokenResponse.put("token", token);
+        tokenResponse.put("login", login);
         return ResponseEntity.ok(tokenResponse);
     }
 
