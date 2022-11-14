@@ -12,12 +12,6 @@ import { LayoutModule } from '../layout/layout.module';
 import { SobrenosotrosComponent } from './sobrenosotros/sobrenosotros.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { SectionComercialComponent } from './section-comercial/section-comercial.component';
-import { HomeEngComponent } from './home-eng/home-eng.component';
-import { SobrenosotrosEngComponent } from './sobrenosotros-eng/sobrenosotros-eng.component';
-import { RegisterEngComponent } from './register-eng/register-eng.component';
-
-import { SectionComercialEngComponent } from './section-comercial-eng/section-comercial-eng.component';
-import { ContactoEngComponent } from './contacto-eng/contacto-eng.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
@@ -56,11 +50,6 @@ import { CartComponent } from './cart/cart.component';
     SobrenosotrosComponent,
     ContactoComponent,
     SectionComercialComponent,
-    HomeEngComponent,
-    SobrenosotrosEngComponent,
-    RegisterEngComponent,
-    SectionComercialEngComponent,
-    ContactoEngComponent,
     LogoutComponent,
     ToolbarAdmComponent,
     DashboardAdmComponent,

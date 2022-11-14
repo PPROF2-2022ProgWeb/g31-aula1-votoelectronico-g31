@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Roboto:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+
 /* TEXTO DE IMAGEN PRINCIPAL */
 
 #intro {
@@ -36,12 +38,21 @@ header {
   width: 100%;
 }
 
-/* CUERPO PRINCIPAL TEST*/
+/* Texto imagen principal */
 
-@media (max-width: 768px) {
-  .servicio-fila {
-    width: 100% !important;
-    text-align: center;
+.tituloPrincipal{
+  font-size: 70px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media(max-width: 768px){
+  .tituloPrincipal{
+  font-size: 40px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
   }
 }
 
@@ -60,6 +71,7 @@ header {
   margin-right: 5px;
 }
 
+
 .contenido-textos a {
   color: black;
   transition: all 0.4s linear;
@@ -69,66 +81,54 @@ header {
   color: orangered;
 }
 
-/* FORMULARIO CONTACTO */
+@media (max-width: 768px) {
+  .servicio-fila {
+    width: 100% !important;
+    text-align: center;
+  }
+}
 
-.contact-form .btnContact {
-  width: 50%;
-  border: none;
-  border-radius: 1rem;
-  padding: 1.5%;
-  background: rgb(77, 0, 77);
+/* NUEVOS ESTILOS */
+
+.tituloServicio, .tituloComoUsar{
+  font-size: 55px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+}
+
+@media(max-width: 768px){
+  .tituloServicio, .tituloComoUsar{
+  font-size: 40px;
+  font-family: 'EB Garamond', serif;
+  font-weight: 700;
+  }
+}
+
+
+.tituloClaves{
+  font-family: 'EB Garamond', serif;
+  font-size: 40px;
   font-weight: 600;
-  color: #fff;
-  cursor: pointer;
+  font-style: italic;
 }
 
-/*SECCION CALCULO EDAD*/
-#edadSeccion {
-  text-align: center;
-}
-#inputEdad {
-  margin: 30px;
-}
-#fechanacimiento {
-  width: 50%;
-  margin-left: 25%;
-}
-.container {
-  width: auto;
-  display: flex;
-  flex-direction: column;
+.descripcionClaves{
+  font-size: 18px;
+  font-family: 'Roboto', serif;
 }
 
-.btn {
-  margin: 20px auto;
-  border: none;
-  padding: 10px 44px;
-  font-size: 36px;
-  position: relative;
-}
-.btn::before {
-  transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  content: "";
-  width: 50%;
-  height: 100%;
-  background: black;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.btn .btn-text {
-  color: white;
-  mix-blend-mode: difference;
-}
-.btn:hover::before {
-  background: black;
-  width: 100%;
+.espacioSecciones{
+  padding-top: 75px;
 }
 
-.divisor {
-  border-top: 8px solid rgb(255, 255, 255);
-  width: 100%;
-  background-color: darkgray;
-  margin: 0;
-  top: -10px;
+.tituloUsar{
+  font-family: 'EB Garamond', serif;
+  font-size: 40px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.descripcionUsar{
+  font-size: 18px;
+  font-family: 'Roboto', serif;
 }
