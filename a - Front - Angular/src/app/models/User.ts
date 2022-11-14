@@ -1,11 +1,13 @@
 export class User {
    
   username:string="";
-  name:string="";
   lastname:string="";
-  email:string="";
   password:string="";
-  phone:string="";
+  email:string="";
+  name:string="";
   dni:string="";
+  phone:string="";
+  rol:string="";
+  
  
 }
