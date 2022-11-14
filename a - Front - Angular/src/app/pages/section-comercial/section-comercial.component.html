@@ -1,137 +1,229 @@
+<app-header></app-header>
+
 <!-- UBICAR DEBAJO DEL BANNER -->
 <section class="sectionComercial paymentMethods">
-    <div class="container-fluid containerPayment">
-        <div class="row superRow">
-            <div class="col-md-6 columnaTest d-flex justify-content-start">
-                <div class="row rowInterna">
-                    <div class="col-3 colImgPayment">
-                        <img class="img-payment" src="assets/section-comercial/credit-card-icon.png" alt="">
-                    </div>
-                    <div class="col-9 containerText">
-                        <h4 class="">Tarjetas de Credito</h4>
-                        <a href="link" data-bs-toggle="modal" data-bs-target="#paymentsModalCards">
-                            Ver promociones bancarias
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 columnaTest d-flex justify-content-start">
-                <div class="row rowInterna">
-                    <div class="col-3 colImgPayment">
-                        <img class="img-payment" src="assets/section-comercial/coin-icon.png" alt="">
-                    </div>
-                    <div class="col-9 containerText">
-                        <h4 class="">Debito/Transferencia</h4>
-                        <a href="link" data-bs-toggle="modal" data-bs-target="#paymentsModalDebit">Ver promociones
-                            bancarias</a>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid containerPayment">
+    <div class="row superRow">
+      <div class="col-md-6 columnaTest d-flex justify-content-start">
+        <div class="row rowInterna">
+          <div class="col-3 colImgPayment">
+            <img
+              class="img-payment"
+              src="assets/section-comercial/credit-card-icon.png"
+              alt=""
+            />
+          </div>
+          <div class="col-9 containerText">
+            <h4 class="">Tarjetas de Credito</h4>
+            <a
+              href="link"
+              data-bs-toggle="modal"
+              data-bs-target="#paymentsModalCards"
+            >
+              Ver promociones bancarias
+            </a>
+          </div>
         </div>
-    </div>
-
-    <!-- MODAL TARJETAS-->
-    <!-- data-bs-target vincula el boton al modal  -->
-    <div class="modal" tabindex="-1" id="paymentsModalCards">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Promociones Bancarias</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                        <p class="greenText">Ahora 12, 6 y 3 sin interés</p>
-                        <p class="secondaryText">En productos seleccionados con Visa, American Express, Cabal, Tarjeta Shopping, Cordobesa y Mastercard bancarias</p>
-                        <img src="assets/section-comercial/MODAL/sin-interes.PNG" alt="">
-                        <p class="greenText">Hasta 6 cuotas sin interés*</p>
-                        <p class="secondaryText">En productos seleccionados</p>
-                        <img src="assets/section-comercial/MODAL/tarjetas.PNG" alt="">
-                        <p class="greenText">Hasta 6 cuotas sin interés*</p>
-                        <p class="secondaryText">En todo el sitio</p>
-                        <img src="assets/section-comercial/MODAL/otras.PNG" alt="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+      </div>
+      <div class="col-md-6 columnaTest d-flex justify-content-start">
+        <div class="row rowInterna">
+          <div class="col-3 colImgPayment">
+            <img
+              class="img-payment"
+              src="assets/section-comercial/coin-icon.png"
+              alt=""
+            />
+          </div>
+          <div class="col-9 containerText">
+            <h4 class="">Debito/Transferencia</h4>
+            <a
+              href="link"
+              data-bs-toggle="modal"
+              data-bs-target="#paymentsModalDebit"
+              >Ver promociones bancarias</a
+            >
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <!-- MODAL DEBITO -->
-
-    <div class="modal" tabindex="-1" id="paymentsModalDebit">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Debito/Transferencia</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                        <p class="greenText">Tarjetas de débito</p>
-                        <p class="secondaryText">Acreditación instantánea.</p>
-                        <img src="assets/section-comercial/MODAL/debito-tarjetas.PNG" alt="">
-                        <p class="greenText">Efectivo</p>
-                        <p class="secondaryText">Es muy simple: cuando termines tu compra, te daremos las instrucciones para que sepas cómo y dónde pagarla.</p>
-                        <img src="assets/section-comercial/MODAL/rapipago.PNG" alt="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+  <!-- MODAL TARJETAS-->
+  <!-- data-bs-target vincula el boton al modal  -->
+  <div class="modal" tabindex="-1" id="paymentsModalCards">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Promociones Bancarias</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
+        <div class="modal-body">
+          <p class="greenText">Ahora 12, 6 y 3 sin interés</p>
+          <p class="secondaryText">
+            En productos seleccionados con Visa, American Express, Cabal,
+            Tarjeta Shopping, Cordobesa y Mastercard bancarias
+          </p>
+          <img src="assets/section-comercial/MODAL/sin-interes.PNG" alt="" />
+          <p class="greenText">Hasta 6 cuotas sin interés*</p>
+          <p class="secondaryText">En productos seleccionados</p>
+          <img src="assets/section-comercial/MODAL/tarjetas.PNG" alt="" />
+          <p class="greenText">Hasta 6 cuotas sin interés*</p>
+          <p class="secondaryText">En todo el sitio</p>
+          <img src="assets/section-comercial/MODAL/otras.PNG" alt="" />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 
+  <!-- MODAL DEBITO -->
+
+  <div class="modal" tabindex="-1" id="paymentsModalDebit">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Debito/Transferencia</h4>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p class="greenText">Tarjetas de débito</p>
+          <p class="secondaryText">Acreditación instantánea.</p>
+          <img
+            src="assets/section-comercial/MODAL/debito-tarjetas.PNG"
+            alt=""
+          />
+          <p class="greenText">Efectivo</p>
+          <p class="secondaryText">
+            Es muy simple: cuando termines tu compra, te daremos las
+            instrucciones para que sepas cómo y dónde pagarla.
+          </p>
+          <img src="assets/section-comercial/MODAL/rapipago.PNG" alt="" />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
+<!--
 <section class="sectionComercial">
-    <div class="container-fluid section">
-        <div id="container section-title">
-            <div class="row row-title">
-                <h1>Comenzar tu votacion</h1>
-            </div>
-        </div>
-        <div class="container section-cards">
-            <div class="row">
-                <div class="col-lg-4 mb-3">
-                    <div class="card">
-                        <img src="assets/section-comercial/card01.jpeg" class="card-img-top" alt="assets/card3.jpeg">
-                        <div class="card-body">
-                            <h4 class="card-title">Votación Gratuita</h4>
-                            <p class="card-text">
-                                <img class="check-icon" src="assets/section-comercial/check-icon3.png" alt="check-icon">
-                                Hasta 10 votantes.
-                            </p>
-                            <a class="btn" routerLink="/register" routerLinkActive="active">COMENZAR</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <div class="card">
-                        <img src="assets/section-comercial/card02.jpeg" class="card-img-top" alt=".assets/">
-                        <div class="card-body">
-                            <h4 class="card-title">Votación Estandar</h4>
-                            <p class="card-text">
-                                <img class="check-icon" src="assets/section-comercial/check-icon3.png" alt="check-icon">
-                                Hasta 50 votantes.
-                            </p>
-                            <a href="#" class="btn">COMPRAR</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <div class="card">
-                        <img src="assets/section-comercial/card03.jpeg" class="card-img-top" alt=".assets/">
-                        <div class="card-body">
-                            <h4 class="card-title">Votación Premium</h4>
-                            <p class="card-text">
-                                <img class="check-icon" src="assets/section-comercial/check-icon3.png" alt="check-icon">
-                                Sin limites de participantes.
-                            </p>
-                            <a href="#" class="btn">COMPRAR</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container-fluid section">
+    <div id="container section-title">
+      <div class="row row-title">
+        <h1>Comenzar tu votacion</h1>
+      </div>
     </div>
-</section>
+    <div class="container section-cards">
+      <div class="row">
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <img
+              src="assets/section-comercial/card01.jpeg"
+              class="card-img-top"
+              alt="assets/card3.jpeg"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Votación Gratuita</h4>
+              <p class="card-text">
+                <img
+                  class="check-icon"
+                  src="assets/section-comercial/check-icon3.png"
+                  alt="check-icon"
+                />
+                Hasta 10 votantes.
+              </p>
+              <a class="btn" routerLink="/register" routerLinkActive="active"
+                >COMENZAR</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <img
+              src="assets/section-comercial/card02.jpeg"
+              class="card-img-top"
+              alt=".assets/"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Votación Estandar</h4>
+              <p class="card-text">
+                <img
+                  class="check-icon"
+                  src="assets/section-comercial/check-icon3.png"
+                  alt="check-icon"
+                />
+                Hasta 50 votantes.
+              </p>
+              <a href="#" class="btn">COMPRAR</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <div class="card">
+            <img
+              src="assets/section-comercial/card03.jpeg"
+              class="card-img-top"
+              alt=".assets/"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Votación Premium</h4>
+              <p class="card-text">
+                <img
+                  class="check-icon"
+                  src="assets/section-comercial/check-icon3.png"
+                  alt="check-icon"
+                />
+                Sin limites de participantes.
+              </p>
+              <a href="#" class="btn">COMPRAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of filterCategory">
+      <div class="card col-md-3">
+        <img src="{{ item.image }}" alt="imagen_producto" />
+        <h5 class="itemTitle">{{ item.title }}</h5>
+        <p class="itemDescription">{{ item.description }}</p>
+        <p><strong>Precio:</strong> ${{ item.price }}</p>
+        <button class="btn btn-primary" (click)="addtoCart(item)">
+          Agregar al carrito
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<app-footer></app-footer>

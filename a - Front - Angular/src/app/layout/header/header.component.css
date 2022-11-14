@@ -2,8 +2,8 @@
   font-size: 18px;
   padding: 0px;
   margin: 3px 0;
-  background-color: rgba(51, 47, 47, 0.87);
-}
+background-color: rgb(23, 23, 23);
+}/* background-color: rgba(51, 47, 47, 0.87);*/
 .navContainer {
   padding: 10px 10%;
   box-shadow: 2px 2px 10px 1px black;
@@ -28,9 +28,9 @@
 }
 .navbar a:hover {
   color: orangered !important;
-  text-decoration: underline;
+  text-decoration: none;
   transition: 0.2s;
-  transform: scale(105%);
+  transform: scale(110%);
 }
 
 @media (max-width: 760px) {
@@ -39,4 +39,13 @@
   }
 }
 
-/*FIN HEADER*/
+.iconoCarrito{
+  font-size: 28px;
+  color: white;
+}
+
+.iconoCarrito:hover{
+  color: orangered;
+  transition: 0.2s;
+  transform: scale(110%);
+}

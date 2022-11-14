@@ -11,7 +11,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { PostLoginModule } from './post-login/post-login.module';
 import { NgChartsModule } from 'ng2-charts';
 //import { JwtInterceptor } from './services/auth/interceptor.service';
 import { UsuarioService } from './services/usuario.service';
@@ -20,12 +19,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './services/auth/error.service';
 import { NgxPermissionsModule } from 'ngx-permissions';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LayoutModule,
@@ -38,7 +33,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    PostLoginModule,
     NgChartsModule,
     HttpClientModule,
     NgxPermissionsModule.forRoot()
@@ -46,6 +40,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
+
 })
-export class AppModule { }
+export class AppModule {}
