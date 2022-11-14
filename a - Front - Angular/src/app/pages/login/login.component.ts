@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import {
+  Validators,
+  FormGroup,
+  FormBuilder,
+  FormControl,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 //import { AuthService } from 'src/app/services/auth/auth.service';
 //import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
@@ -12,38 +17,44 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  username : string="";
-  password : string="";
-  error : string="";
+  username: string = '';
+  password: string = '';
+  error: string = '';
   usuario: User = new User();
 
-  constructor(private usersService : UsuarioService, private router : Router, private rolesService: NgxRolesService) { }
+  constructor(
+    private usersService: UsuarioService,
+    private router: Router,
+    private rolesService: NgxRolesService
+  ) {}
 
   ngOnInit(): void {
-      if (localStorage.getItem('token')) {
-          this.router.navigateByUrl('/login')
-      }
+    if (localStorage.getItem('token')) {
+      this.router.navigateByUrl('/login');
+    }
   }
 
-  logIn () {
-      this.error = ''
-      this.usuario.username=this.username;
-      this.usuario.password=this.password;
+  logIn() {
+    this.error = '';
+    this.usuario.username = this.username;
+    this.usuario.password = this.password;
 
-      this.usersService.login(
-          this.username, this.password).subscribe((token : Token) => {
-              localStorage.setItem('token', token.token);
-              this.rolesService.addRole(this.usuario.rol, []);
-              this.router.navigateByUrl('/contacto').then(() => window.location.reload())
-          }, (error : ErrorEvent) => {
-              console.log(error);
-              this.error = "Invalid login credentials"
-          })
-      
+    this.usersService.login(this.username, this.password).subscribe(
+      (token: Token) => {
+        localStorage.setItem('token', token.token);
+        //this.rolesService.addRole(this.usuario.rol, []);
+        this.router
+          .navigateByUrl('/contacto')
+          .then(() => window.location.reload());
+      },
+      (error: ErrorEvent) => {
+        console.log(error);
+        this.error = 'Credenciales no válidas';
+      }
+    );
   }
 
   /*form: FormGroup;
@@ -121,6 +132,4 @@ export class LoginComponent implements OnInit {
       this.form.markAllAsTouched(); //Activa todas las validaciones
     }
   }*/
-
-
 }
