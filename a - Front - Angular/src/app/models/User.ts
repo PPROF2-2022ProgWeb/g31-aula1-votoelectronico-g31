@@ -1,5 +1,5 @@
 export class User {
-   
+
   username:string="";
   lastname:string="";
   password:string="";
@@ -8,6 +8,7 @@ export class User {
   dni:string="";
   phone:string="";
   rol:string="";
-  
- 
+  id:string="";
+
+
 }

@@ -42,11 +42,9 @@ export class GestionUserAdmComponent implements OnInit {
 
   borrarFila(id: number) {
     if (confirm("¿Realmente quiere borrar los datos?")) {
-      this.userService.deleteUser(id);
-      setTimeout(() => {
+      this.userService.deleteUser(id).subscribe(data => {
         this.cargarUsuarios();
-      },
-      300);
+      })
     }
   }
 
@@ -56,8 +54,8 @@ export class GestionUserAdmComponent implements OnInit {
     columnas: string[] = ['usuarioid','nombre','apellido','telefono','dni','email','rol','borrar','editar'];
 
     //datos que se visualizaran
-   
-  
+
+
 
 }
 

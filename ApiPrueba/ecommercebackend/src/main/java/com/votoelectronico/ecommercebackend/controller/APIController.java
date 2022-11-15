@@ -1,16 +1,13 @@
 package com.votoelectronico.ecommercebackend.controller;
 
 import com.votoelectronico.ecommercebackend.config.JwtUtil;
-import com.votoelectronico.ecommercebackend.model.Login;
+import com.votoelectronico.ecommercebackend.model.Category;
 import com.votoelectronico.ecommercebackend.model.Product;
 import com.votoelectronico.ecommercebackend.model.User;
 import com.votoelectronico.ecommercebackend.model.cart.CartItem;
 import com.votoelectronico.ecommercebackend.model.cart.CartItemPK;
 import com.votoelectronico.ecommercebackend.repo.UserRepository;
-import com.votoelectronico.ecommercebackend.service.CartItemService;
-import com.votoelectronico.ecommercebackend.service.JwtUserDetailsService;
-import com.votoelectronico.ecommercebackend.service.ProductService;
-import com.votoelectronico.ecommercebackend.service.UserService;
+import com.votoelectronico.ecommercebackend.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +26,8 @@ public class APIController {
     private final UserService userService;
     private final ProductService productService;
     private final CartItemService cartItemService;
+
+    private final CategoryService categoryService;
     @Autowired
     private UserRepository repo;
 
@@ -38,10 +37,11 @@ public class APIController {
     @Autowired
     private JwtUtil jwtUtil;
 
-    public APIController(UserService userService, ProductService productService, CartItemService cartItemService) {
+    public APIController(UserService userService, ProductService productService, CartItemService cartItemService, CategoryService categoryService) {
         this.userService = userService;
         this.productService = productService;
         this.cartItemService = cartItemService;
+        this.categoryService = categoryService;
     }
 
     @PostMapping("/create-token")
@@ -165,4 +165,7 @@ public class APIController {
                                                  @PathVariable("productId") Long productId) {
         return ResponseEntity.ok(cartItemService.getCartItem(id, productId));
     }
+
+    @GetMapping("/category")
+    public ResponseEntity<List<Category>> getCategories(){return ResponseEntity.ok(categoryService.getCategories());}
 }

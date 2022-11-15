@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 //import { AuthService } from 'src/app/services/auth/auth.service';
 //import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
@@ -21,7 +19,7 @@ export class LoginComponent implements OnInit {
   error : string="";
   usuario: User = new User();
   roles: string="";
- 
+
 
   constructor(private usersService : UsuarioService, private router : Router, private rolesService: NgxRolesService, private permissionsService: NgxPermissionsService) { }
 
@@ -41,7 +39,7 @@ export class LoginComponent implements OnInit {
         this.roles=data.rol;
         console.log(this.roles);
         this.rolesService.addRole(data.rol, []);
-        
+
       })
 
       this.usersService.login(
@@ -54,8 +52,8 @@ export class LoginComponent implements OnInit {
         }
         )
 
-      
-      
+
+
   }
 
   /*form: FormGroup;
@@ -84,7 +82,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
   get mail()
   {
     return this.form.get("mail");

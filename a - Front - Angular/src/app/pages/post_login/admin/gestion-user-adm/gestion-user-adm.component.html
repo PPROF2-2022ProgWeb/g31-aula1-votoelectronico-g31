@@ -45,7 +45,8 @@
         </ng-container>
         <ng-container matColumnDef="editar">
           <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let j"> <button class="botonEditar" mat-raised-button focusable="true">
+          <td mat-cell *matCellDef="let j"> <button class="botonEditar" mat-raised-button focusable="true"
+            [routerLink]="['../edit-user', j.username]">
               Editar
             </button> </td>
         </ng-container>

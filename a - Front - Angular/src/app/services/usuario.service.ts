@@ -20,7 +20,7 @@ export class UsuarioService {
     currentUser: Observable<Token>;
     loggedIn= new BehaviorSubject<boolean>(false);
 
-    register (username : string, lastname: string, password : string, email : string, name : string, dni : string, 
+    register (username : string, lastname: string, password : string, email : string, name : string, dni : string,
         phone : string) : Observable<Token> {
         return this.http.post<Token>(`${environment.API_URL}/register`, {
             username,
@@ -73,14 +73,16 @@ export class UsuarioService {
         });
     }
 
-    updateUser (id : string, username : string, password : string, email : string, name : string, address : string, phone : string) : Observable<User> {
+    updateUser (id : string, username : string, lastname: string, password : string, email : string, name : string, dni : string,
+      phone : string) : Observable<User> {
         return this.http.put<User>(`${environment.API_URL}/api/users/${id}`, {
-            username,
-            password,
-            email,
-            name,
-            address,
-            phone 
+          username,
+          lastname,
+          password,
+          email,
+          name,
+          dni,
+          phone
         })
     }
 
@@ -91,8 +93,8 @@ export class UsuarioService {
     get usuarioAutenticado(): Token {
       return this.currentUserSubject.value;
     }
-  
-  
+
+
     get estaAutenticado(): Observable<boolean> {
       return this.loggedIn.asObservable();
     }
@@ -105,7 +107,6 @@ export class UsuarioService {
       localStorage.clear();
       this.loggedIn.next(false);
     }
-  
-}
 
+}
 
