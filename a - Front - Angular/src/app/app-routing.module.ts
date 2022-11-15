@@ -11,6 +11,7 @@ import { SectionComercialComponent } from './pages/section-comercial/section-com
 import { ToolbarAdmComponent } from './pages/post_login/admin/toolbar-adm/toolbar-adm.component';
 import { DashboardAdmComponent } from './pages/post_login/admin/dashboard-adm/dashboard-adm.component';
 import { CrearProdAdmComponent } from './pages/post_login/admin/crear-prod-adm/crear-prod-adm.component';
+import { CrearUsrAdmComponent } from 'src/app/pages/post_login/admin/crear-usr-adm/crear-usr-adm.component';
 import { GestionProdAdmComponent } from './pages/post_login/admin/gestion-prod-adm/gestion-prod-adm.component';
 import { GestionUserAdmComponent } from './pages/post_login/admin/gestion-user-adm/gestion-user-adm.component';
 import { HistorialAdmComponent } from './pages/post_login/admin/historial-adm/historial-adm.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'toolbar-adm', component: ToolbarAdmComponent },
   { path: 'dash-adm', component: DashboardAdmComponent },
   { path: 'crearpro-adm', component: CrearProdAdmComponent },
+  { path: 'crearusr-adm', component: CrearUsrAdmComponent },
   { path: 'gestionpro-adm', component: GestionProdAdmComponent },
   { path: 'gestionuser-adm', component: GestionUserAdmComponent },
   { path: 'historial-adm', component: HistorialAdmComponent },
