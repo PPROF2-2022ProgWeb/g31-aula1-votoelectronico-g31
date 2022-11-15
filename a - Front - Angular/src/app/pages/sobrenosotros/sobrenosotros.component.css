@@ -1,3 +1,8 @@
+.cuerpoContacto{
+  background: rgb(100,184,213);
+background: linear-gradient(180deg, rgba(100,184,213,1) 0%, rgba(148,223,255,1) 30%, rgba(255,255,255,1) 70%)
+}
+
 /* CARD */
 
 .timeline {
