@@ -1,8 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard-user',
@@ -30,44 +28,6 @@ export class DashboardUserComponent {
       ];
     })
   );
-
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
-  // Pie
-  public pieChartOptions1: ChartConfiguration['options'] = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-      },
-    }
-  };
-  public pieChartData1: ChartData<'pie', number[], string | string[]> = {
-    labels: [ [ 'Votaciones finalizadas' ], [ 'Votaciones canceladas'], [ 'Votaciones activas'] ],
-    datasets: [ {
-      data: [ 14, 5, 1 ]
-    } ]
-  };
-
-  public pieChartType2: ChartType = 'pie';
-
-  public pieChartOptions2: ChartConfiguration['options'] = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-      },
-    }
-  };
-  public pieChartData2: ChartData<'pie', number[], string | string[]> = {
-    labels: [ [ 'Votacion gratuita' ], [ 'Votaciones estandar'], [ 'Votaciones premium'] ],
-    datasets: [ {
-      data: [ 3, 12, 5 ]
-    } ]
-  };
-  public pieChartType1: ChartType = 'pie';
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 }

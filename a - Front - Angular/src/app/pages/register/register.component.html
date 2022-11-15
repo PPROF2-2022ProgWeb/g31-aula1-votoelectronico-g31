@@ -2,6 +2,7 @@
 
 <section id="register" class="cuerpoRegistro">
   <div class="container">
+    <!-- INICIO FORMULARIO -->
     <div class="row">
       <div class="col-xs-12 col-sm-6 com-md-4 mx-auto">
         <div class="card">
@@ -17,7 +18,7 @@
                 <input
                   type="text"
                   formControlName="nombre"
-                  [(ngModel)]="usuario.name"
+                  [(ngModel)]="usuario.nombre"
                   [class.border-danger]="NombreValid"
                   id="nombre"
                   name="nombre"
@@ -28,12 +29,12 @@
                 />
                 <label></label>
                 <div *ngIf="Nombre?.errors && Nombre?.touched">
-                  <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                  <p *ngIf="Nombre?.hasError('required')" class="mensajeError">
                     El nombre es requerido.
                   </p>
                 </div>
                 <div *ngIf="Nombre?.errors && Nombre?.touched">
-                  <p *ngIf="Nombre?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="Nombre?.hasError('pattern')" class="mensajeError">
                     Solo puede ingresar letras en este campo y al menos dos
                     caracteres.
                   </p>
@@ -45,7 +46,7 @@
                 <input
                   type="text"
                   formControlName="apellido"
-                  [(ngModel)]="usuario.lastname"
+                  [(ngModel)]="usuario.apellido"
                   [class.border-danger]="ApellidoValid"
                   id="apellido"
                   name="apellido"
@@ -56,37 +57,18 @@
                 />
                 <label></label>
                 <div *ngIf="Apellido?.errors && Apellido?.touched">
-                  <p *ngIf="Apellido?.hasError('required')" class="text-danger">
+                  <p
+                    *ngIf="Apellido?.hasError('required')"
+                    class="mensajeError"
+                  >
                     El apellido es requerido.
                   </p>
                 </div>
 
                 <div *ngIf="Apellido?.errors && Apellido?.touched">
-                  <p *ngIf="Apellido?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="Apellido?.hasError('pattern')" class="mensajeError">
                     Solo puede ingresar letras en este campo y al menos dos
                     caracteres.
-                  </p>
-                </div>
-              </div>
-
-              <div class="form-group campo">
-                <i class="fa-solid fa-id-card-clip posicionIcono"></i>
-                <input
-                  type="text"
-                  formControlName="username"
-                  [(ngModel)]="usuario.username"
-                  [class.border-danger]="UsernameValid"
-                  id="username"
-                  name="username"
-                  class="form-control"
-                  placeholder="Ingrese su usuario"
-                  required
-                  #newUsername
-                />
-                <label></label>
-                <div *ngIf="Apellido?.errors && Apellido?.touched">
-                  <p *ngIf="Apellido?.hasError('required')" class="text-danger">
-                    El nombre de usuario es requerido.
                   </p>
                 </div>
               </div>
@@ -109,7 +91,7 @@
                 <div *ngIf="Identificador?.errors && Identificador?.touched">
                   <p
                     *ngIf="Identificador?.hasError('required')"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     El identificador es requerido.
                   </p>
@@ -129,14 +111,15 @@
                   placeholder="Ingrese su email"
                   required
                   #newMail
-                /><label></label>
+                />
+                <label></label>
                 <div *ngIf="Mail?.errors && Mail?.touched">
-                  <p *ngIf="Mail?.hasError('required')" class="text-danger">
+                  <p *ngIf="Mail?.hasError('required')" class="mensajeError">
                     El email es requerido.
                   </p>
                 </div>
                 <div *ngIf="Mail?.errors && Mail?.touched">
-                  <p *ngIf="Mail?.errors?.['email']" class="text-danger">
+                  <p *ngIf="Mail?.errors?.['email']" class="mensajeError">
                     El mail no es válido
                   </p>
                 </div>
@@ -155,11 +138,12 @@
                   placeholder="Ingrese su contraseña"
                   required
                   #newPass
-                /><label></label>
+                />
+                <label></label>
                 <div *ngIf="Contrasena?.errors && Contrasena?.touched">
                   <p
                     *ngIf="Contrasena?.hasError('required')"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     La contraseña es requerida.
                   </p>
@@ -167,7 +151,7 @@
                 <div *ngIf="Contrasena?.errors && Contrasena?.touched">
                   <p
                     *ngIf="Contrasena?.errors?.['minlength']"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     La contraseña debe contener al menos 8 caracteres.
                   </p>
@@ -186,11 +170,12 @@
                   placeholder="Repita su contraseña"
                   required
                   #newPass
-                /><label></label>
+                />
+                <label></label>
                 <div *ngIf="Contrasena2?.errors && Contrasena2?.touched">
                   <p
                     *ngIf="Contrasena?.hasError('required')"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     La contraseña es requerida.
                   </p>
@@ -198,13 +183,13 @@
                 <div *ngIf="Contrasena2?.errors && Contrasena2?.touched">
                   <p
                     *ngIf="Contrasena?.errors?.['minlength']"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     La contraseña debe contener al menos 8 caracteres.
                   </p>
                 </div>
                 <div *ngIf="Contrasena2Invalid">
-                  <p class="Contrasena2Invalid" class="text-danger">
+                  <p class="Contrasena2Invalid" class="mensajeError">
                     Las contraseñas no coinciden.
                   </p>
                 </div>
@@ -215,7 +200,7 @@
                 <input
                   type="text"
                   formControlName="telefono"
-                  [(ngModel)]="usuario.phone"
+                  [(ngModel)]="usuario.telefono"
                   [class.border-danger]="TelefonoValid"
                   id="telefono"
                   name="telefono"
@@ -223,40 +208,41 @@
                   placeholder="Ingrese su teléfono"
                   required
                   #newTelefono
-                /><label></label>
+                />
+                <label></label>
                 <div *ngIf="Telefono?.errors && Telefono?.touched">
-                  <p *ngIf="Telefono?.hasError('required')" class="text-danger">
+                  <p
+                    *ngIf="Telefono?.hasError('required')"
+                    class="mensajeError"
+                  >
                     El teléfono es requerido.
                   </p>
                 </div>
                 <div *ngIf="Telefono?.errors && Telefono?.touched">
-                  <p *ngIf="Telefono?.hasError('pattern')" class="text-danger">
+                  <p *ngIf="Telefono?.hasError('pattern')" class="mensajeError">
                     Solo puede ingresar números en este campo.
                   </p>
                 </div>
                 <div *ngIf="Telefono?.errors && Telefono?.touched">
                   <p
                     *ngIf="Telefono?.errors?.['minlength']"
-                    class="text-danger"
+                    class="mensajeError"
                   >
                     EL teléfono debe tener al menos 6 dígitos.
                   </p>
                 </div>
               </div>
-
               <button
                 type="submit"
                 id="envio"
-                class="btn btn-lg w-75 btn-block"
+                class="btn btn-lg w-75 btn-block btn-primary"
               >
                 Registrarse
               </button>
 
-              <div class="form-group campo">
-                <a routerLink="/login" class="linkLogin"
-                  ><p class="textoLogin">¿Ya tienes una cuenta?</p></a
-                >
-              </div>
+              <a routerLink="/login" class="linkLogin"
+                ><p class="textoLogin">¿Ya tienes una cuenta?</p></a
+              >
             </form>
           </div>
         </div>

@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <section id="section-register" class="cuerpoLogin">
   <div class="container">
     <div class="row">
@@ -6,33 +7,60 @@
         <div class="card">
           <h1 class="tituloTarjeta">Ingreso de usuario</h1>
           <div class="card-body text-center">
-            <form action="" (submit)="logIn()">
+            <form
+              [formGroup]="form"
+              (ngSubmit)="onEnviar($event, usuario)"
+              novalidate
+            >
               <div class="form-group">
                 <i class="fa-solid fa-user posicionIcono"></i>
                 <input
-                  type="text"
-                  placeholder="Username"
-                  name="username"
-                  id="username"
-                  [(ngModel)]="username"
-                /><label></label>
+                  type="email"
+                  class="form-control"
+                  formControlName="mail"
+                  [(ngModel)]="usuario.email"
+                  placeholder="Ingrese su email"
+                  id="email"
+                  [class.border-danger]="mailNoValido"
+                />
+                <label for="email"></label>
+                <span
+                  *ngIf="this.form.get('mail')?.errors?.['required'] && this.mail?.touched"
+                  ><p class="mensajeError">El email no puede quedar vacío</p>
+                </span>
+                <span *ngIf="this.form.get('mail')?.errors?.['email']">
+                  <p class="mensajeError">El email no es válido</p>
+                </span>
               </div>
               <div class="form-group">
                 <i class="fa-solid fa-key posicionIcono"></i>
                 <input
                   type="password"
-                  placeholder="Password"
-                  name="password"
-                  id="password"
-                  [(ngModel)]="password"
-                /><label></label>
+                  class="form-control"
+                  formControlName="password"
+                  [(ngModel)]="usuario.password"
+                  placeholder="Ingrese su contraseña"
+                  id="pwd"
+                  [class.border-danger]="passInvalid"
+                />
+                <label for="pwd"></label>
+                <span *ngIf="pass?.errors?.['required'] && pass?.touched">
+                  <p class="mensajeError">La contraseña es requerida</p>
+                </span>
+                <span *ngIf="pass?.errors?.['minlength']" class="text-danger">
+                  <p class="mensajeError">
+                    La contraseña debe contener al menos 8 caracteres
+                  </p>
+                </span>
               </div>
-              <button type="submit" class="btn btn-lg w-50 btn-block">
+
+              <button
+                type="submit"
+                [disabled]="form.invalid"
+                class="btn btn-lg w-50 btn-block"
+              >
                 Iniciar sesión
               </button>
-              <h4 *ngIf="error" class="mensajeError">
-                {{ error }}
-              </h4>
               <p id="sin-cuenta">
                 ¿No tienes una cuenta?
                 <a
@@ -49,4 +77,5 @@
     </div>
   </div>
 </section>
+
 <app-footer></app-footer>

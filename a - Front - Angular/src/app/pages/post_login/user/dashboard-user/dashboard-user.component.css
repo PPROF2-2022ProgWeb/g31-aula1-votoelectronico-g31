@@ -1,9 +1,31 @@
+.grid-container {
+  margin: 20px;
+  padding-left: 30px;
+
+}
+/*
+.title_dash{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+*/
+.descripcion_graf {
+  color: white;
+}
+.titulo_tarjeta{
+  color: white;
+}
 .tit_tabla{
   font-size: 22px;
   font-weight: bold;
   padding-top: 10px;
   text-align: center;
 }
+
+/* Tarjetas de datos de votacion */
 
 .card{
   padding: 10px;
@@ -53,16 +75,3 @@
 .margenGrafico{
   margin-top: 15px;
 }
-
-.grafico{
-  width: 100%;
-  margin: 0 auto;
-}
-
-@media(max-width: 768px) {
-  .grafico{
-    width: 50%;
-    margin: 0 auto;
-  }
-}
- 
