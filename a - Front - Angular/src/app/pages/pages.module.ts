@@ -40,6 +40,10 @@ import { LineChartComponent } from './post_login/admin/dashboard-adm/components/
 import { BarChartComponent } from './post_login/admin/dashboard-adm/components/bar-chart/bar-chart.component';
 import { MatTableModule } from '@angular/material/table';
 import { CartComponent } from './cart/cart.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import { PagarComponent } from './pagar/pagar.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,7 @@ import { CartComponent } from './cart/cart.component';
     LineChartComponent,
     BarChartComponent,
     CartComponent,
+    PagarComponent,
   ],
   imports: [
     CommonModule,
@@ -84,6 +89,9 @@ import { CartComponent } from './cart/cart.component';
     MatMenuModule,
     NgChartsModule,
     MatTableModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
+    MatInputModule,
   ],
   exports: [
     HomeComponent,
