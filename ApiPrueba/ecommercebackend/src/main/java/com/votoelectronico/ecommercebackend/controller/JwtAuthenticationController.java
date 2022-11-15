@@ -108,8 +108,6 @@ public class JwtAuthenticationController {
     public ResponseEntity<?> authenticateUser (@RequestBody Map<String, String> user) throws Exception {
         authenticate(user.get("username"), user.get("password"));
         Login login= new Login();
-        login.setUsername(user.get("username"));
-        login.setPassword(user.get("password"));
         User usuario = repo.findByUsername(user.get("username"));
         login.rol= usuario.getRol();
         Map<String, Object> tokenResponse = new HashMap<>();
@@ -117,7 +115,7 @@ public class JwtAuthenticationController {
         final String token = jwtUtil.generateToken(userDetails);
         login.setToken(token);
 
-        tokenResponse.put("login", login);
+        tokenResponse.put("token", token);
         return ResponseEntity.ok(tokenResponse);
     }
 

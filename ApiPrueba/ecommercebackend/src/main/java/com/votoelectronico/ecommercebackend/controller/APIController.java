@@ -1,10 +1,12 @@
 package com.votoelectronico.ecommercebackend.controller;
 
 import com.votoelectronico.ecommercebackend.config.JwtUtil;
+import com.votoelectronico.ecommercebackend.model.Login;
 import com.votoelectronico.ecommercebackend.model.Product;
 import com.votoelectronico.ecommercebackend.model.User;
 import com.votoelectronico.ecommercebackend.model.cart.CartItem;
 import com.votoelectronico.ecommercebackend.model.cart.CartItemPK;
+import com.votoelectronico.ecommercebackend.repo.UserRepository;
 import com.votoelectronico.ecommercebackend.service.CartItemService;
 import com.votoelectronico.ecommercebackend.service.JwtUserDetailsService;
 import com.votoelectronico.ecommercebackend.service.ProductService;
@@ -27,6 +29,8 @@ public class APIController {
     private final UserService userService;
     private final ProductService productService;
     private final CartItemService cartItemService;
+    @Autowired
+    private UserRepository repo;
 
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
@@ -55,9 +59,11 @@ public class APIController {
         return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
 
-    @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUser (@PathVariable("id") Long id) {
-        return new ResponseEntity<>(userService.getUser(id), HttpStatus.OK);
+
+
+    @GetMapping("/users/{username}")
+    public User getUsuario(@PathVariable String username) {
+        return repo.findByUsername(username);
     }
 
     @PutMapping("/users/{id}")

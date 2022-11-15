@@ -29,6 +29,9 @@ public class UserService {
                 new UserNotFoundException("User by id " + id + " was not found."));
     }
 
+    public User getUser (String username) {
+        return repo.findByUsername(username);
+    }
     public User updateUser (Long id, User user) {
         User oldUser = getUser(id);
 
