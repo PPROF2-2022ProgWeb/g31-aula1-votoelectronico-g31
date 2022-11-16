@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'edit-user/:username', component: RegisterComponent},
+  { path: 'edit-user/:userId', component: CrearUsrAdmComponent},
   { path: 'contacto', component: ContactoComponent },
   { path: 'sobrenosotros', component: SobrenosotrosComponent },
   { path: 'section-comercial', component: SectionComercialComponent },

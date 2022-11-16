@@ -1,6 +1,7 @@
 package com.votoelectronico.ecommercebackend.service;
 
 import com.votoelectronico.ecommercebackend.exceptions.UserNotFoundException;
+import com.votoelectronico.ecommercebackend.model.Product;
 import com.votoelectronico.ecommercebackend.model.User;
 import com.votoelectronico.ecommercebackend.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class UserService {
     public User getUser (Long id) {
         return repo.findById(id).orElseThrow(() ->
                 new UserNotFoundException("User by id " + id + " was not found."));
+    }
+
+    public User addUser (User user) {
+        return repo.save(user);
     }
 
     public User getUser (String username) {

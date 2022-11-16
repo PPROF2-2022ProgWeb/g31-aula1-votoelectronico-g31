@@ -63,6 +63,9 @@ export class UsuarioService {
         return this.http.get<User>(`${environment.API_URL}/api/users/${id}`);
     }
 
+    getUserById (id : string) : Observable<User> {
+      return this.http.get<User>(`${environment.API_URL}/api/users/id/${id}`);
+  }
 
     getUserByToken () : Observable<User> {
         return this.http.get<User>(`${environment.API_URL}/user`, {

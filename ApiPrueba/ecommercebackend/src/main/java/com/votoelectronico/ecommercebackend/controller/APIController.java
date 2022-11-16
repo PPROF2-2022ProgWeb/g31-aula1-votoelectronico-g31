@@ -66,6 +66,11 @@ public class APIController {
         return repo.findByUsername(username);
     }
 
+    @GetMapping("/users/id/{id}")
+    public ResponseEntity<User> getUserById (@PathVariable("id") Long id) {
+        return new ResponseEntity<>(userService.getUser(id), HttpStatus.OK);
+    }
+
     @PutMapping("/users/{id}")
     public ResponseEntity<User> updateUser (@PathVariable("id") Long id, @RequestBody Map<String, Object> user) {
         User newUser = new User(
