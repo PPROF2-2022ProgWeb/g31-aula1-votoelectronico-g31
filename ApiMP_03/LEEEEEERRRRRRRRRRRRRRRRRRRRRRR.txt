@@ -1,0 +1,62 @@
+Credenciales de API:
+149100949 - MercadoPago application - 16315450
+ID: 1235297259730382
+
+Credenciales para pruebas : 
+
+Public Key : 
+TEST-d021c23c-8ad6-469d-9763-54cdd0622a0d
+
+Access Token (USAR EN EL BACK):
+TEST-1235297259730382-070120-a539801b79a2276295f4993844c906d8-149100949
+
+VER :
+https://www.mercadopago.com.ar/developers/es/docs/checkout-pro/integrate-checkout-pro
+
+Para integrar a nuestro proyecto primero instalar SDK en el back :
+<dependency>
+  <groupId>com.mercadopago</groupId>
+  <artifactId>sdk-java</artifactId>
+  <version>2.1.2</version>
+</dependency>
+
+entidades :
+Preferencia :  carrito de compras con los item.
+item : lista de productos.
+
+
+
+
+
+COMO USAR :
+-Levantar la api
+-Cargar en postman
+
+http://localhost:8080/reference/new
+{
+    "accessToken" : "TEST-1235297259730382-070120-a539801b79a2276295f4993844c906d8-149100949",
+    "items" : {  "title": "Auto" , "quantity" : "2" , "price" : "50" }
+}
+
+Mercadopago nos devolvera un monton de atributos y al final de todo hay uno que se llama "initpoint"
+ej : "initPoint": "https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=149100949-c1e7d3ae-c9f9-4440-9114-d268053d7ab4",
+
+Ese es el link con el carrito de compras.
+
+Necesitaran estos datos para probar el pago :
+TARJETA PARA PRUEBAS :
+
+Mastercard	
+5031 7557 3453 0604	
+123
+11/25
+titular : APRO(pago aprobado) o OTHE(para errores).
+
+
+¿QUE LE FALTA?
+
+Cambiar el atributo items del preferenceDTO , pasarlo a lista. ( ahora trabaja con un solo producto).
+Chequear en el servicio que la funcion funcione correctamente cambiando el tipo de dato items del preferenceDTO a lista.
+Capturar el initpoint , y mandarselo al front para que pueda usarlo en el boton de "pagar".
+
+
