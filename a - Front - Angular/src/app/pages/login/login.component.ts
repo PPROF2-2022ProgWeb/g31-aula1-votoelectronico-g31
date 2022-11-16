@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 
       this.usersService.ObtenerUsuario(this.username).subscribe((data:any)=>{
         localStorage.setItem('role', data.rol);
+        localStorage.setItem('llave', data.id);
         this.roles=data.rol;
         console.log(this.roles);
         this.rolesService.addRole(data.rol, []);
@@ -46,7 +47,15 @@ export class LoginComponent implements OnInit {
       this.usersService.login(
         this.username, this.password).subscribe((login:Token) => {
           localStorage.setItem('token', JSON.stringify(login.token));
-          this.router.navigateByUrl('/dash-adm')
+
+          if (localStorage.getItem('role')=='ADMIN') {
+            this.router.navigateByUrl('/dash-adm');
+          }
+          else{
+            this.router.navigateByUrl('/dash-usr')
+          }
+
+          
         }, (error : ErrorEvent) => {
           console.log(error);
           this.error = "Invalid login credentials"

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartItem } from 'src/app/models/CartItem';
+import { User } from 'src/app/models/User';
+import { CartItemsService } from 'src/app/services/cart-items.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import { CartService } from '../../services/cart.service';
 
 @Component({
@@ -9,19 +14,44 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
   public products: any = [];
   public grandTotal: number = 0;
+  llave:any;
+  user : User=new User();
+  cartItems : CartItem[]=[];
+  ;
 
-  constructor(private cartService: CartService) {}
+
+  constructor(private cartService: CartItemsService, private router : Router, 
+    private usersService : UsuarioService,
+    ) {}
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((res) => {
-      this.products = res;
-      this.grandTotal = this.cartService.getTotalPrice();
-    });
+    if (!localStorage.getItem('token')) {
+      this.router.navigateByUrl('/login')
+      return
+    }
+    this.llave= localStorage.getItem('llave');
+ 
+    this.cartService.getUserCart(this.llave !=null ? this.llave: 0 ).subscribe((cartItems : CartItem[]) => {
+      this.cartItems = cartItems;
+      console.log(cartItems)
+  })
+
   }
+
+  getItems () {
+    this.llave= localStorage.getItem('llave');
+    this.cartService.getUserCart(this.llave !=null ? this.llave: 0 ).subscribe((cartItems : CartItem[]) => {
+        this.cartItems = cartItems;
+    })
+}
+  
   removeItem(item: any) {
-    this.cartService.removeCartItem(item);
+    this.cartService.deleteUserCartItem(this.user.id.toString(), item.product.id.toString()).subscribe(res => {
+      console.log(res)
+      this.getItems()
+  })
   }
-  emptycart() {
-    this.cartService.removeAll();
-  }
+ // emptycart() {
+   // this.cartService.removeAll();
+  //}
 }

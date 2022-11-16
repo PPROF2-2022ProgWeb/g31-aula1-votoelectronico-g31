@@ -38,7 +38,7 @@ public class User {
 
     @Column(name="rol")
     @Enumerated(EnumType.STRING)
-    private Rol rol = Rol.ADMIN;
+    private Rol rol = Rol.USER;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "pk.user", cascade = CascadeType.ALL)

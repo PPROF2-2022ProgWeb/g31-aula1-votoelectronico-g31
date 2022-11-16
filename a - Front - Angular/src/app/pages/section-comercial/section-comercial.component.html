@@ -215,11 +215,11 @@
     <ng-container *ngFor="let item of filterCategory">
       <div class="card col-md-3">
         <img src="{{ item.imageUrl }}" alt="imagen_producto" />
-           
+        <p style="display: none">{{ item.id }}</p>
         <h5 class="itemTitle">{{ item.title }}</h5>
         <p class="itemDescription">{{ item.description }}</p>
         <p><strong>Precio:</strong> ${{ item.price }}</p>
-        <button class="btn btn-primary" (click)="addtoCart(item)">
+        <button class="btn btn-primary" (click)="addToCart(item.id)">
           Agregar al carrito
         </button>
       </div>
