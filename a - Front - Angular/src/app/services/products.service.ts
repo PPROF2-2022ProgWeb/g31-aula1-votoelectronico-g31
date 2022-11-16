@@ -30,13 +30,14 @@ export class ProductsService {
         });
     }
 
-    updateProduct (id: string, name: string, description: string, price: Number, image: any): Observable<Product> {
+    updateProduct (id: string, name: string, description: string, price: Number, image: any, category: Categoria): Observable<Product> {
         return this.http.put<Product>(`${environment.API_URL}/api/products/${id}`, {
             id,
             name,
             description,
             price,
-            image
+            image,
+            category
         });
     }
 

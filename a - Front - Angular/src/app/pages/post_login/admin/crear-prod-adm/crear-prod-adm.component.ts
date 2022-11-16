@@ -100,7 +100,7 @@ export class CrearProdAdmComponent implements OnInit {
 
       if (this.idProducto) {
         console.log('Entra a if');
-        this.productoService.updateProduct(this.producto.id, this.producto.name, this.producto.description, this.producto.price, this.producto.image)
+        this.productoService.updateProduct(this.producto.id, this.producto.name, this.producto.description, this.producto.price, this.producto.image, this.producto.category)
         .subscribe((data)=> {
           console.log(producto);
           this.router.navigateByUrl('/gestionpro-adm');
