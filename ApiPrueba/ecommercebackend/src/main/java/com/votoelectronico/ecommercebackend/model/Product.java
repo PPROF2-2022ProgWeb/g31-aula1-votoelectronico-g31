@@ -2,6 +2,7 @@ package com.votoelectronico.ecommercebackend.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,7 +20,7 @@ public class Product {
     @Column(nullable = false, length = 4000)
     private String description;
 
-    @JsonBackReference
+
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
@@ -39,7 +40,7 @@ public class Product {
     public Product () {
     }
 
-    public Product (String name, String description, double price) {
+    /*public Product (String name, String description, double price) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -50,6 +51,23 @@ public class Product {
         this.description = description;
         this.price = price;
         this.image = image;
+    }*/
+
+    public Product(long id, String name, String description, Category category, double price, Date addedOn, byte[] image) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.addedOn = addedOn;
+        this.image = image;
+    }
+
+    public Product(String name, String description, Category category, double price, Date addedOn) {
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.addedOn = addedOn;
     }
 
     public long getId() {
@@ -98,5 +116,13 @@ public class Product {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
