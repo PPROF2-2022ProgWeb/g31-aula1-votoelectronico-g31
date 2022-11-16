@@ -11,27 +11,27 @@
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla3>
         <ng-container matColumnDef="productoid">
           <th mat-header-cell *matHeaderCellDef> ProductoId </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">ProductoId:</span>{{Producto.productoid}} </td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">ProductoId:</span>{{Producto.id}} </td>
         </ng-container>
         <ng-container matColumnDef="nombre">
           <th mat-header-cell *matHeaderCellDef> Nombre </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Nombre:</span>{{Producto.nombre}} </td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Nombre:</span>{{Producto.name}} </td>
         </ng-container>
         <ng-container matColumnDef="descripcion">
           <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Descripcion:</span>{{Producto.descripcion}} </td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Descripcion:</span>{{Producto.description}} </td>
         </ng-container>
         <ng-container matColumnDef="imagen">
           <th mat-header-cell *matHeaderCellDef> Imagen </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Imagen:</span> <img [src]="Producto.imagen" /></td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Imagen:</span> <img [src]="Producto.imageUrl" /></td>
         </ng-container>
         <ng-container matColumnDef="precio">
           <th mat-header-cell *matHeaderCellDef> Precio </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Precio:</span>{{Producto.precio}}</td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Precio:</span>{{Producto.price}}</td>
         </ng-container>
         <ng-container matColumnDef="categoria">
           <th mat-header-cell *matHeaderCellDef> Categoria </th>
-          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Categoria:</span>{{Producto.categoria}} </td>
+          <td mat-cell *matCellDef="let Producto"> <span class="mobile-label">Categoria:</span>{{Producto.category.description}} </td>
         </ng-container>
         <ng-container matColumnDef="borrar">
           <th mat-header-cell *matHeaderCellDef></th>
@@ -42,7 +42,7 @@
         </ng-container>
         <ng-container matColumnDef="editar">
           <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let j"> <button class="botonEditar" mat-raised-button focusable="true">
+          <td mat-cell *matCellDef="let j"> <button class="botonEditar" mat-raised-button focusable="true"  [routerLink]="['../editpro-adm', j.id]">
               Editar
             </button> </td>
         </ng-container>

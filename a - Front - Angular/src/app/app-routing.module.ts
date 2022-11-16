@@ -40,6 +40,7 @@ const routes: Routes = [
   { path: 'toolbar-adm', component: ToolbarAdmComponent},
   { path: 'dash-adm', component: DashboardAdmComponent, canActivate: [AuthGuard]},
   { path: 'crearpro-adm', component: CrearProdAdmComponent,canActivate: [AuthGuard] },
+  { path: 'editpro-adm/:id', component: CrearProdAdmComponent },
   { path: 'crearusr-adm', component: CrearUsrAdmComponent },
   { path: 'gestionpro-adm', component: GestionProdAdmComponent,canActivate: [AuthGuard] },
   { path: 'gestionuser-adm', component: GestionUserAdmComponent,canActivate: [AuthGuard] },
