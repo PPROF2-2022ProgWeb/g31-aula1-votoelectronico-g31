@@ -18,4 +18,6 @@ export class ProductsService {
     getProduct (id : string) : Observable<Product> {
         return this.http.get<Product>(`${environment.API_URL}/api/products/${id}`);
     }
+
+    
 }
