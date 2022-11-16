@@ -23,32 +23,34 @@ import { HistorialUserComponent } from './pages/post_login/user/historial-user/h
 import { PanelUserUserComponent } from './pages/post_login/user/panel-user-user/panel-user-user.component';
 import { PagarComponent } from './pages/pagar/pagar.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'edit-user/:username', component: RegisterComponent},
   { path: 'contacto', component: ContactoComponent },
   { path: 'sobrenosotros', component: SobrenosotrosComponent },
   { path: 'section-comercial', component: SectionComercialComponent },
   { path: 'cart', component: CartComponent },
   { path: 'pagar', component: PagarComponent },
   //ruta admin
-  { path: 'toolbar-adm', component: ToolbarAdmComponent },
-  { path: 'dash-adm', component: DashboardAdmComponent },
-  { path: 'crearpro-adm', component: CrearProdAdmComponent },
+  { path: 'toolbar-adm', component: ToolbarAdmComponent},
+  { path: 'dash-adm', component: DashboardAdmComponent, canActivate: [AuthGuard]},
+  { path: 'crearpro-adm', component: CrearProdAdmComponent,canActivate: [AuthGuard] },
   { path: 'crearusr-adm', component: CrearUsrAdmComponent },
-  { path: 'gestionpro-adm', component: GestionProdAdmComponent },
-  { path: 'gestionuser-adm', component: GestionUserAdmComponent },
+  { path: 'gestionpro-adm', component: GestionProdAdmComponent,canActivate: [AuthGuard] },
+  { path: 'gestionuser-adm', component: GestionUserAdmComponent,canActivate: [AuthGuard] },
   { path: 'historial-adm', component: HistorialAdmComponent },
-  { path: 'panel-adm', component: PanelUserAdmComponent },
+  { path: 'panel-adm', component: PanelUserAdmComponent},
   //ruta user
-  { path: 'toolbar-usr', component: ToolbarUserComponent },
-  { path: 'dash-usr', component: DashboardUserComponent },
-  { path: 'compra-usr', component: CompraUserComponent },
-  { path: 'historial-usr', component: HistorialUserComponent },
-  { path: 'panel-usr', component: PanelUserUserComponent },
+  { path: 'toolbar-usr', component: ToolbarUserComponent,canActivate: [AuthGuard] },
+  { path: 'dash-usr', component: DashboardUserComponent,canActivate: [AuthGuard] },
+  { path: 'compra-usr', component: CompraUserComponent,canActivate: [AuthGuard] },
+  { path: 'historial-usr', component: HistorialUserComponent,canActivate: [AuthGuard] },
+  { path: 'panel-usr', component: PanelUserUserComponent, canActivate: [AuthGuard] },
   //dejar siempre al ultimo por que entra a la pagina de error si no esta contemplada
   { path: '**', component: NotFoundComponent },
 ];

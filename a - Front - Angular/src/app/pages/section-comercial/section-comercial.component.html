@@ -214,7 +214,8 @@
   <div class="row">
     <ng-container *ngFor="let item of filterCategory">
       <div class="card col-md-3">
-        <img src="{{ item.image }}" alt="imagen_producto" />
+        <img src="{{ item.imageUrl }}" alt="imagen_producto" />
+           
         <h5 class="itemTitle">{{ item.title }}</h5>
         <p class="itemDescription">{{ item.description }}</p>
         <p><strong>Precio:</strong> ${{ item.price }}</p>

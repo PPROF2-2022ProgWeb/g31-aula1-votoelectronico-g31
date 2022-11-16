@@ -1,11 +1,10 @@
-import { Byte } from "@angular/compiler/src/util"
 
 export class Product {
-    id : Number
-    name : string
-    description : string
-    price : Number
-    addedOn : Date
-    image : [Byte]
-    imageUrl : string
+    id : Number=0;
+    name : string="";
+    description : string="";
+    price : Number=0;
+    addedOn : Date=new Date();
+    image? :Blob=new Blob([]);
+    imageUrl : string="";
 }

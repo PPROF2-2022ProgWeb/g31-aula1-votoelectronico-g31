@@ -1,5 +1,6 @@
 package com.votoelectronico.ecommercebackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -17,6 +18,11 @@ public class Product {
 
     @Column(nullable = false, length = 4000)
     private String description;
+
+    @JsonBackReference
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private double price;
