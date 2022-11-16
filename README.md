@@ -1,12 +1,13 @@
 <a name="inicio"></a>
-<br />
+<br>
 <div align="center">
     <img src="z - Proyecto 2021 - Voto/img/logos/logotipo_Mesa de trabajo 1.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h2 align="center">Proyecto: Voto Electrónico</h2>
-  
-  <br />
+## <h1 align="center">Proyecto: Voto Electrónico</h1>
+  <br>
+
+ 
   
 </div>
 
@@ -14,7 +15,7 @@
 
 <!-- Contenido -->
 <details>
-  <summary>Click aqui para navegación rápida</summary>
+<summary><h2>Click aqui para navegación rápida</h2></summary>
   <ol>
     <li>
       <a href="#sobre">Sobre el proyecto</a>
@@ -36,12 +37,14 @@
   </ol>
 </details>
 
-
+<br>
+<br>
 
 <!-- SOBRE -->
 ## Sobre
+<br>
 <br />
-<img src="http://imgfz.com/i/r0Q6hKe.png" alt="pag-web" border="0">
+<img src="http://imgfz.com/i/WuMNfDm.png" alt="pag-web" border="0">
 <br />
 
 El proyecto de 'Voto Electrónico' será una web-app de uso general para efectuar votaciones de manera simple y sencilla.
@@ -50,32 +53,50 @@ El proyecto de 'Voto Electrónico' será una web-app de uso general para efectua
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
+<br>
+<br>
 
-
-### Tecnologías
+## Tecnologías
+<br>
 
 Aqui adjuntamos las tecnologías utilizadas para el proyecto con su correspondiente link al sitio.
-
-* [![Angular][Angular.io]][Angular-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![css][css.com]][css-url]
-* [![js][js.com]][js-url]
-* [![mysql][mysql.com]][mysql-url]
-* [![php][php.com]][php-url]
-* [![ts][ts.com]][ts-url]
-* [![Springboot][Springboot.io]][Springboot-url]
-
+ <br>
+ <br>
+ [![Angular][Angular.io]][Angular-url] 
+ <br>
+ <br>
+ [![Bootstrap][Bootstrap.com]][Bootstrap-url] 
+ <br>
+ <br>
+ [![css][css.com]][css-url] 
+ <br>
+ <br>
+ [![js][js.com]][js-url] 
+ <br>
+ <br>
+ [![mysql][mysql.com]][mysql-url] 
+ <br>
+ <br>
+ [![ts][ts.com]][ts-url] 
+ <br>
+ <br>
+ [![Springboot][Springboot.io]][Springboot-url] 
+ <br>
+ <br>
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
 
-
+<br>
+<br>
 
 <!-- INICIANDO EL PROYECTO -->
 ## Iniciando
+<br>
 
 Aqui veremos los pasos para iniciar de manera sencilla el proyecto de forma local.
 
-### Pre-requisitos
-
+## Pre-requisitos
+<br>
+<br>
 Instalaciones necesarias para el correcto funcionamiento.
 
 * npm
@@ -83,20 +104,34 @@ Instalaciones necesarias para el correcto funcionamiento.
   npm install npm@latest -g
   ```
 
-### Instalacion
-
-
+## Instalacion 
+<br>
+<br>
 1. Clonar el repo
    ```sh
    git clone https://github.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31.git
    ```
-3. Instalar paquetes NPM
+   
+## Frontend
+<br>
+<br>
+1. Abrir carpeta Frontend Angular del repositorio descargado utilizando VSC o editor preferido.
+
+2. Instalar paquetes NPM
    ```sh
    npm install
    ```
-4. Lanzar proyecto
+3. Lanzar proyecto
    ```sh
    ng s -o
+   ```
+   
+## Backend
+<br>
+<br>
+1. Cargar Backend (utilizando IntelliJ IDEA)
+   ```sh
+   Iniciar EcommercebackendApplication
    ```
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
@@ -105,8 +140,9 @@ Instalaciones necesarias para el correcto funcionamiento.
 
 <!-- USOS -->
 ## USO
-
-El usuario debe registrarse cargando su nombre, apellido, teléfono y email como paso indispensable. Luego de concretado este paso se accede al apartado de crear una votación configurando en la misma las opciones de votación, integrantes de la misma, modalidad de participación (link por mail, link al numero de celular, acceso a otro usuario registrado), fecha de inicio, fin, etc. Posteriormente la votación estará lista e iniciará según los datos ingresados. Al finalizar la misma se podrán ver datos desde el dashboard.
+<br>
+<br>
+El usuario debe registrarse cargando su nombre, apellido, teléfono, DNI, email y nombre de usuario como paso indispensable. Luego de concretado este paso se habilita la opción de adquirir una votación (gratis o paga) en la misma se configuran las opciones de votación, integrantes de la misma, modalidad de participación (link por mail, link al numero de celular, acceso a otro usuario registrado), fecha de inicio, fin, etc. Posteriormente la votación estará lista e iniciará según los datos ingresados. Al finalizar la misma se podrán ver datos desde el panel de usuario. 
 El sistema solo permitirá 1 voto por participante.
 
 
@@ -117,14 +153,23 @@ El sistema solo permitirá 1 voto por participante.
 <!-- Estado actual del proyecto -->
 ## Estado
 
-'Sprint 3/5'
+### Sprint 4/4
 
-- [x] Mantener actualizado ieee830.
-- [x] Registro de usuario.
-- [x] Login de usuario.
-- [x] Dashboard con módulos planteados.
+- [x] Mantener actualizado Ieee830 + Kanban + Wiki.
+- [x] Validaciones con Angular.
+- [x] Mostrar catálogo (mínimo 2 productos o servicios o suscripción). Seleccionar para comprar. Simular Pago con API Mercado Pago o API similar.
+- [x] Tablero de control  administrador CRUD básico funcional de producto y cliente.
+- [x] Demo Final del proyecto.
  
- <br />
+ ### Entrega final minimos requerimientos
+
+- [x] Información del Producto con Descripción Básica, mínimo una Imagen del mismo, entre otros.
+- [x] Carro de Compras con búsqueda en cualquier sección de la aplicación/sitio web.
+- [x] Registrarse y/o Crear Usuarios.
+- [x] Iniciar Sesión.
+- [x] El administrador podrá ingresar registros de nuevos productos en la web por categorías.
+
+
  
 Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31/issues) con futuros cambios ( incluye correcciones de problemas) del proyecto.
 
@@ -134,7 +179,8 @@ Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb
 
 <!-- Contacto -->
 ## Contacto
-
+<br>
+<br>
 <br />
 
 Hilario Iñigo Menéndez Picossi - mail@gmail.com
@@ -202,8 +248,6 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 [js-url]: https://www.javascript.com/
 [mysql.com]: https://img.shields.io/badge/MySQL-blue?style=for-the-badge&logo=MySQL&logoColor=FFF
 [mysql-url]: https://www.mysql.com/
-[php.com]: https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white
-[php-url]: https://www.php.net/
 [ts.com]: https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [ts-url]: https://www.typescriptlang.org/
 [Springboot.io]: https://img.shields.io/badge/Springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=black
