@@ -44,6 +44,8 @@ import { CartComponent } from './cart/cart.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
+import { CrearUsrAdmComponent } from './post_login/admin/crear-usr-adm/crear-usr-adm.component';
+import { PagarComponent } from './pagar/pagar.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import {MatInputModule} from '@angular/material/input';
     LineChartComponent,
     BarChartComponent,
     CartComponent,
+    CrearUsrAdmComponent,
+    PagarComponent,
   ],
   imports: [
     CommonModule,

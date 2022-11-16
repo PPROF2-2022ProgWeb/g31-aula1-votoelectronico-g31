@@ -11,6 +11,7 @@ import { SectionComercialComponent } from './pages/section-comercial/section-com
 import { ToolbarAdmComponent } from './pages/post_login/admin/toolbar-adm/toolbar-adm.component';
 import { DashboardAdmComponent } from './pages/post_login/admin/dashboard-adm/dashboard-adm.component';
 import { CrearProdAdmComponent } from './pages/post_login/admin/crear-prod-adm/crear-prod-adm.component';
+import { CrearUsrAdmComponent } from 'src/app/pages/post_login/admin/crear-usr-adm/crear-usr-adm.component';
 import { GestionProdAdmComponent } from './pages/post_login/admin/gestion-prod-adm/gestion-prod-adm.component';
 import { GestionUserAdmComponent } from './pages/post_login/admin/gestion-user-adm/gestion-user-adm.component';
 import { HistorialAdmComponent } from './pages/post_login/admin/historial-adm/historial-adm.component';
@@ -20,6 +21,7 @@ import { DashboardUserComponent } from './pages/post_login/user/dashboard-user/d
 import { CompraUserComponent } from './pages/post_login/user/compra-user/compra-user.component';
 import { HistorialUserComponent } from './pages/post_login/user/historial-user/historial-user.component';
 import { PanelUserUserComponent } from './pages/post_login/user/panel-user-user/panel-user-user.component';
+import { PagarComponent } from './pages/pagar/pagar.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { AuthGuard } from './services/auth/auth.guard';
 
@@ -33,10 +35,12 @@ const routes: Routes = [
   { path: 'sobrenosotros', component: SobrenosotrosComponent },
   { path: 'section-comercial', component: SectionComercialComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'pagar', component: PagarComponent },
   //ruta admin
   { path: 'toolbar-adm', component: ToolbarAdmComponent},
   { path: 'dash-adm', component: DashboardAdmComponent, canActivate: [AuthGuard]},
   { path: 'crearpro-adm', component: CrearProdAdmComponent,canActivate: [AuthGuard] },
+  { path: 'crearusr-adm', component: CrearUsrAdmComponent },
   { path: 'gestionpro-adm', component: GestionProdAdmComponent,canActivate: [AuthGuard] },
   { path: 'gestionuser-adm', component: GestionUserAdmComponent,canActivate: [AuthGuard] },
   { path: 'historial-adm', component: HistorialAdmComponent },

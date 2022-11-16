@@ -35,11 +35,9 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     MatListModule,
     NgChartsModule,
     HttpClientModule,
-    NgxPermissionsModule.forRoot()
-
+    NgxPermissionsModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
-
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

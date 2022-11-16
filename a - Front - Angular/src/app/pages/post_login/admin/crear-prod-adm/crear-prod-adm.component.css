@@ -49,7 +49,7 @@ table {
 
   .box{
     border-radius: 75px;
-    background: linear-gradient(179.5deg, rgba(255, 158, 73, 0.5) 3.3%, rgba(255, 68, 0, 0.4) 96%);
+    background: linear-gradient(179.5deg, rgba(255, 158, 73, 0.384) 3.3%, rgba(255, 68, 0, 0.274) 96%);
   }
 
   @media(max-width: 551px) {
