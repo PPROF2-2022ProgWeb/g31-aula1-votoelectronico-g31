@@ -105,8 +105,7 @@ Instalaciones necesarias para el correcto funcionamiento.
   ```
 
 ## Instalacion 
-<br>
-<br>
+
 1. Clonar el repo
    ```sh
    git clone https://github.com/PPROF2-2022ProgWeb/g31-aula1-votoelectronico-g31.git
@@ -130,7 +129,8 @@ Instalaciones necesarias para el correcto funcionamiento.
 <br>
 <br>
 1. Cargar Backend (utilizando IntelliJ IDEA)
-   ```sh
+  
+  ```sh
    Iniciar EcommercebackendApplication
    ```
 
@@ -179,7 +179,7 @@ Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb
 
 <!-- Contacto -->
 ## Contacto
-<br>
+
 <br>
 <br />
 
@@ -228,8 +228,6 @@ Recursos utiles al momento de crear el proyecto (agradecimientos a los creadores
 * [Material Icons](https://fonts.google.com/icons?selected=Material+Icons)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [etc9](etc3)
-* [etc10](etc3)
 
 
 <p align="right">(<a href="#inicio">Ir arriba</a>)</p>
