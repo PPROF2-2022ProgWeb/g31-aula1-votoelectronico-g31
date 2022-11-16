@@ -183,31 +183,31 @@ Aqui puedes observar las [Issues abiertas](https://github.com/PPROF2-2022ProgWeb
 <br>
 <br />
 
-Hilario Iñigo Menéndez Picossi - mail@gmail.com
+### Hilario Iñigo Menéndez Picossi 
 
 Proyectos: [https://github.com/hpicossi](https://github.com/hpicossi)
 
 <br />
 
-Marcos Javier Gómez - mail1@gmail.com
+### Marcos Javier Gómez 
 
 Proyectos: [https://github.com/wesborland-github](https://github.com/wesborland-github)
 
 <br />
 
-Florencia Bravo Corvalán - mail2@gmail.com
+### Florencia Bravo Corvalán 
 
 Proyectos: [https://github.com/FlorenciaCorvalan](https://github.com/FlorenciaCorvalan)
 
 <br />
 
-Juan Ortega - mail3@gmail.com
+### Juan Ortega
 
 Proyectos: [hhttps://github.com/Full-Juan-Ortega](https://github.com/Full-Juan-Ortega)
 
 <br />
 
-Lucas Bartolone - mail4@gmail.com
+### Lucas Bartolone
 
 Proyectos: [https://github.com/LucasBartolone](https://github.com/LucasBartolone)
 
