@@ -63,6 +63,8 @@
               </div>
             </button>
           </li>
+          <li>  <a routerLink="/login" routerLinkActive="active" *ngIf="estaAutenticado" (click)="onCerrarSesion()" class="btn btn-danger me-2">Cerrar Sesión</a></li>
+          <li>  <a  *ngIf="estaAutenticado" (click)="irPanel()" class="btn btn-danger me-2">Dashboard</a></li>
         </ul>
       </div>
     </div>

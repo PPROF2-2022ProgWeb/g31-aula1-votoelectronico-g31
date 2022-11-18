@@ -32,11 +32,30 @@ export class CartComponent implements OnInit {
     this.llave= localStorage.getItem('llave');
  
     this.cartService.getUserCart(this.llave !=null ? this.llave: 0 ).subscribe((cartItems : CartItem[]) => {
+      for (let item of cartItems) {
+        item.product.imageUrl = item.product.image ? 'data:image/jpeg;base64,' + item.product.image :
+        "../../../../assets/images/product-placeholder.png";}
       this.cartItems = cartItems;
-      console.log(cartItems)
-  })
+      console.log(cartItems)});
 
+    }
+
+  getTotal () : Number {
+    var reducer = (acc: any, val: any) => acc + val;
+    return this.cartItems ? this.cartItems.map((item) => item.totalPrice).reduce(reducer) : 0.0
   }
+    
+    removeItem(id: string) {
+      this.llave= localStorage.getItem('llave');
+      this.cartService.deleteUserCartItem(this.llave !=null ? this.llave: 0, id.toString()).subscribe(res => {
+        console.log(res)
+        this.cartService.getUserCart(this.llave !=null ? this.llave: 0 ).subscribe((cartItems : CartItem[]) => {
+          this.cartItems = cartItems;
+          console.log(cartItems)
+      })
+    })
+  
+    }
 
   getItems () {
     this.llave= localStorage.getItem('llave');
@@ -44,13 +63,10 @@ export class CartComponent implements OnInit {
         this.cartItems = cartItems;
     })
 }
+
+
+
   
-  removeItem(item: any) {
-    this.cartService.deleteUserCartItem(this.user.id.toString(), item.product.id.toString()).subscribe(res => {
-      console.log(res)
-      this.getItems()
-  })
-  }
  // emptycart() {
    // this.cartService.removeAll();
   //}

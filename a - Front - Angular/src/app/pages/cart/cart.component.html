@@ -30,18 +30,18 @@
               <td style="width: 15%">{{ item.quantity }}</td>
               <td style="width: 12%">{{ item.totalPrice }}</td>
               <td>
-                <button (click)="removeItem(item)" class="btn btn-danger">
+                <button (click)="removeItem(item.product.id)" class="btn btn-danger">
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </td>
             </tr>
             <tr>
               <td colspan="4"></td>
-              <td>
+             <!-- <td>
                 <button  class="btn btn-danger">
                   Vaciar
                 </button>
-              </td>
+              </td>-->
               <td>
                 <button routerLink="/section-comercial" class="btn btn-primary">
                   Seguir comprando
@@ -53,7 +53,7 @@
                 </button>
               </td>
               <td>
-                <strong>Total compra : $ {{ grandTotal }}</strong>
+                <strong>Total compra : $ {{ getTotal() }}</strong>
               </td>
             </tr>
           </tbody>

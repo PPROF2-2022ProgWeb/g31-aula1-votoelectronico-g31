@@ -9,6 +9,7 @@ export class User {
   phone:string="";
   rol:string="";
   id:string="";
+  cartItems : [any]=[""];
 
 
 }

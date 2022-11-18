@@ -216,10 +216,10 @@
       <div class="card col-md-3">
         <img src="{{ item.imageUrl }}" alt="imagen_producto" />
         <p style="display: none">{{ item.id }}</p>
-        <h5 class="itemTitle">{{ item.title }}</h5>
+        <h4 class="itemTitle">{{ item.name }}</h4>
         <p class="itemDescription">{{ item.description }}</p>
         <p><strong>Precio:</strong> ${{ item.price }}</p>
-        <button class="btn btn-primary" (click)="addToCart(item.id)">
+        <button class="btn btn-primary" *ngIf="!isProductInCart" (click)="addToCart(item.id)">
           Agregar al carrito
         </button>
       </div>

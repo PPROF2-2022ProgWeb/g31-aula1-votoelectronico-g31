@@ -23,6 +23,7 @@ export class SectionComercialComponent implements OnInit {
   public user : User=new User();
   public product : Product=new Product();
 
+  public isProductInCart : boolean=false;
   constructor(private api: ProductsService, private cartService: CartService, private sanitizer: DomSanitizer, private cartItemsService : CartItemsService, private usersService : UsuarioService,) {}
 
   ngOnInit(): void {
@@ -37,10 +38,7 @@ export class SectionComercialComponent implements OnInit {
       for (let product of this.productList) {
         product.imageUrl = product.image ? 'data:image/jpeg;base64,' + product.image :
         "../../../../assets/images/product-placeholder.png";
-
-      
-        
-    }
+        this.getCartItem(product.id)}
 
       this.productList.forEach((a: any) => {
        // if (a.category === 'jewelery') {
@@ -64,7 +62,7 @@ export class SectionComercialComponent implements OnInit {
   addToCart (id: Number) {
     this.llave= localStorage.getItem('llave');
     this.cartItemsService.addToUserCart(this.llave !=null ? this.llave: 0 , id.toString()).subscribe(res => {
-        
+      this.getCartItem(id)
     })
 }
   filter(category: string) {
@@ -74,4 +72,12 @@ export class SectionComercialComponent implements OnInit {
       }
     });
   }
+
+  getCartItem (id: Number) {
+    this.cartItemsService.getCartItem(this.user.id.toString(), id.toString()).subscribe(res => {
+        this.isProductInCart = true
+    }, (error : ErrorEvent) => {
+        this.isProductInCart = false
+    })
+}
 }
