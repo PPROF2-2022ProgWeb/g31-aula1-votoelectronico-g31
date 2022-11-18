@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
+
+//import { AuthService } from 'src/app/services/auth/auth.service';
+//import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.service';
+import { NgxPermissionsService, NgxRolesService } from 'ngx-permissions';
+import { Token } from 'src/app/models/Token';
+import { User } from 'src/app/models/User';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -11,80 +14,56 @@ import { LoginRequest, Usuario, UsuarioService } from 'src/app/services/usuario.
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form: FormGroup;
-  contactForm: FormGroup;
-  usuario: LoginRequest = new LoginRequest();
-  error: string="";
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) {
-    this.form= this.formBuilder.group(
-      {
-        password:['',[Validators.required, Validators.minLength(8)]],
-        mail:['', [Validators.required, Validators.email]]
-      }
-    )
-    this.contactForm = this.createFormGroup();
+  username : string="";
+  password : string="";
+  error : string="";
+  usuario: User = new User();
+  roles: string="";
 
-  }
 
-  createFormGroup(){
-    return new FormGroup({
-      password: new FormControl('',[Validators.required, Validators.minLength(8)]),
-        mail: new FormControl('', [Validators.required])
-    })
-  }
+  constructor(private usersService : UsuarioService, private router : Router, private rolesService: NgxRolesService, private permissionsService: NgxPermissionsService) { }
 
   ngOnInit(): void {
+      if (localStorage.getItem('token')) {
+          this.router.navigateByUrl('/login')
+      }
   }
 
-  
-  get mail()
-  {
-    return this.form.get("mail");
-  }
+  logIn () {
+      this.error = ''
+      this.usuario.username=this.username;
+      this.usuario.password=this.password;
 
-  get pass()
-  {
-    return this.form.get("password");
-  }
+      this.usersService.ObtenerUsuario(this.username).subscribe((data:any)=>{
+        localStorage.setItem('role', data.rol);
+        localStorage.setItem('llave', data.id);
+        this.roles=data.rol;
+        console.log(this.roles);
+        this.rolesService.addRole(data.rol, []);
 
-  get passInvalid()
-  {
-    return this.pass?.touched && !this.pass.valid;
-  }
+      })
 
+      this.usersService.login(
+        this.username, this.password).subscribe((login:Token) => {
+          localStorage.setItem('token', JSON.stringify(login.token));
 
-  get mailNoValido()
-  {
-    return this.mail?.invalid;
-  }
+          if (localStorage.getItem('role')=='ADMIN') {
+            this.router.navigateByUrl('/dash-adm');
+          }
+          else{
+            this.router.navigateByUrl('/dash-usr')
+          }
 
-
-  onEnviar(event: Event, usuario: LoginRequest)
-  {
-    event.preventDefault(); //Cancela la funcionalidad por default.
-    if (this.form.valid)
-    {
-      console.log(this.form.value); //se puede enviar al servidor...
-      this.authService.login(this.usuario)
-      .subscribe(
-        data => {
-        console.log("DATA"+ JSON.stringify( data));
-        //localStorage.setItem('auth-token', JSON.stringify(data ));
-
-        this.router.navigate(['sobrenosotros']);
-
-        },
-        error => {
-         this.error = error;
+          
+        }, (error : ErrorEvent) => {
+          console.log(error);
+          this.error = "Invalid login credentials"
         }
-      );
-    }
-    else
-    {
-      this.form.markAllAsTouched(); //Activa todas las validaciones
-    }
-  }
+        )
 
+
+
+  }
 
 }
