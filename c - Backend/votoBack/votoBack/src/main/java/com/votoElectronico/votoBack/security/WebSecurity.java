@@ -15,8 +15,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import static com.votoElectronico.votoBack.security.Constants.LOGIN_URL;
-import static com.votoElectronico.votoBack.security.Constants.REG_URL;
+import static com.votoElectronico.votoBack.model.Rol.ADMIN;
 
 @Configuration
 @EnableWebSecurity
@@ -27,6 +26,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     public WebSecurity(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
+
+
+
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
@@ -44,9 +46,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
          */
         httpSecurity
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .cors().and()
+                //.cors().and()
                 .csrf().disable()
                 .authorizeRequests().antMatchers(HttpMethod.POST).permitAll()
+                .antMatchers(HttpMethod.GET).permitAll()
+//                se agregan los permisos por el rol por necesidad de producto el DELETE y PUT
+                .antMatchers(HttpMethod.DELETE).permitAll()
+                .antMatchers(HttpMethod.PUT).permitAll()
+                .antMatchers("/admin").hasRole(String.valueOf(ADMIN))
                 .anyRequest().authenticated().and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()));

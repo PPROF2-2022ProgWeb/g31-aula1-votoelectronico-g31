@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { Token } from 'src/app/models/Token';
 
 import { ValidatorFn, AbstractControl} from '@angular/forms';
-import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
+import {  UsuarioService } from 'src/app/services/usuario.service';
+import { User } from 'src/app/models/User';
 
 
 @Component({
@@ -15,12 +18,16 @@ import { Usuario, UsuarioService } from 'src/app/services/usuario.service';
 export class RegisterComponent implements OnInit {
 
   formulario:FormGroup;
-  usuario: Usuario = new Usuario();
+  usuario: User = new User();
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private usuarioService: UsuarioService) { 
+  error : string="";
+  currentUserName?: any;
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private usuarioService: UsuarioService, private route: ActivatedRoute) {
     this.formulario= this.formBuilder.group(
       {
         nombre : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
+        username : new FormControl('', [Validators.required]),
         apellido : new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]{2,254}')]),
         identificador : new FormControl('', [Validators.required, Validators.minLength(2)]),
         email : new FormControl('', [Validators.required, Validators.email]),
@@ -32,29 +39,72 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.currentUserName = this.route.snapshot.paramMap.get('username');
+    if (this.currentUserName) {
+      if (localStorage.getItem('token')) {
+        this.router.navigateByUrl('edit-user/' + this.currentUserName);
+        this.usuarioService.getUser(this.currentUserName).subscribe(data => {
+          this.usuario = data;
+          this.usuario.password = "";
+          const contenedor: HTMLElement = document.getElementById('tituloRegistro') as HTMLElement;
+          contenedor.innerHTML = 'Editar Usuario';
+          const contenedorBoton: HTMLElement = document.getElementById('envio') as HTMLElement;
+          contenedorBoton.innerHTML = "Editar";
+        })
+      }
+    }
+    else {
+      if (localStorage.getItem('token')) {
+        this.router.navigateByUrl('/register')
+      }
+    }
   }
 
-  onEnviar(event: Event, usuario:Usuario): void {
+  onEnviar(event: Event, usuario:User): void {
     event.preventDefault;
 
     if (this.formulario.valid)
     {
       console.log(usuario);
-      this.usuarioService.onCrearRegistro(usuario).subscribe(
-        data => {
-          console.log(data);
-          //if (data['id_usuario']>0)
-          //{
-            //alert("El registro ha sido creado satisfactoriamente. A continuación, por favor Inicie Sesión.");
-            //this.router.navigate(['/login'])
-          //}
+      if (this.currentUserName) {
+        this.usuarioService.updateUser(this.usuario.id, this.usuario.username, this.usuario.lastname, this.usuario.password, this.usuario.email, this.usuario.name, this.usuario.dni, this.usuario.phone)
+        .subscribe((data) => {
+          this.router.navigateByUrl('/gestionuser-adm');
+        }, (error : ErrorEvent) => {
+          this.error = error.error
+        })
+      }
+      else {
+        this.usuarioService.register(
+          this.usuario.username, this.usuario.lastname, this.usuario.password, this.usuario.email, this.usuario.name, this.usuario.dni, this.usuario.phone).subscribe((token : Token) => {
+              localStorage.setItem('token', token.token);
+              this.router.navigateByUrl('/login').then(() => window.location.reload())
+          }, (error : ErrorEvent) => {
+              this.error = error.error
+          })
+      }
+    }
+    else
+    {
+      this.formulario.markAllAsTouched();
+    }
+  };
+
+
+register () {
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*/
+
+  this.error = ''
+
+
+  this.usuarioService.register(
+      this.usuario.username, this.usuario.name, this.usuario.lastname, this.usuario.password, this.usuario.email, this.usuario.dni, this.usuario.phone).subscribe((token : Token) => {
+          localStorage.setItem('token', token.token);
+          this.router.navigateByUrl('/login').then(() => window.location.reload())
+      }, (error : ErrorEvent) => {
+          this.error = error.error
       })
-  }
-  else
-  {
-    this.formulario.markAllAsTouched();
-  }
-};
+}
 
   get Contrasena()
 {
@@ -80,9 +130,9 @@ get Telefono()
   return this.formulario.get("telefono");
 }
 
-get Pais()
+get Username()
 {
-  return this.formulario.get("pais");
+  return this.formulario.get("username");
 }
 
 
@@ -147,8 +197,8 @@ get IdentificadorValid(){
   return this.Identificador?.touched && !this.Identificador?.valid;
 }
 
-get PaisValid(){
-  return this.Pais?.touched && !this.Pais?.valid;
+get UsernameValid(){
+  return this.Username?.touched && !this.Username?.valid;
 }
 
 }
