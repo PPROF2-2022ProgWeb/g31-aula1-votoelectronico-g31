@@ -1,12 +1,12 @@
 .navbar {
   font-size: 18px;
   padding: 0px;
-  margin: 3px 0;
+  margin: 0px 0;
 background-color: rgb(23, 23, 23);
 }/* background-color: rgba(51, 47, 47, 0.87);*/
 .navContainer {
   padding: 10px 10%;
-  box-shadow: 2px 2px 10px 1px black;
+  box-shadow: 2px 2px 0px 1px black;
 }
 .menuDiv {
   justify-content: end;
@@ -48,4 +48,15 @@ background-color: rgb(23, 23, 23);
   color: orangered;
   transition: 0.2s;
   transform: scale(110%);
+}
+
+.botonUsuario{
+  background-color: rgb(23, 23, 23);
+  color: white;
+  transition: all 0.2s linear;
+}
+.botonUsuario:hover{
+  background-color: rgb(23, 23, 23);
+  color: orangered;
+  transition: all 0.2s linear;
 }

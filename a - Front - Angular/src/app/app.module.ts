@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,7 +25,6 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     BrowserModule,
     LayoutModule,
     AppRoutingModule,
-    PagesModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -34,6 +33,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     MatIconModule,
     MatListModule,
     NgChartsModule,
+    FormsModule,
     HttpClientModule,
     NgxPermissionsModule.forRoot(),
   ],
