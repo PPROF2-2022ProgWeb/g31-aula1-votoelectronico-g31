@@ -35,6 +35,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     NgChartsModule,
     FormsModule,
     HttpClientModule,
+    PagesModule,
     NgxPermissionsModule.forRoot(),
   ],
   providers: [],
