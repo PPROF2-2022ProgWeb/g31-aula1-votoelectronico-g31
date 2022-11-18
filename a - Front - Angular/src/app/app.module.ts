@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,9 +18,10 @@ import { UsuarioService } from './services/usuario.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './services/auth/error.service';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FilterPipe],
   imports: [
     BrowserModule,
     LayoutModule,
@@ -34,6 +35,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     MatIconModule,
     MatListModule,
     NgChartsModule,
+    FormsModule,
     HttpClientModule,
     NgxPermissionsModule.forRoot(),
   ],

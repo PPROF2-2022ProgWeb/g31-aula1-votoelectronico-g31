@@ -1,5 +1,25 @@
 <!-- headers contains only navbar -->
 <header>
+  <nav class="navbar" *ngIf="estaAutenticado">
+    <form class="container-fluid justify-content-end">
+      <button
+        *ngIf="estaAutenticado"
+        (click)="irPanel()"
+        class="btn me-2 botonUsuario"
+      >
+        Dashboard
+      </button>
+      <button
+        *ngIf="estaAutenticado"
+        routerLink="/login"
+        routerLinkActive="active"
+        (click)="onCerrarSesion()"
+        class="btn me-2 botonUsuario"
+      >
+        Cerrar Sesión
+      </button>
+    </form>
+  </nav>
   <nav class="navbar navbar-expand-md">
     <div class="navContainer container-fluid">
       <div class="col-4 divImgHome">
@@ -63,10 +83,20 @@
               </div>
             </button>
           </li>
-          <li>  <a routerLink="/login" routerLinkActive="active" *ngIf="estaAutenticado" (click)="onCerrarSesion()" class="btn btn-danger me-2">Cerrar Sesión</a></li>
-          <li>  <a  *ngIf="estaAutenticado" (click)="irPanel()" class="btn btn-danger me-2">Dashboard</a></li>
         </ul>
       </div>
     </div>
+  </nav>
+  <nav class="navbar">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchTerm"
+        (keyup)="search($event)"
+        placeholder="Buscar producto"
+      />
+    </div>
+    <span class="fa fa-search search-icon"></span>
   </nav>
 </header>

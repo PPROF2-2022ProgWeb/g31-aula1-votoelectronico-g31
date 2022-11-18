@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
@@ -41,11 +40,12 @@ import { LineChartComponent } from './post_login/admin/dashboard-adm/components/
 import { BarChartComponent } from './post_login/admin/dashboard-adm/components/bar-chart/bar-chart.component';
 import { MatTableModule } from '@angular/material/table';
 import { CartComponent } from './cart/cart.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { CrearUsrAdmComponent } from './post_login/admin/crear-usr-adm/crear-usr-adm.component';
 import { PagarComponent } from './pagar/pagar.component';
+import { FilterPipe } from '../shared/filter.pipe';
 
 @NgModule({
   declarations: [
