@@ -15,6 +15,8 @@ import { FilterPipe } from '../../shared/filter.pipe';
   styleUrls: ['./section-comercial.component.css'],
 })
 export class SectionComercialComponent implements OnInit {
+  public totalItem: number = 0;
+  public searchTerm: string = '';
   public productList: any;
   public filterCategory: any;
   searchKey: string = '';
@@ -29,7 +31,8 @@ export class SectionComercialComponent implements OnInit {
     private cartService: CartService,
     private sanitizer: DomSanitizer,
     private cartItemsService: CartItemsService,
-    private usersService: UsuarioService
+    private usersService: UsuarioService,
+    private cartService1: CartService
   ) {}
 
   ngOnInit(): void {
@@ -93,5 +96,10 @@ export class SectionComercialComponent implements OnInit {
           this.isProductInCart = false;
         }
       );
+  }
+  search(event: any) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService1.search.next(this.searchTerm);
   }
 }

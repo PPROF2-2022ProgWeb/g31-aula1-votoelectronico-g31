@@ -74,6 +74,7 @@ import { FilterPipe } from '../shared/filter.pipe';
     CartComponent,
     CrearUsrAdmComponent,
     PagarComponent,
+    FilterPipe,
   ],
   imports: [
     CommonModule,

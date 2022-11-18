@@ -224,13 +224,28 @@
   </div>
 </div>
 
+<!-- Buscador -->
+<div class="container-lg">
+  <nav class="navbar nav-dark">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="searchTerm"
+        (keyup)="search($event)"
+        placeholder="Buscar producto"
+      />
+    </div>
+  </nav>
+</div>
+
 <!-- Productos -->
 
 <section class="seccionProductos">
   <div class="container-lg">
     <div class="row">
       <ng-container
-        *ngFor="let item of filterCategory | filter: searchKey:'title'"
+        *ngFor="let item of filterCategory | filter: searchKey:'name'"
       >
         <div class="col-md-4">
           <div class="card">

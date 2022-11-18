@@ -18,15 +18,13 @@ import { UsuarioService } from './services/usuario.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptor } from './services/auth/error.service';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, FilterPipe],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LayoutModule,
     AppRoutingModule,
-    PagesModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
