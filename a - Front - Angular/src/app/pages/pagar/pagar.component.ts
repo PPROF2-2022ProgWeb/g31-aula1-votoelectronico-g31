@@ -8,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class PagarComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.location.reload();
+
+      }
 }
